@@ -1,88 +1,105 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/bdb479d2-7064-4ee5-8f50-ce77e207eeb8.jpg";
-
-const DAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-const LEVELS = ["Все", "Начинающий", "Средний", "Продвинутый"];
-
-const SCHEDULE = [
-  { id: 1, day: "Пн", time: "07:00", name: "Утренняя йога", trainer: "Анна К.", duration: 60, level: "Начинающий", spots: 8, color: "#FF5C00" },
-  { id: 2, day: "Пн", time: "10:00", name: "Силовой тренинг", trainer: "Дмитрий В.", duration: 60, level: "Средний", spots: 6, color: "#00D4FF" },
-  { id: 3, day: "Пн", time: "18:00", name: "HIIT-кардио", trainer: "Мария Л.", duration: 45, level: "Продвинутый", spots: 3, color: "#FF2E93" },
-  { id: 4, day: "Пн", time: "20:00", name: "Пилатес", trainer: "Ольга Р.", duration: 60, level: "Начинающий", spots: 10, color: "#00FF94" },
-  { id: 5, day: "Вт", time: "07:30", name: "TRX-тренировка", trainer: "Дмитрий В.", duration: 45, level: "Средний", spots: 5, color: "#00D4FF" },
-  { id: 6, day: "Вт", time: "09:00", name: "Стретчинг", trainer: "Анна К.", duration: 60, level: "Начинающий", spots: 12, color: "#FF5C00" },
-  { id: 7, day: "Вт", time: "19:00", name: "Кросс-фит", trainer: "Сергей М.", duration: 60, level: "Продвинутый", spots: 2, color: "#FF2E93" },
-  { id: 8, day: "Ср", time: "08:00", name: "Утренняя йога", trainer: "Анна К.", duration: 60, level: "Начинающий", spots: 8, color: "#FF5C00" },
-  { id: 9, day: "Ср", time: "12:00", name: "Функциональный тренинг", trainer: "Сергей М.", duration: 45, level: "Средний", spots: 7, color: "#00D4FF" },
-  { id: 10, day: "Ср", time: "18:30", name: "Бокс", trainer: "Дмитрий В.", duration: 60, level: "Продвинутый", spots: 4, color: "#FF2E93" },
-  { id: 11, day: "Чт", time: "07:00", name: "Пилатес", trainer: "Ольга Р.", duration: 60, level: "Начинающий", spots: 9, color: "#00FF94" },
-  { id: 12, day: "Чт", time: "19:00", name: "HIIT-кардио", trainer: "Мария Л.", duration: 45, level: "Продвинутый", spots: 5, color: "#FF2E93" },
-  { id: 13, day: "Пт", time: "08:00", name: "Силовой тренинг", trainer: "Дмитрий В.", duration: 60, level: "Средний", spots: 6, color: "#00D4FF" },
-  { id: 14, day: "Пт", time: "10:00", name: "Стретчинг", trainer: "Анна К.", duration: 60, level: "Начинающий", spots: 12, color: "#FF5C00" },
-  { id: 15, day: "Пт", time: "19:30", name: "TRX-тренировка", trainer: "Сергей М.", duration: 45, level: "Средний", spots: 3, color: "#00D4FF" },
-  { id: 16, day: "Сб", time: "10:00", name: "Кросс-фит", trainer: "Сергей М.", duration: 90, level: "Продвинутый", spots: 8, color: "#FF2E93" },
-  { id: 17, day: "Сб", time: "12:00", name: "Утренняя йога", trainer: "Ольга Р.", duration: 60, level: "Начинающий", spots: 14, color: "#FF5C00" },
-  { id: 18, day: "Вс", time: "11:00", name: "Функциональный тренинг", trainer: "Мария Л.", duration: 60, level: "Средний", spots: 6, color: "#00D4FF" },
-  { id: 19, day: "Вс", time: "13:00", name: "Бокс", trainer: "Дмитрий В.", duration: 60, level: "Продвинутый", spots: 5, color: "#FF2E93" },
-];
+const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg";
+const IMG_GONG = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg";
 
 const SERVICES = [
   {
-    icon: "Zap",
-    title: "Групповые занятия",
-    desc: "Более 15 форматов тренировок для любого уровня подготовки. Йога, HIIT, пилатес, бокс и многое другое.",
-    tag: "от 800 ₽/занятие",
-    accent: "#FF5C00",
+    emoji: "🪢",
+    title: "Аэройога в гамаках",
+    desc: "Для начинающих и продолжающих. Гамак берёт нагрузку на себя — тело раскрывается без боли. Группы до 8 человек и индивидуальные занятия.",
+    tags: ["Группы до 8 чел.", "Индивидуальные", "Детские классы"],
+    price: "от ___ ₽",
+    per: "занятие",
+    color: "var(--pp-teal)",
   },
   {
-    icon: "User",
-    title: "Персональный тренер",
-    desc: "Индивидуальная программа, контроль техники и питания. Достигайте результатов в 3 раза быстрее.",
-    tag: "от 3 500 ₽/час",
-    accent: "#00D4FF",
+    emoji: "🔔",
+    title: "Гонг-медитации",
+    desc: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать — никакой подготовки не нужно. Подходит абсолютно всем.",
+    tags: ["Групповые", "VIP мини-группы", "Корпоративные"],
+    price: "от ___ ₽",
+    per: "сеанс",
+    color: "var(--pp-gold)",
   },
   {
-    icon: "Heart",
-    title: "Велнес & Восстановление",
-    desc: "Стретчинг, йога-нидра, медитация и работа с телом. Гармония как основа физической силы.",
-    tag: "от 700 ₽/занятие",
-    accent: "#FF2E93",
-  },
-  {
-    icon: "TrendingUp",
-    title: "Онлайн-трансляции",
-    desc: "Занимайтесь с нами из любой точки мира. Полная библиотека записанных тренировок доступна 24/7.",
-    tag: "от 1 200 ₽/месяц",
-    accent: "#00FF94",
+    emoji: "✨",
+    title: "Aerial Sounds",
+    desc: "Эксклюзивный гибрид: ты лежишь в коконе гамака, пока живые вибрации гонга окутывают тело и разум. Только у нас.",
+    tags: ["Групповой", "VIP мини-группа", "Индивидуальный"],
+    price: "___ ₽",
+    per: "сеанс",
+    color: "#8B7BB8",
+    exclusive: true,
   },
 ];
 
-const STATS = [
-  { value: "1500+", label: "Клиентов" },
-  { value: "15", label: "Тренеров" },
-  { value: "7", label: "Лет работы" },
-  { value: "98%", label: "Довольны результатом" },
+const PAINS = [
+  { emoji: "😮‍💨", text: "Тело зажато, спина устаёт, голова не отключается даже ночью" },
+  { emoji: "😶", text: "Ходишь в зал, но бросаешь через месяц — скучно и нет результата" },
+  { emoji: "😔", text: "Хочешь чего-то особенного, но не знаешь, где это найти" },
+  { emoji: "🤯", text: "Стресс стал фоновым шумом, который не отпускает" },
 ];
 
-const DIFFICULTY_COLORS: Record<string, string> = {
-  "Начинающий": "#00FF94",
-  "Средний": "#FFB800",
-  "Продвинутый": "#FF2E93",
-};
+const BENEFITS = [
+  { icon: "Leaf", title: "Декомпрессия позвоночника", text: "Позвонки вытягиваются без нагрузки — в невесомости гамака" },
+  { icon: "Sparkles", title: "Глубокое растяжение", text: "Без боли и насилия над собой — тело раскрывается само" },
+  { icon: "Waves", title: "Перезагрузка за 5 минут", text: "Гонг снижает кортизол и выводит из хронического стресса" },
+  { icon: "Moon", title: "Сон как у ребёнка", text: "Клиенты отмечают улучшение сна уже с первого посещения" },
+];
+
+const STEPS = [
+  { n: "1", title: "Теория и анатомия", text: "Биомеханика, безопасность, работа с гамаком разных типов" },
+  { n: "2", title: "Методика преподавания", text: "Построение урока, работа с группой, ведение начинающих" },
+  { n: "3", title: "Практика под наблюдением", text: "Самостоятельное ведение занятий с обратной связью" },
+  { n: "4", title: "Сертификат и старт", text: "Международный сертификат + поддержка при запуске первых классов" },
+];
+
+const REVIEWS = [
+  {
+    avatar: "🌸",
+    text: "«После первой же гонг-медитации я спала 9 часов без пробуждений. До этого 2 года была бессонница. Не верила, что это работает.»",
+    name: "Марина К.", meta: "Посетительница, 38 лет",
+  },
+  {
+    avatar: "🌿",
+    text: "«Думала, аэройога — это для гимнасток. Пришла с нулевой растяжкой, а через месяц делаю шпагат в гамаке. Спина перестала болеть.»",
+    name: "Ольга В.", meta: "Ученица аэройоги, 44 года",
+  },
+  {
+    avatar: "🦋",
+    text: "«Это единственное место, где я могу полностью отключить голову. Aerial Sounds — нечто невероятное. Хожу уже год.»",
+    name: "Елена Д.", meta: "Постоянная ученица, 35 лет",
+  },
+];
+
+const TRUST = [
+  { emoji: "🏋️", title: "Гамаки до 200 кг", text: "Сертифицированные крепления, ежемесячная проверка" },
+  { emoji: "👥", title: "Малые группы", text: "Максимум 8 человек — каждый под вниманием" },
+  { emoji: "🎓", title: "Международный сертификат", text: "AAYA, Yoga Alliance, диплом гос. образца" },
+  { emoji: "🔄", title: "Гибкое расписание", text: "Утренние, дневные, вечерние. Перенос без штрафов" },
+  { emoji: "💫", title: "Пробное — бесплатно", text: "Первое занятие без оплаты и обязательств" },
+  { emoji: "🌿", title: "Атмосфера, не спортзал", text: "Ароматерапия, растения, чай после занятия" },
+];
+
+const FAQS = [
+  { q: "Я никогда не занималась йогой. Это для меня?", a: "Да, именно для вас. Аэройога в гамаке легче напольной — часть нагрузки берёт на себя ткань. Большинство наших клиентов пришли с нулевым опытом." },
+  { q: "Страшно висеть вверх ногами?", a: "Мы делаем это очень постепенно. На первых занятиях — только базовые асаны близко к полу. К перевёрнутым позициям переходят только тогда, когда вы готовы." },
+  { q: "Можно на гонг-медитацию без опыта?", a: "Абсолютно. Вы просто лежите на коврике и слушаете. Никакой физической подготовки не нужно. Возраст и уровень формы — не ограничение." },
+  { q: "Как проходит обучение инструкторов?", a: "Теория, анатомия, методика преподавания, практика под наблюдением. В финале — международный сертификат. Очные и смешанные форматы." },
+  { q: "А если не понравится первое занятие?", a: "Деньги возвращаем без вопросов. Мы уверены в качестве — поэтому и предлагаем бесплатное пробное." },
+  { q: "Есть ли ограничения по здоровью?", a: "Для аэройоги — беременность, острые заболевания позвоночника, свежие травмы. Сообщите нам при записи, подберём подходящий формат." },
+];
+
+const S = { fontFamily: "'Cormorant', Georgia, serif" };
 
 export default function Index() {
-  const [activeDay, setActiveDay] = useState("Пн");
-  const [activeLevel, setActiveLevel] = useState("Все");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  const filtered = SCHEDULE.filter(
-    (s) => s.day === activeDay && (activeLevel === "Все" || s.level === activeLevel)
-  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,256 +107,488 @@ export default function Index() {
   };
 
   return (
-    <div style={{ background: "var(--dark-bg)", minHeight: "100vh", color: "#fff" }}>
-      {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, borderBottom: "1px solid var(--dark-border)", backdropFilter: "blur(20px)", background: "rgba(10,10,10,0.8)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-          <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 28, fontWeight: 700, letterSpacing: "0.05em" }}>
-            <span className="neon-text">PULSE</span>
-          </div>
+    <div style={{ background: "var(--pp-cream)", minHeight: "100vh", color: "var(--pp-text)" }}>
+
+      {/* ── НАВИГАЦИЯ ─────────────────────────────────────── */}
+      <nav className="pp-nav">
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
+          <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+            <div style={{ width: 40, height: 40, borderRadius: "50%", border: "1.5px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🪢</div>
+            <div>
+              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Пространство Пара</div>
+              <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Aerial · Sound · Wellness</div>
+            </div>
+          </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-            <a href="#services" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontFamily: "Oswald, sans-serif", letterSpacing: "0.05em", fontSize: 14, textTransform: "uppercase", transition: "color 0.2s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--neon)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>Услуги</a>
-            <a href="#schedule" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontFamily: "Oswald, sans-serif", letterSpacing: "0.05em", fontSize: 14, textTransform: "uppercase", transition: "color 0.2s" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--neon)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>Расписание</a>
-            <button className="neon-btn" onClick={() => setShowForm(true)}
-              style={{ padding: "10px 24px", borderRadius: 4, fontSize: 13, border: "none", cursor: "pointer" }}>
+            {["Услуги", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
+              <a key={t} href={`#${["services","training","reviews","faq"][i]}`}
+                style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
+                className="hidden md:block">{t}</a>
+            ))}
+            <button className="pp-btn-primary" onClick={() => setShowForm(true)} style={{ padding: "10px 24px", fontSize: 13 }}>
               Записаться
             </button>
           </div>
         </div>
       </nav>
 
-      {/* HERO */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }} className="hero-grid noise-overlay">
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src={HERO_IMG} alt="Студия" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.25 }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.9) 100%)" }} />
-        </div>
-        <div style={{ position: "absolute", top: "20%", right: "5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,92,0,0.12) 0%, transparent 70%)", zIndex: 1 }} />
-        <div style={{ position: "absolute", bottom: "10%", left: "10%", width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%)", zIndex: 1 }} />
+      {/* ── HERO ──────────────────────────────────────────── */}
+      <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 68 }}>
+        {/* Фоновые градиенты */}
+        <div style={{ position: "absolute", top: "10%", right: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(58,125,107,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "5%", left: "-5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,169,106,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "120px 24px 80px", position: "relative", zIndex: 2 }}>
-          <div className="animate-fade-in-up" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,92,0,0.15)", border: "1px solid rgba(255,92,0,0.3)", borderRadius: 4, padding: "6px 16px", marginBottom: 32 }}>
-            <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--neon)" }} />
-            <span style={{ fontFamily: "Oswald, sans-serif", fontSize: 13, letterSpacing: "0.1em", color: "var(--neon)", textTransform: "uppercase" }}>Первое занятие бесплатно</span>
-          </div>
-
-          <h1 className="animate-fade-in-up delay-100" style={{ fontFamily: "Oswald, sans-serif", fontSize: "clamp(52px, 9vw, 110px)", fontWeight: 700, lineHeight: 0.95, letterSpacing: "-0.02em", margin: "0 0 32px", textTransform: "uppercase" }}>
-            <span style={{ display: "block" }}>НАЙДИ</span>
-            <span className="gradient-text" style={{ display: "block" }}>СВОЙ</span>
-            <span style={{ display: "block" }}>ПРЕДЕЛ</span>
-          </h1>
-
-          <p className="animate-fade-in-up delay-200" style={{ fontSize: 20, color: "rgba(255,255,255,0.65)", maxWidth: 520, lineHeight: 1.6, marginBottom: 48 }}>
-            Профессиональные тренеры, современное оборудование и атмосфера, которая заряжает энергией. Результат с первой тренировки.
-          </p>
-
-          <div className="animate-fade-in-up delay-300" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <button className="neon-btn animate-pulse-glow" onClick={() => setShowForm(true)}
-              style={{ padding: "18px 48px", borderRadius: 4, fontSize: 18, border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }}>
-              <Icon name="Flame" size={20} />
-              Записаться бесплатно
-            </button>
-            <a href="#schedule"
-              style={{ display: "flex", alignItems: "center", gap: 10, padding: "18px 32px", borderRadius: 4, border: "1px solid rgba(255,255,255,0.2)", color: "#fff", textDecoration: "none", fontFamily: "Oswald, sans-serif", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", fontSize: 16, transition: "all 0.3s" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,92,0,0.5)"; e.currentTarget.style.color = "var(--neon)"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#fff"; }}>
-              <Icon name="Calendar" size={18} />
-              Расписание
-            </a>
-          </div>
-
-          <div className="animate-fade-in-up delay-400" style={{ display: "flex", gap: 48, marginTop: 80, paddingTop: 48, borderTop: "1px solid var(--dark-border)", flexWrap: "wrap" }}>
-            {STATS.map((s) => (
-              <div key={s.label}>
-                <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 40, fontWeight: 700, color: "var(--neon)", lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", marginTop: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ marginBottom: 64 }}>
-          <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 13, letterSpacing: "0.15em", color: "var(--neon)", textTransform: "uppercase", marginBottom: 12 }}>— Что мы предлагаем</div>
-          <h2 style={{ fontFamily: "Oswald, sans-serif", fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "-0.01em", margin: 0 }}>
-            Наши <span className="gradient-text">Услуги</span>
-          </h2>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-          {SERVICES.map((s, i) => (
-            <div key={i} className="dark-card" style={{ borderRadius: 12, padding: 32, position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", inset: 0, background: `linear-gradient(135deg, ${s.accent}12 0%, transparent 60%)`, pointerEvents: "none" }} />
-              <div style={{ width: 56, height: 56, borderRadius: 12, background: `${s.accent}20`, border: `1px solid ${s.accent}30`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24 }}>
-                <Icon name={s.icon} fallback="Zap" size={26} style={{ color: s.accent }} />
-              </div>
-              <h3 style={{ fontFamily: "Oswald, sans-serif", fontSize: 22, fontWeight: 600, marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.02em" }}>{s.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.7, fontSize: 15, marginBottom: 24 }}>{s.desc}</p>
-              <div style={{ display: "inline-block", background: `${s.accent}20`, border: `1px solid ${s.accent}30`, borderRadius: 4, padding: "4px 14px", fontFamily: "Oswald, sans-serif", fontSize: 14, color: s.accent, letterSpacing: "0.05em" }}>
-                {s.tag}
-              </div>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 24px 80px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", width: "100%" }}>
+          {/* Текст */}
+          <div>
+            <div className="pp-fade-up pp-label" style={{ marginBottom: 20 }}>
+              Студия аэройоги и звуковых практик
             </div>
-          ))}
+
+            <h1 className="pp-fade-up d1" style={{ ...S, fontSize: "clamp(48px, 6vw, 80px)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-0.01em", marginBottom: 24, color: "var(--pp-text)" }}>
+              Почувствуй<br /><em style={{ color: "var(--pp-teal)" }}>лёгкость</em><br />тела и тишину ума
+            </h1>
+
+            <p className="pp-fade-up d2" style={{ fontSize: 18, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 16, fontWeight: 400, maxWidth: 460 }}>
+              Уже после первого занятия. Аэройога · Гонг-медитации · Aerial Sounds · Обучение инструкторов
+            </p>
+
+            <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
+              <button className="pp-btn-primary" onClick={() => setShowForm(true)}>
+                <Icon name="Sparkles" size={16} />
+                Первое занятие бесплатно
+              </button>
+              <a href="#services" className="pp-btn-ghost">
+                Узнать подробнее
+                <Icon name="ChevronDown" size={16} />
+              </a>
+            </div>
+
+            <div className="pp-fade-up d4" style={{ display: "flex", gap: 40, paddingTop: 32, borderTop: "1px solid var(--pp-border)", flexWrap: "wrap" }}>
+              {[["500+", "Учеников"], ["5 лет", "Практики"], ["98%", "Приходят снова"], ["4", "Формата"]].map(([n, l]) => (
+                <div key={l}>
+                  <div style={{ ...S, fontSize: 34, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
+                  <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Изображение */}
+          <div className="pp-fade-up d2 pp-float" style={{ position: "relative" }}>
+            <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "3/4", boxShadow: "0 40px 100px rgba(31,29,24,0.15)" }}>
+              <img src={IMG_AERIAL} alt="Аэройога в гамаках" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            {/* Бейдж */}
+            <div style={{ position: "absolute", bottom: 28, left: -24, background: "var(--pp-cream-2)", borderRadius: 16, padding: "16px 20px", boxShadow: "0 12px 40px rgba(31,29,24,0.12)", border: "1px solid var(--pp-border)", maxWidth: 220 }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)", marginBottom: 4 }}>🏅 Международная сертификация</div>
+              <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>AAYA · Yoga Alliance · Диплом гос. образца</div>
+            </div>
+            {/* Ярлычок Aerial Sounds */}
+            <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)" }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>✨ Aerial Sounds</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>Только у нас</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* SCHEDULE */}
-      <section id="schedule" style={{ padding: "100px 0", background: "rgba(255,255,255,0.02)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+      {/* ── БОЛЬ ─────────────────────────────────────────── */}
+      <section style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
-            <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 13, letterSpacing: "0.15em", color: "var(--neon)", textTransform: "uppercase", marginBottom: 12 }}>— Ваш график</div>
-            <h2 style={{ fontFamily: "Oswald, sans-serif", fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "-0.01em", margin: 0 }}>
-              Интерактивное <span className="gradient-text">Расписание</span>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Узнай себя</div>
+            <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, marginBottom: 0, lineHeight: 1.1 }}>
+              Это <em style={{ color: "var(--pp-teal)" }}>про тебя</em>?
             </h2>
           </div>
 
-          <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-            {DAYS.map((d) => (
-              <button key={d} className={`schedule-tab ${activeDay === d ? "active" : ""}`} onClick={() => setActiveDay(d)}
-                style={{ color: activeDay === d ? "#000" : "rgba(255,255,255,0.6)" }}>
-                {d}
-              </button>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 32 }}>
+            {PAINS.map((p, i) => (
+              <div key={i} className="pp-card" style={{ padding: "24px 28px", display: "flex", gap: 16, alignItems: "flex-start" }}>
+                <span style={{ fontSize: 28, lineHeight: 1, flexShrink: 0 }}>{p.emoji}</span>
+                <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.65, margin: 0 }}>{p.text}</p>
+              </div>
             ))}
           </div>
 
-          <div style={{ display: "flex", gap: 8, marginBottom: 40, flexWrap: "wrap" }}>
-            {LEVELS.map((l) => (
-              <button key={l} onClick={() => setActiveLevel(l)}
-                style={{
-                  padding: "6px 16px", borderRadius: 4, fontSize: 12, cursor: "pointer",
-                  fontFamily: "Golos Text, sans-serif", letterSpacing: "0.03em",
-                  background: activeLevel === l ? "rgba(255,255,255,0.1)" : "transparent",
-                  border: `1px solid ${activeLevel === l ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.1)"}`,
-                  color: activeLevel === l ? "#fff" : "rgba(255,255,255,0.5)",
-                  transition: "all 0.2s",
-                }}>
-                {l}
-              </button>
-            ))}
+          <div style={{ background: "rgba(58,125,107,0.07)", border: "1px solid rgba(58,125,107,0.18)", borderRadius: 20, padding: "28px 36px", textAlign: "center" }}>
+            <p style={{ ...S, fontSize: 22, fontStyle: "italic", color: "var(--pp-text)", margin: 0 }}>
+              Если хотя бы один пункт — про тебя, ты попала туда, куда нужно.
+            </p>
           </div>
+        </div>
+      </section>
 
-          {filtered.length === 0 ? (
-            <div style={{ padding: 60, textAlign: "center", color: "rgba(255,255,255,0.3)", fontFamily: "Oswald, sans-serif", fontSize: 18, letterSpacing: "0.05em" }}>
-              Нет занятий в этот день
-            </div>
-          ) : (
-            <div style={{ display: "grid", gap: 12 }}>
-              {filtered.map((cls, i) => (
-                <div key={cls.id} className="dark-card animate-slide-in" style={{ borderRadius: 10, padding: "20px 28px", display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap", animationDelay: `${i * 0.08}s` }}>
-                  <div style={{ minWidth: 70 }}>
-                    <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 28, fontWeight: 700, color: cls.color, lineHeight: 1 }}>{cls.time}</div>
-                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>{cls.duration} мин</div>
+      {/* ── РЕШЕНИЕ ───────────────────────────────────────── */}
+      <section style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Наш подход</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
+              Пространство, где тело <em style={{ color: "var(--pp-teal)" }}>парит</em>, а разум молчит
+            </h2>
+            <hr className="pp-divider" style={{ margin: "20px 0 24px" }} />
+            <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 32 }}>
+              Мы создали место, где аэройога встречается со звуковой терапией — уникальное сочетание, работающее одновременно на физическом и эмоциональном уровне.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {BENEFITS.map((b, i) => (
+                <div key={i} className="pp-card" style={{ padding: "16px 20px", display: "flex", gap: 14, alignItems: "flex-start" }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Icon name={b.icon} fallback="Leaf" size={18} style={{ color: "var(--pp-teal)" }} />
                   </div>
-                  <div style={{ width: 1, height: 50, background: "var(--dark-border)", flexShrink: 0 }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, flexWrap: "wrap" }}>
-                      <span style={{ fontFamily: "Oswald, sans-serif", fontSize: 20, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.02em" }}>{cls.name}</span>
-                      <span className="difficulty-badge" style={{ background: `${DIFFICULTY_COLORS[cls.level]}20`, color: DIFFICULTY_COLORS[cls.level], border: `1px solid ${DIFFICULTY_COLORS[cls.level]}40` }}>
-                        {cls.level}
-                      </span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.5)", fontSize: 14 }}>
-                      <Icon name="User" size={14} />
-                      {cls.trainer}
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                    <div style={{ textAlign: "center" }}>
-                      <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 22, fontWeight: 700, color: cls.spots <= 3 ? "#FF2E93" : "rgba(255,255,255,0.8)" }}>{cls.spots}</div>
-                      <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.05em" }}>мест</div>
-                    </div>
-                    <button className="neon-btn" onClick={() => setShowForm(true)}
-                      style={{ padding: "10px 24px", borderRadius: 4, fontSize: 13, border: "none", cursor: "pointer", whiteSpace: "nowrap" }}>
-                      Записаться
-                    </button>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 2 }}>{b.title}</div>
+                    <div style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.5 }}>{b.text}</div>
                   </div>
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={{ padding: "100px 24px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(255,92,0,0.08) 0%, transparent 70%)" }} />
-        <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-          <div style={{ width: 80, height: 80, borderRadius: "50%", background: "rgba(255,92,0,0.15)", border: "1px solid rgba(255,92,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 32px" }} className="animate-float">
-            <Icon name="Flame" size={36} style={{ color: "var(--neon)" }} />
           </div>
-          <h2 style={{ fontFamily: "Oswald, sans-serif", fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 700, textTransform: "uppercase", lineHeight: 1, marginBottom: 24 }}>
-            Первое занятие —<br /><span className="neon-text">бесплатно</span>
-          </h2>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 48 }}>
-            Приходи на любую групповую тренировку без обязательств. Познакомься с командой и почувствуй атмосферу PULSE лично.
-          </p>
-          <button className="neon-btn animate-pulse-glow" onClick={() => setShowForm(true)}
-            style={{ padding: "20px 60px", borderRadius: 4, fontSize: 20, border: "none", cursor: "pointer" }}>
-            Получить бесплатное занятие
-          </button>
+
+          {/* Фото гонг-медитации */}
+          <div style={{ position: "relative" }}>
+            <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "4/5", boxShadow: "0 30px 80px rgba(31,29,24,0.12)" }}>
+              <img src={IMG_GONG} alt="Гонг-медитация" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            {/* Плавающий блок */}
+            <div style={{ position: "absolute", top: 32, left: -28, background: "var(--pp-cream-2)", borderRadius: 16, padding: "20px 24px", boxShadow: "0 12px 40px rgba(31,29,24,0.1)", border: "1px solid var(--pp-border)" }}>
+              <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                <div style={{ fontSize: 28 }}>🔔</div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)" }}>Гонг-медитация</div>
+                  <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>Тибетские чаши · Гонг · Монохорд</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer style={{ borderTop: "1px solid var(--dark-border)", padding: "40px 24px", textAlign: "center" }}>
-        <div style={{ fontFamily: "Oswald, sans-serif", fontSize: 24, fontWeight: 700, marginBottom: 12 }}>
-          <span className="neon-text">PULSE</span>
+      {/* ── УСЛУГИ ───────────────────────────────────────── */}
+      <section id="services" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ marginBottom: 48 }}>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Форматы</div>
+            <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.1 }}>
+              Выбери свой <em style={{ color: "var(--pp-teal)" }}>формат</em>
+            </h2>
+          </div>
+
+          {/* Aerial Sounds — главная карточка */}
+          <div style={{ background: "linear-gradient(135deg, #2A6355 0%, #3A7D6B 60%, #4A9480 100%)", borderRadius: 24, padding: "40px 48px", marginBottom: 20, display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", overflow: "hidden" }}>
+            {/* Рябь гонга */}
+            <div style={{ position: "absolute", right: 120, top: "50%", transform: "translateY(-50%)" }}>
+              {[0, 1, 2].map(i => (
+                <div key={i} className="gong-ripple" style={{ width: 160, height: 160, top: -80, left: -80, animationDelay: `${i * 1}s` }} />
+              ))}
+            </div>
+
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <div style={{ display: "inline-block", background: "rgba(200,169,106,0.25)", border: "1px solid rgba(200,169,106,0.5)", borderRadius: 100, padding: "4px 16px", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-gold)", marginBottom: 16 }}>
+                ★ Только у нас в городе
+              </div>
+              <h3 style={{ ...S, fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 300, color: "#E8F4F0", lineHeight: 1.1, marginBottom: 12 }}>
+                Aerial Sounds —<br /><em style={{ color: "var(--pp-gold)" }}>гонг в гамаках</em>
+              </h3>
+              <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 24, maxWidth: 500 }}>
+                Ты лежишь в коконе гамака, пока живые вибрации гонга, тибетских чаш и монохорда окутывают тело и разум. Уникальный гибрид аэройоги и звуковой терапии.
+              </p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
+                {["Групповой", "VIP мини-группа", "Индивидуальный"].map(t => (
+                  <span key={t} style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", background: "rgba(255,255,255,0.1)", borderRadius: 100, padding: "4px 14px" }}>{t}</span>
+                ))}
+              </div>
+              <button className="pp-btn-gold" onClick={() => setShowForm(true)}>
+                <Icon name="Sparkles" size={15} />
+                Записаться
+              </button>
+            </div>
+
+            <div style={{ fontSize: 80, textAlign: "center", position: "relative", zIndex: 1 }} className="pp-float">🔔</div>
+          </div>
+
+          {/* Остальные услуги */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+            {SERVICES.slice(0, 2).map((s, i) => (
+              <div key={i} className="pp-card" style={{ padding: 32, display: "flex", flexDirection: "column" }}>
+                <div style={{ fontSize: 40, marginBottom: 20 }}>{s.emoji}</div>
+                <h3 style={{ ...S, fontSize: 26, fontWeight: 400, marginBottom: 12, lineHeight: 1.2 }}>{s.title}</h3>
+                <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, flex: 1, marginBottom: 20 }}>{s.desc}</p>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
+                  {s.tags.map(t => (
+                    <span key={t} style={{ fontSize: 11, color: "var(--pp-muted)", background: "var(--pp-cream-3)", borderRadius: 100, padding: "3px 12px" }}>{t}</span>
+                  ))}
+                </div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 20 }}>
+                  <span style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)" }}>{s.price}</span>
+                  <span style={{ fontSize: 13, color: "var(--pp-muted)" }}>/ {s.per}</span>
+                </div>
+                <button className="pp-btn-ghost" onClick={() => setShowForm(true)} style={{ justifyContent: "center" }}>
+                  Записаться
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
-        <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 14 }}>
-          © 2026 PULSE Fitness Studio. Все права защищены.
-        </p>
+      </section>
+
+      {/* ── ОТЗЫВЫ ───────────────────────────────────────── */}
+      <section id="reviews" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ marginBottom: 48 }}>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Отзывы</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1 }}>
+              Как меняются люди уже через <em style={{ color: "var(--pp-teal)" }}>4 занятия</em>
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+            {REVIEWS.map((r, i) => (
+              <div key={i} className="pp-card" style={{ padding: 28 }}>
+                <div style={{ color: "var(--pp-gold)", letterSpacing: 2, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
+                <p style={{ ...S, fontSize: 17, fontStyle: "italic", color: "var(--pp-text)", lineHeight: 1.6, marginBottom: 20 }}>{r.text}</p>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{r.avatar}</div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)" }}>{r.meta}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ОБУЧЕНИЕ ─────────────────────────────────────── */}
+      <section id="training" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+          <div>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Для инструкторов</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
+              Обучение инструкторов <em style={{ color: "var(--pp-teal)" }}>аэройоги</em>
+            </h2>
+            <hr className="pp-divider" style={{ margin: "16px 0 20px" }} />
+            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 32 }}>
+              Для тренеров, йогов и новичков с нуля — если хочешь превратить любовь к практике в профессию и зарабатывать на любимом деле.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {STEPS.map((step, i) => (
+                <div key={i} style={{ display: "flex", gap: 16, padding: "20px 24px", background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16 }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, flexShrink: 0 }}>{step.n}</div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 4 }}>{step.title}</div>
+                    <div style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.5 }}>{step.text}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ background: "rgba(58,125,107,0.07)", border: "1px solid rgba(58,125,107,0.18)", borderRadius: 24, padding: 36 }}>
+            <h3 style={{ ...S, fontSize: 24, fontStyle: "italic", marginBottom: 24, color: "var(--pp-text)" }}>После курса ты сможешь:</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
+              {[
+                "Вести групповые и индивидуальные занятия аэройогой",
+                "Работать в любой студии или открыть свои классы",
+                "Получить международный сертификат AAYA",
+                "Зарабатывать от 50 000 ₽ в месяц на любимом деле",
+                "Вести Aerial Sounds — эксклюзивный гибридный формат",
+              ].map((item, i) => (
+                <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  <div style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1 }}>
+                    <Icon name="Check" size={13} style={{ color: "var(--pp-teal)" }} />
+                  </div>
+                  <span style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.5 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ paddingTop: 24, borderTop: "1px solid rgba(58,125,107,0.15)" }}>
+              <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 16 }}>📅 Ближайший поток — уточни дату</div>
+              <button className="pp-btn-primary" onClick={() => setShowForm(true)}>
+                <Icon name="GraduationCap" size={16} />
+                Записаться на обучение
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ДОВЕРИЕ ──────────────────────────────────────── */}
+      <section style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Почему выбирают нас</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1 }}>
+              Безопасно. <em style={{ color: "var(--pp-teal)" }}>Профессионально.</em> Уютно.
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+            {TRUST.map((t, i) => (
+              <div key={i} className="pp-card" style={{ padding: "28px 20px", textAlign: "center" }}>
+                <div style={{ fontSize: 36, marginBottom: 12 }}>{t.emoji}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 6 }}>{t.title}</div>
+                <div style={{ fontSize: 12, color: "var(--pp-muted)", lineHeight: 1.5 }}>{t.text}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section id="faq" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 64, alignItems: "start" }}>
+          <div>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Вопросы</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
+              Отвечаем <em style={{ color: "var(--pp-teal)" }}>честно</em>
+            </h2>
+            <hr className="pp-divider" style={{ margin: "16px 0 20px" }} />
+            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 24 }}>
+              Если не нашли ответ — напишите нам, ответим в течение 15 минут.
+            </p>
+            <button className="pp-btn-ghost" onClick={() => setShowForm(true)}>
+              <Icon name="MessageCircle" size={15} />
+              Написать нам
+            </button>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {FAQS.map((f, i) => (
+              <div key={i} style={{ background: "var(--pp-cream)", border: `1px solid ${openFaq === i ? "rgba(58,125,107,0.35)" : "var(--pp-border)"}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.2s" }}>
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  style={{ width: "100%", padding: "18px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+                  <span style={{ fontSize: 15, fontWeight: 600, color: "var(--pp-text)", lineHeight: 1.4 }}>{f.q}</span>
+                  <span style={{ color: "var(--pp-teal)", fontSize: 22, flexShrink: 0, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "none" }}>+</span>
+                </button>
+                {openFaq === i && (
+                  <div style={{ padding: "0 24px 18px", fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7 }}>{f.a}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ФИНАЛЬНЫЙ CTA ────────────────────────────────── */}
+      <section style={{ padding: "100px 24px", background: "var(--pp-cream)", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(58,125,107,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+          <div style={{ fontSize: 56, marginBottom: 24 }} className="pp-float">🪢</div>
+          <div className="pp-label" style={{ marginBottom: 16 }}>Начни сегодня</div>
+          <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20 }}>
+            Твой первый шаг —<br /><em style={{ color: "var(--pp-teal)" }}>бесплатно</em>
+          </h2>
+          <hr className="pp-divider" style={{ margin: "0 auto 24px" }} />
+          <p style={{ fontSize: 17, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 32 }}>
+            Запишись на пробное занятие аэройогой или гонг-медитацию прямо сейчас.
+          </p>
+
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(58,125,107,0.08)", border: "1px solid rgba(58,125,107,0.2)", borderRadius: 100, padding: "8px 20px", marginBottom: 36, fontSize: 13, color: "var(--pp-muted)" }}>
+            <div className="pp-blink" style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--pp-teal)", flexShrink: 0 }} />
+            Мест в группе не более 8 — обычно заканчиваются за 3–5 дней
+          </div>
+
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
+            <button className="pp-btn-primary" onClick={() => setShowForm(true)} style={{ padding: "18px 48px", fontSize: 16 }}>
+              <Icon name="Sparkles" size={18} />
+              Записаться бесплатно
+            </button>
+          </div>
+
+          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+            {[["📞", "Позвонить"], ["💬", "Telegram"], ["📱", "WhatsApp"], ["📸", "Instagram"]].map(([e, t]) => (
+              <button key={t} className="pp-btn-ghost" style={{ padding: "10px 20px", fontSize: 13 }}>
+                <span>{e}</span> {t}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ФУТЕР ────────────────────────────────────────── */}
+      <footer style={{ background: "#1F1D18", color: "rgba(255,255,255,0.7)", padding: "60px 24px 40px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
+            <div>
+              <div style={{ ...S, fontSize: 24, fontStyle: "italic", color: "#fff", marginBottom: 12 }}>Пространство Пара</div>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: "32ch" }}>
+                Студия аэройоги, гонг-медитаций и обучения инструкторов. Место, где тело парит, а разум молчит.
+              </p>
+            </div>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Услуги</div>
+              {["Аэройога в гамаках", "Гонг-медитации", "Aerial Sounds", "Обучение инструкторов"].map(t => (
+                <div key={t} style={{ marginBottom: 10 }}>
+                  <a href="#services" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>{t}</a>
+                </div>
+              ))}
+            </div>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Контакты</div>
+              {["+7 (XXX) XXX-XX-XX", "г. Ваш город, ул. Адрес", "Instagram", "Telegram"].map(t => (
+                <div key={t} style={{ marginBottom: 10, fontSize: 13, color: "rgba(255,255,255,0.6)" }}>{t}</div>
+              ))}
+            </div>
+          </div>
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2026 Пространство Пара. Все права защищены.</span>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>Гамаки сертифицированы · нагрузка до 200 кг · первое занятие бесплатно</span>
+          </div>
+        </div>
       </footer>
 
-      {/* MODAL */}
+      {/* ── МОДАЛЬНАЯ ФОРМА ──────────────────────────────── */}
       {showForm && (
         <div style={{ position: "fixed", inset: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
-          onClick={(e) => { if (e.target === e.currentTarget) { setShowForm(false); setSubmitted(false); } }}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.85)", backdropFilter: "blur(10px)" }} />
-          <div className="dark-card animate-fade-in" style={{ borderRadius: 16, padding: 48, maxWidth: 480, width: "100%", position: "relative", zIndex: 1 }}>
+          onClick={e => { if (e.target === e.currentTarget) { setShowForm(false); setSubmitted(false); } }}>
+          <div style={{ position: "absolute", inset: 0, background: "rgba(31,29,24,0.7)", backdropFilter: "blur(12px)" }} />
+          <div className="pp-card pp-fade" style={{ maxWidth: 460, width: "100%", padding: 48, position: "relative", zIndex: 1, borderRadius: 24 }}>
             <button onClick={() => { setShowForm(false); setSubmitted(false); }}
-              style={{ position: "absolute", top: 20, right: 20, background: "transparent", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: 24, lineHeight: 1 }}>×</button>
+              style={{ position: "absolute", top: 20, right: 20, background: "transparent", border: "none", color: "var(--pp-faint)", cursor: "pointer", fontSize: 24, lineHeight: 1 }}>×</button>
 
             {!submitted ? (
               <>
-                <div style={{ marginBottom: 32 }}>
-                  <h3 style={{ fontFamily: "Oswald, sans-serif", fontSize: 32, fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>
-                    Записаться на<br /><span className="neon-text">занятие</span>
-                  </h3>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 15 }}>Первая тренировка — бесплатно. Мы перезвоним в течение часа.</p>
-                </div>
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div style={{ fontSize: 36, marginBottom: 16, textAlign: "center" }}>🪢</div>
+                <h3 style={{ ...S, fontSize: 32, fontWeight: 300, textAlign: "center", marginBottom: 8, lineHeight: 1.1 }}>
+                  Записаться на <em style={{ color: "var(--pp-teal)" }}>занятие</em>
+                </h3>
+                <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28 }}>
+                  Первая тренировка бесплатно. Перезвоним в течение часа.
+                </p>
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   <div>
-                    <label style={{ display: "block", fontSize: 12, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8, fontFamily: "Oswald, sans-serif" }}>Имя</label>
-                    <input value={name} onChange={e => setName(e.target.value)} required placeholder="Введите ваше имя"
-                      style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "14px 16px", color: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", fontFamily: "Golos Text, sans-serif" }}
-                      onFocus={e => (e.target.style.borderColor = "rgba(255,92,0,0.5)")}
-                      onBlur={e => (e.target.style.borderColor = "rgba(255,255,255,0.1)")} />
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 8 }}>Имя</label>
+                    <input className="pp-input" value={name} onChange={e => setName(e.target.value)} required placeholder="Введите ваше имя" />
                   </div>
                   <div>
-                    <label style={{ display: "block", fontSize: 12, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8, fontFamily: "Oswald, sans-serif" }}>Телефон</label>
-                    <input value={phone} onChange={e => setPhone(e.target.value)} required placeholder="+7 (999) 000-00-00" type="tel"
-                      style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "14px 16px", color: "#fff", fontSize: 16, outline: "none", boxSizing: "border-box", fontFamily: "Golos Text, sans-serif" }}
-                      onFocus={e => (e.target.style.borderColor = "rgba(255,92,0,0.5)")}
-                      onBlur={e => (e.target.style.borderColor = "rgba(255,255,255,0.1)")} />
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 8 }}>Телефон</label>
+                    <input className="pp-input" value={phone} onChange={e => setPhone(e.target.value)} required placeholder="+7 (999) 000-00-00" type="tel" />
                   </div>
-                  <button type="submit" className="neon-btn" style={{ padding: "16px", borderRadius: 8, fontSize: 16, border: "none", cursor: "pointer", marginTop: 8 }}>
+                  <button type="submit" className="pp-btn-primary" style={{ justifyContent: "center", marginTop: 8 }}>
                     Отправить заявку
                   </button>
+                  <p style={{ fontSize: 11, color: "var(--pp-faint)", textAlign: "center" }}>Без обязательств · Ответим в течение часа</p>
                 </form>
               </>
             ) : (
               <div style={{ textAlign: "center", padding: "20px 0" }}>
-                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(0,255,148,0.15)", border: "1px solid rgba(0,255,148,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
-                  <Icon name="Check" size={36} style={{ color: "#00FF94" }} />
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+                  <Icon name="Check" size={32} style={{ color: "var(--pp-teal)" }} />
                 </div>
-                <h3 style={{ fontFamily: "Oswald, sans-serif", fontSize: 28, marginBottom: 12, textTransform: "uppercase" }}>Заявка принята!</h3>
-                <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 16, lineHeight: 1.6 }}>Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие.</p>
+                <h3 style={{ ...S, fontSize: 30, marginBottom: 12, lineHeight: 1.1 }}>Заявка принята!</h3>
+                <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.6 }}>
+                  Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас!
+                </p>
               </div>
             )}
           </div>
