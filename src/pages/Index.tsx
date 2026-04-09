@@ -297,7 +297,7 @@ export default function Index() {
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
               <button className="pp-btn-primary" onClick={() => setShowForm(true)}>
                 <Icon name="Sparkles" size={16} />
-                Первое занятие по спец цене
+                Записаться на пробное занятие
               </button>
               <a href="#services" className="pp-btn-ghost">
                 Узнать подробнее
@@ -694,7 +694,7 @@ export default function Index() {
                   Записаться на <em style={{ color: "var(--pp-teal)" }}>занятие</em>
                 </h3>
                 <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28, lineHeight: 1.6 }}>
-                  Первое занятие по спец цене. Перезвоним в течение часа.
+                  Записаться на пробное занятие. Перезвоним в течение часа.
                 </p>
 
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
