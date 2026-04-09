@@ -620,14 +620,6 @@ export default function Index() {
                     </div>
                   </div>
 
-                  {/* Сообщение */}
-                  <div>
-                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Вопрос или пожелание</label>
-                    <textarea className="pp-input" value={message} onChange={e => setMessage(e.target.value)}
-                      placeholder="Напишите, если есть вопросы..." rows={3}
-                      style={{ resize: "none", fontFamily: "'Golos Text', sans-serif" }} />
-                  </div>
-
                   {/* Ошибка */}
                   {error && (
                     <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: 10, padding: "10px 14px", fontSize: 13, color: "#DC2626", display: "flex", alignItems: "center", gap: 8 }}>
