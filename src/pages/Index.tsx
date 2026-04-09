@@ -424,13 +424,19 @@ export default function Index() {
                   <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Icon name="Phone" size={16} style={{ color: "var(--pp-teal)" }} />
                   </div>
-                  +7 (914) 701-28-83
+                  <div>
+                    <div>+7 (914) 701-28-83</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Фитнслим</div>
+                  </div>
                 </a>
                 <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>
                   <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <Icon name="Phone" size={16} style={{ color: "var(--pp-teal)" }} />
                   </div>
-                  +7 (908) 980-35-45
+                  <div>
+                    <div>+7 (908) 980-35-45</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>СПА Пространство Пара</div>
+                  </div>
                 </a>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "var(--pp-text)" }}>
                   <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
