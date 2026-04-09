@@ -428,11 +428,15 @@ export default function Index() {
                 ★ Только у нас в городе
               </div>
               <h3 style={{ ...S, fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 300, color: "#E8F4F0", lineHeight: 1.1, marginBottom: 12 }}>
-                Аэройога —<br /><em style={{ color: "var(--pp-gold)" }}>гонг в гамаках</em>
+                Аэройога —<br /><em style={{ color: "var(--pp-gold)" }}>только у нас</em>
               </h3>
-              <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 24, maxWidth: 500 }}>
-                Ты лежишь в коконе гамака, пока живые вибрации гонга, тибетских чаш и монохорда окутывают тело и разум. Уникальный гибрид аэройоги и звуковой терапии.
+              <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 20, maxWidth: 500 }}>
+                2 вида гамаков на выбор: шелковые гамаки и гамаки с ручками. Подбираем формат под твои цели и уровень подготовки.
               </p>
+              <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
+                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 12, padding: "10px 18px", fontSize: 13, color: "#E8F4F0" }}>🪢 Шелковые гамаки</div>
+                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 12, padding: "10px 18px", fontSize: 13, color: "#E8F4F0" }}>🤸 Гамаки с ручками</div>
+              </div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
                 {["Групповой", "VIP мини-группа", "Индивидуальный"].map(t => (
                   <span key={t} style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", background: "rgba(255,255,255,0.1)", borderRadius: 100, padding: "4px 14px" }}>{t}</span>
