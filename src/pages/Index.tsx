@@ -262,8 +262,8 @@ export default function Index() {
             </div>
           </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-            {["Услуги", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
-              <a key={t} href={`#${["services","training","reviews","faq"][i]}`}
+            {["О нас", "Услуги", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
+              <a key={t} href={`#${["about","services","training","reviews","faq"][i]}`}
                 style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
                 onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
@@ -345,6 +345,66 @@ export default function Index() {
               <Icon name="Phone" size={20} style={{ color: "#fff", flexShrink: 0 }} />
               <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", whiteSpace: "nowrap" }}>Начни прямо сейчас</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── О НАС ────────────────────────────────────────── */}
+      <section id="about" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+          <div>
+            <div className="pp-label" style={{ marginBottom: 16 }}>О студии</div>
+            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
+              Мы объединили <em style={{ color: "var(--pp-teal)" }}>йогу, фитнес и спа</em> под одной крышей
+            </h2>
+            <hr className="pp-divider" style={{ margin: "16px 0 20px" }} />
+            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 16 }}>
+              Чтобы каждый нашёл свой путь к здоровью.
+            </p>
+            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 16 }}>
+              Центр Fit'n'Slim & Пространство Пара работает в Артёме с 2019 года. За это время мы стали местом, куда приходят не просто за тренировкой — а за ощущением себя живым, лёгким и счастливым.
+            </p>
+            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75 }}>
+              Наши инструкторы — сертифицированные специалисты с опытом от 5 лет. Работаем по авторским программам, адаптированным для любого уровня: от новичков до продвинутых практиков.
+            </p>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 20, padding: "28px 32px" }}>
+              <div className="pp-label" style={{ marginBottom: 16 }}>Контакты</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Icon name="Phone" size={16} style={{ color: "var(--pp-teal)" }} />
+                  </div>
+                  +7 (914) 701-28-83
+                </a>
+                <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Icon name="Phone" size={16} style={{ color: "var(--pp-teal)" }} />
+                  </div>
+                  +7 (908) 980-35-45
+                </a>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "var(--pp-text)" }}>
+                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Icon name="MapPin" size={16} style={{ color: "var(--pp-teal)" }} />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 500 }}>Пространство Пара</div>
+                    <div style={{ fontSize: 13, color: "var(--pp-muted)", marginTop: 2 }}>г. Артём, мкр. Глобус-2, 1а<br />Приморский край</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: 12 }}>
+              {[["5+", "лет в Артёме"], ["500+", "учеников"], ["10+", "инструкторов"]].map(([n, l]) => (
+                <div key={l} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
+                  <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
+                  <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>{l}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
