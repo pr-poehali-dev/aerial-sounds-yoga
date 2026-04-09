@@ -29,9 +29,9 @@
     --pp-cream: #f5f1ea;
     --pp-cream-2: #faf8f3;
     --pp-cream-3: #ede8df;
-    --pp-teal: #3a7d6b;
-    --pp-teal-light: #d4e8e2;
-    --pp-teal-dark: #2a6355;
+    --pp-teal: #7c5cbf;
+    --pp-teal-light: #ede5f8;
+    --pp-teal-dark: #5e3fa3;
     --pp-gold: #c8a96a;
     --pp-gold-light: #f0e6d0;
     --pp-text: #1f1d18;
@@ -178,12 +178,12 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 24px rgba(58, 125, 107, 0.25);
+  box-shadow: 0 4px 24px rgba(124, 92, 191, 0.25);
 }
 .pp-btn-primary:hover {
   background: var(--pp-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(58, 125, 107, 0.35);
+  box-shadow: 0 10px 40px rgba(124, 92, 191, 0.35);
 }
 
 .pp-btn-ghost {
@@ -238,7 +238,7 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .pp-card:hover {
-  border-color: rgba(58, 125, 107, 0.3);
+  border-color: rgba(124, 92, 191, 0.3);
   box-shadow: 0 20px 60px rgba(31, 29, 24, 0.08);
   transform: translateY(-3px);
 }
@@ -278,7 +278,7 @@
 .gong-ripple {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(58, 125, 107, 0.35);
+  border: 1px solid rgba(124, 92, 191, 0.35);
   animation: ripple 3s ease-out infinite;
 }
 
