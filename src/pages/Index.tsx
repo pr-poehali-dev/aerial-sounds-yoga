@@ -66,11 +66,11 @@ const SERVICES = [
 ];
 
 const PAINS = [
-  { emoji: "💺", text: "Боль после долгого сидения за компьютером" },
-  { emoji: "🌅", text: "Скованность по утрам, «деревянная» спина" },
-  { emoji: "🩻", text: "Протрузии, остеохондроз, межпозвонковые грыжи" },
-  { emoji: "⚡", text: "Боль, которая «отдаёт» в ногу или руку" },
-  { emoji: "😣", text: "Постоянное напряжение в плечах и шее" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/72bea29e-1a49-41dc-ba19-ecc06344c9b4.jpg", text: "Боль после долгого сидения за компьютером" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/e4ecd090-62b7-4bdc-99c4-f7c948753c09.jpg", text: "Скованность по утрам, «деревянная» спина" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b37366ea-5ebc-4158-b927-e4f3a2fe1f39.jpg", text: "Протрузии, остеохондроз, межпозвонковые грыжи" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/961749d6-8748-457a-83ad-e7201b494bf7.jpg", text: "Боль, которая «отдаёт» в ногу или руку" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5858bc70-04d2-4cac-a319-b2f9cbafe045.jpg", text: "Постоянное напряжение в плечах и шее" },
 ];
 
 const BENEFITS = [
@@ -479,8 +479,8 @@ export default function Index() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 32 }}>
             {PAINS.map((p, i) => (
-              <div key={i} className="pp-card" style={{ padding: "24px 28px", display: "flex", gap: 16, alignItems: "flex-start" }}>
-                <span style={{ fontSize: 28, lineHeight: 1, flexShrink: 0 }}>{p.emoji}</span>
+              <div key={i} className="pp-card" style={{ padding: "24px 28px", display: "flex", gap: 16, alignItems: "center" }}>
+                <img src={p.img} alt="" style={{ width: 64, height: 64, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid var(--pp-teal)" }} />
                 <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.65, margin: 0 }}>{p.text}</p>
               </div>
             ))}
