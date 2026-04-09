@@ -66,10 +66,11 @@ const SERVICES = [
 ];
 
 const PAINS = [
-  { emoji: "😮‍💨", text: "Тело зажато, спина устаёт, голова не отключается даже ночью" },
-  { emoji: "😶", text: "Ходишь в зал, но бросаешь через месяц — скучно и нет результата" },
-  { emoji: "😔", text: "Хочешь чего-то особенного, но не знаешь, где это найти" },
-  { emoji: "🤯", text: "Стресс стал фоновым шумом, который не отпускает" },
+  { emoji: "💺", text: "Боль после долгого сидения за компьютером" },
+  { emoji: "🌅", text: "Скованность по утрам, «деревянная» спина" },
+  { emoji: "🩻", text: "Протрузии, остеохондроз, межпозвонковые грыжи" },
+  { emoji: "⚡", text: "Боль, которая «отдаёт» в ногу или руку" },
+  { emoji: "😣", text: "Постоянное напряжение в плечах и шее" },
 ];
 
 const BENEFITS = [
@@ -468,9 +469,12 @@ export default function Index() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 48 }}>
             <div className="pp-label" style={{ marginBottom: 16 }}>Узнай себя</div>
-            <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, marginBottom: 0, lineHeight: 1.1 }}>
-              Это <em style={{ color: "var(--pp-teal)" }}>про тебя</em>?
+            <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, marginBottom: 16, lineHeight: 1.1 }}>
+              Вы узнаёте себя в <em style={{ color: "var(--pp-teal)" }}>одной из этих историй</em>?
             </h2>
+            <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.7, maxWidth: 620, margin: 0 }}>
+              Каждая программа в ФИТНСЛИМ создана под конкретный запрос — чтобы вы получили результат, а не просто «занятие».
+            </p>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 32 }}>
