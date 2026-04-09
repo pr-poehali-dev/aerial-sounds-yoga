@@ -443,8 +443,8 @@ export default function Index() {
                     <Icon name="MapPin" size={16} style={{ color: "var(--pp-teal)" }} />
                   </div>
                   <div>
-                    <div style={{ fontWeight: 500 }}>Пространство Пара</div>
-                    <div style={{ fontSize: 13, color: "var(--pp-muted)", marginTop: 2 }}>г. Артём, мкр. Глобус-2, 1а<br />Приморский край</div>
+                    <div style={{ fontWeight: 500 }}>г. Артём, мкр. Глобус-2, 1а</div>
+                    <div style={{ fontSize: 13, color: "var(--pp-muted)", marginTop: 2 }}>Приморский край</div>
                   </div>
                 </div>
               </div>
