@@ -1,4 +1,30 @@
 import { useState, useEffect, useRef } from "react";
+
+function useCountUp(target: number, duration = 2000, start = 10) {
+  const [count, setCount] = useState(start);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const started = useRef(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !started.current) {
+        started.current = true;
+        const startTime = performance.now();
+        const tick = (now: number) => {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.floor(start + (target - start) * ease));
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration, start]);
+  return { count, ref };
+}
 import Icon from "@/components/ui/icon";
 
 const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg";
@@ -134,6 +160,16 @@ const FAQ_TABS = [
 ];
 
 const S = { fontFamily: "'Cormorant', Georgia, serif" };
+
+function CounterStat() {
+  const { count, ref } = useCountUp(500, 2200, 10);
+  return (
+    <div ref={ref}>
+      <div style={{ ...S, fontSize: 34, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{count}+</div>
+      <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>Учеников</div>
+    </div>
+  );
+}
 
 function ReviewsCarousel() {
   const [current, setCurrent] = useState(0);
@@ -319,7 +355,8 @@ export default function Index() {
             </div>
 
             <div className="pp-fade-up d4" style={{ display: "flex", gap: 40, paddingTop: 32, borderTop: "1px solid var(--pp-border)", flexWrap: "wrap" }}>
-              {[["500+", "Учеников"], ["7 лет", "Практики"], ["98%", "Приходят снова"], ["4", "Формата"]].map(([n, l]) => (
+              <CounterStat />
+              {[["7 лет", "Практики"], ["98%", "Приходят снова"], ["4", "Формата"]].map(([n, l]) => (
                 <div key={l}>
                   <div style={{ ...S, fontSize: 34, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>{l}</div>
