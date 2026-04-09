@@ -8,6 +8,7 @@ const API_URL = "https://functions.poehali.dev/460e133a-853d-4f85-aefa-16408cddd
 const SERVICES = [
   {
     emoji: "🪢",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
     title: "Аэройога в гамаках",
     desc: "Для начинающих и продолжающих. Гамак берёт нагрузку на себя — тело раскрывается без боли. Группы до 8 человек и индивидуальные занятия.",
     tags: ["Группы до 8 чел.", "Индивидуальные", "Детские классы"],
@@ -17,6 +18,7 @@ const SERVICES = [
   },
   {
     emoji: "🔔",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/70fc32d6-2106-42f0-8af9-fa47c0451d05.jpg",
     title: "Гонг-медитации",
     desc: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать — никакой подготовки не нужно. Подходит абсолютно всем.",
     tags: ["Групповые", "VIP мини-группы", "Корпоративные"],
@@ -26,6 +28,7 @@ const SERVICES = [
   },
   {
     emoji: "✨",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/12fddbc8-ab75-4c1e-9a4b-21ec572c763c.jpg",
     title: "Аэройога",
     desc: "Эксклюзивный гибрид: ты лежишь в коконе гамака, пока живые вибрации гонга окутывают тело и разум. Только у нас.",
     tags: ["Групповой", "VIP мини-группа", "Индивидуальный"],
@@ -465,7 +468,9 @@ export default function Index() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
             {SERVICES.slice(0, 2).map((s, i) => (
               <div key={i} className="pp-card" style={{ padding: 32, display: "flex", flexDirection: "column" }}>
-                <div style={{ fontSize: 40, marginBottom: 20 }}>{s.emoji}</div>
+                <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", marginBottom: 20, border: "2px solid var(--pp-border)" }}>
+                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
                 <h3 style={{ ...S, fontSize: 26, fontWeight: 400, marginBottom: 12, lineHeight: 1.2 }}>{s.title}</h3>
                 <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, flex: 1, marginBottom: 20 }}>{s.desc}</p>
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
