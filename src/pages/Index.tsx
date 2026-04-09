@@ -323,8 +323,8 @@ export default function Index() {
             </div>
           </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-            {["О нас", "Услуги", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
-              <a key={t} href={`#${["about","services","training","reviews","faq"][i]}`}
+            {["О нас", "Услуги", "Здоровая спина", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
+              <a key={t} href={`#${["about","services","back-health","training","reviews","faq"][i]}`}
                 style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
                 onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
@@ -505,6 +505,113 @@ export default function Index() {
               Если хотя бы один пункт — про тебя, ты попала туда, куда нужно.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── ЗДОРОВАЯ СПИНА ────────────────────────────────── */}
+      <section id="back-health" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+
+          {/* Заголовок */}
+          <div style={{ marginBottom: 56, maxWidth: 680 }}>
+            <div className="pp-label" style={{ marginBottom: 16 }}>Программа</div>
+            <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
+              Здоровая <em style={{ color: "#e07b54" }}>спина</em>
+            </h2>
+            <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75 }}>
+              Авторская программа для тех, кто устал жить с болью. Мягкая декомпрессия позвоночника в гамаке + терапевтические упражнения — без таблеток и хирургии.
+            </p>
+          </div>
+
+          {/* Главный блок — фото + описание */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", marginBottom: 56 }}>
+            <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "4/3" }}>
+              <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/54ee570b-6314-456d-aaf0-f5e871615f38.jpg" alt="Здоровая спина" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <div>
+              <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.8, marginBottom: 24 }}>
+                Когда вы висите в гамаке, позвоночник вытягивается под собственным весом — без нагрузки, без боли. Это называется <strong>пассивная декомпрессия</strong>. Межпозвонковые диски получают пространство, нервы освобождаются от зажима, мышцы расслабляются.
+              </p>
+              <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.8, marginBottom: 32 }}>
+                Программа разработана совместно с остеопатом. Подходит при остеохондрозе, протрузиях, межпозвонковых грыжах и хронических болях в пояснице и шее.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  { icon: "CheckCircle", text: "Снятие острой боли уже после 1–3 занятий" },
+                  { icon: "CheckCircle", text: "Восстановление подвижности позвоночника" },
+                  { icon: "CheckCircle", text: "Укрепление мышечного корсета без осевой нагрузки" },
+                  { icon: "CheckCircle", text: "Работа с грыжами и протрузиями" },
+                  { icon: "CheckCircle", text: "Индивидуальный подбор нагрузки" },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <Icon name="CheckCircle" size={18} style={{ color: "#e07b54", flexShrink: 0, marginTop: 2 }} />
+                    <span style={{ fontSize: 15, color: "var(--pp-text)", lineHeight: 1.5 }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Результаты */}
+          <div style={{ marginBottom: 56 }}>
+            <h3 style={{ ...S, fontSize: 28, fontWeight: 400, marginBottom: 28, textAlign: "center" }}>
+              Что говорят <em style={{ color: "#e07b54" }}>после курса</em>
+            </h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+              {[
+                { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4d4b828d-0a8d-48e7-8c8b-9cac34a84e75.jpg", name: "Марина, 42 года", result: "«Перестала болеть спина после 4 занятий. Врач сказал, что грыжа уменьшилась. Я в шоке в хорошем смысле!»" },
+                { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1acac388-badd-4f99-a90b-b0157299374e.jpg", name: "Ольга, 38 лет", result: "«Ходила с болью в пояснице 3 года. После курса «Здоровая спина» забыла, что это такое. Рекомендую всем!»" },
+                { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b51a8cdb-ca09-4e44-bddb-d9fde22f0eda.jpg", name: "Светлана, 55 лет", result: "«Остеохондроз мучил меня годами. Здесь за 8 занятий я почувствовала себя лет на 20 моложе — спина ровная, движения свободные.»" },
+              ].map((r, i) => (
+                <div key={i} className="pp-card" style={{ padding: "28px 32px" }}>
+                  <div style={{ color: "#e07b54", letterSpacing: 3, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
+                  <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 20, fontStyle: "italic" }}>{r.result}</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <img src={r.img} alt={r.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid #e07b54" }} />
+                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Форматы + CTA */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              {[
+                { title: "Мини-группа", desc: "До 4 человек. Инструктор следит за каждым.", price: "от 600 ₽" },
+                { title: "Индивидуально", desc: "Полностью под ваш диагноз и запрос.", price: "от 1500 ₽" },
+                { title: "Курс 8 занятий", desc: "Полный цикл с ощутимым результатом.", price: "от 4200 ₽" },
+                { title: "По направлению врача", desc: "Работаем с остеопатами и неврологами.", price: "Уточнить" },
+              ].map((f, i) => (
+                <div key={i} style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 22px" }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 6 }}>{f.title}</div>
+                  <div style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.5, marginBottom: 12 }}>{f.desc}</div>
+                  <div style={{ fontSize: 18, fontWeight: 500, color: "#e07b54", fontFamily: "var(--font-serif)" }}>{f.price}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{ background: "linear-gradient(135deg, #e07b54 0%, #c4623e 100%)", borderRadius: 24, padding: "40px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 16 }}>Запись на программу</div>
+                <h3 style={{ ...S, fontSize: 32, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
+                  Первое занятие — по специальной цене
+                </h3>
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: 32 }}>
+                  Расскажем о программе, оценим ваш запрос и подберём оптимальный формат.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <button className="pp-btn" onClick={() => setShowForm(true)} style={{ background: "#fff", color: "#c4623e", justifyContent: "center", fontWeight: 600 }}>
+                  Записаться на первое занятие
+                </button>
+                <a href="https://wa.me/79147070440" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 14, color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
+                  <Icon name="MessageCircle" size={16} /> Написать в WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
