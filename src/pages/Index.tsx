@@ -26,7 +26,7 @@ const SERVICES = [
   },
   {
     emoji: "✨",
-    title: "Aerial Sounds",
+    title: "Аэройога",
     desc: "Эксклюзивный гибрид: ты лежишь в коконе гамака, пока живые вибрации гонга окутывают тело и разум. Только у нас.",
     tags: ["Групповой", "VIP мини-группа", "Индивидуальный"],
     price: "___ ₽",
@@ -258,7 +258,7 @@ export default function Index() {
             </h1>
 
             <p className="pp-fade-up d2" style={{ fontSize: 18, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 16, fontWeight: 400, maxWidth: 460 }}>
-              Аэройога · Хатха-йога · Айенгара йога · Йогатерапия · Йога для беременных · Гонг-медитации · Aerial Sounds · Обучение инструкторов
+              Аэройога · Хатха-йога · Айенгара йога · Йогатерапия · Йога для беременных · Гонг-медитации · Аэройога · Обучение инструкторов
             </p>
 
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
@@ -292,9 +292,9 @@ export default function Index() {
               <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)", marginBottom: 4 }}>🏅 Международная сертификация</div>
               <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>AAYA · Yoga Alliance · Диплом гос. образца</div>
             </div>
-            {/* Ярлычок Aerial Sounds */}
+            {/* Ярлычок Аэройога */}
             <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)" }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>✨ Aerial Sounds</div>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>✨ Аэройога</div>
               <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>Только у нас</div>
             </div>
           </div>
@@ -385,7 +385,7 @@ export default function Index() {
             </h2>
           </div>
 
-          {/* Aerial Sounds — главная карточка */}
+          {/* Аэройога — главная карточка */}
           <div style={{ background: "linear-gradient(135deg, #2A6355 0%, #3A7D6B 60%, #4A9480 100%)", borderRadius: 24, padding: "40px 48px", marginBottom: 20, display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", overflow: "hidden" }}>
             {/* Рябь гонга */}
             <div style={{ position: "absolute", right: 120, top: "50%", transform: "translateY(-50%)" }}>
@@ -399,7 +399,7 @@ export default function Index() {
                 ★ Только у нас в городе
               </div>
               <h3 style={{ ...S, fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 300, color: "#E8F4F0", lineHeight: 1.1, marginBottom: 12 }}>
-                Aerial Sounds —<br /><em style={{ color: "var(--pp-gold)" }}>гонг в гамаках</em>
+                Аэройога —<br /><em style={{ color: "var(--pp-gold)" }}>гонг в гамаках</em>
               </h3>
               <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 24, maxWidth: 500 }}>
                 Ты лежишь в коконе гамака, пока живые вибрации гонга, тибетских чаш и монохорда окутывают тело и разум. Уникальный гибрид аэройоги и звуковой терапии.
@@ -480,7 +480,7 @@ export default function Index() {
                 "Работать в любой студии или открыть свои классы",
                 "Получить международный сертификат AAYA",
                 "Зарабатывать от 50 000 ₽ в месяц на любимом деле",
-                "Вести Aerial Sounds — эксклюзивный гибридный формат",
+                "Вести Аэройога — эксклюзивный гибридный формат",
               ].map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1 }}>
@@ -610,7 +610,7 @@ export default function Index() {
             </div>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Услуги</div>
-              {["Аэройога в гамаках", "Гонг-медитации", "Aerial Sounds", "Обучение инструкторов"].map(t => (
+              {["Аэройога в гамаках", "Гонг-медитации", "Аэройога", "Обучение инструкторов"].map(t => (
                 <div key={t} style={{ marginBottom: 10 }}>
                   <a href="#services" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
@@ -675,7 +675,7 @@ export default function Index() {
                   <div>
                     <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Интересует</label>
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                      {["Аэройога", "Гонг-медитация", "Aerial Sounds", "Обучение"].map(s => (
+                      {["Аэройога", "Гонг-медитация", "Аэройога", "Обучение"].map(s => (
                         <button key={s} type="button" onClick={() => setService(service === s ? "" : s)}
                           style={{ padding: "8px 16px", borderRadius: 100, fontSize: 13, cursor: "pointer", transition: "all 0.18s", fontFamily: "'Golos Text', sans-serif", border: service === s ? "1.5px solid var(--pp-teal)" : "1.5px solid var(--pp-border)", background: service === s ? "var(--pp-teal-light)" : "transparent", color: service === s ? "var(--pp-teal)" : "var(--pp-muted)", fontWeight: service === s ? 600 : 400 }}>
                           {s}
