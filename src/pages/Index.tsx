@@ -145,7 +145,14 @@ function ReviewsCarousel() {
           </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 10, marginTop: 28 }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 16, marginTop: 28 }}>
+          <button
+            onClick={() => goTo((current - 1 + REVIEWS.length) % REVIEWS.length)}
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: 28, lineHeight: 1, padding: 4, opacity: 0.7, transition: "opacity 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+          >👈</button>
+
           {REVIEWS.map((_, i) => (
             <button
               key={i}
@@ -153,6 +160,13 @@ function ReviewsCarousel() {
               style={{ width: i === current ? 28 : 10, height: 10, borderRadius: 5, border: "none", cursor: "pointer", background: i === current ? "var(--pp-teal)" : "var(--pp-teal-light)", transition: "all 0.3s", padding: 0 }}
             />
           ))}
+
+          <button
+            onClick={() => goTo((current + 1) % REVIEWS.length)}
+            style={{ background: "none", border: "none", cursor: "pointer", fontSize: 28, lineHeight: 1, padding: 4, opacity: 0.7, transition: "opacity 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+          >👉</button>
         </div>
       </div>
     </section>
