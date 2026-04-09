@@ -27,14 +27,14 @@ function useCountUp(target: number, duration = 2000, start = 10) {
 }
 import Icon from "@/components/ui/icon";
 
-const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg";
-const IMG_GONG = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg";
+const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/f3a217af-d9dd-4c90-a658-59497eda24cc.jpg";
+const IMG_GONG = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/d79384f3-2a3e-44c4-bec0-fbf1b792edc5.jpg";
 const API_URL = "https://functions.poehali.dev/460e133a-853d-4f85-aefa-16408cdddcab";
 
 const SERVICES = [
   {
     emoji: "🪢",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/f3a217af-d9dd-4c90-a658-59497eda24cc.jpg",
     title: "Аэройога в гамаках",
     desc: "Для начинающих и продолжающих. Гамак берёт нагрузку на себя — тело раскрывается без боли. Группы до 8 человек и индивидуальные занятия.",
     tags: ["Группы до 8 чел.", "Индивидуальные", "Детские классы"],
@@ -44,7 +44,7 @@ const SERVICES = [
   },
   {
     emoji: "🔔",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/70fc32d6-2106-42f0-8af9-fa47c0451d05.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/d79384f3-2a3e-44c4-bec0-fbf1b792edc5.jpg",
     title: "Гонг-медитации",
     desc: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать — никакой подготовки не нужно. Подходит абсолютно всем.",
     tags: ["Групповые", "VIP мини-группы", "Корпоративные"],
@@ -53,9 +53,19 @@ const SERVICES = [
     color: "var(--pp-gold)",
   },
   {
+    emoji: "🦴",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/86bc746d-101a-417d-9e53-7483e7971b23.jpg",
+    title: "Здоровая спина",
+    desc: "Авторская программа для тех, кто страдает от болей в спине, протрузий и остеохондроза. Мягкая декомпрессия позвоночника в гамаке + терапевтические упражнения.",
+    tags: ["Малая группа", "Индивидуальные", "По направлению врача"],
+    price: "от 600 ₽",
+    per: "занятие",
+    color: "#e07b54",
+  },
+  {
     emoji: "✨",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/12fddbc8-ab75-4c1e-9a4b-21ec572c763c.jpg",
-    title: "Аэройога",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/c48350e9-a068-4b3a-99db-2724c3f139f5.jpg",
+    title: "Аэройога + Гонг",
     desc: "Эксклюзивный гибрид: ты лежишь в коконе гамака, пока живые вибрации гонга окутывают тело и разум. Только у нас.",
     tags: ["Групповой", "VIP мини-группа", "Индивидуальный"],
     price: "___ ₽",
@@ -71,6 +81,10 @@ const PAINS = [
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b37366ea-5ebc-4158-b927-e4f3a2fe1f39.jpg", text: "Протрузии, остеохондроз, межпозвонковые грыжи" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/961749d6-8748-457a-83ad-e7201b494bf7.jpg", text: "Боль, которая «отдаёт» в ногу или руку" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5858bc70-04d2-4cac-a319-b2f9cbafe045.jpg", text: "Постоянное напряжение в плечах и шее" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1dd62862-4edf-4513-8763-846edb97fdce.jpg", text: "Тело зажато, спина устаёт, голова не отключается даже ночью" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/11454283-4442-40ab-8e60-44e7208aa4b9.jpg", text: "Ходишь в зал, но бросаешь через месяц — скучно и нет результата" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4d4b828d-0a8d-48e7-8c8b-9cac34a84e75.jpg", text: "Хочешь чего-то особенного, но не знаешь, где это найти" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b51a8cdb-ca09-4e44-bddb-d9fde22f0eda.jpg", text: "Стресс стал фоновым шумом, который не отпускает" },
 ];
 
 const BENEFITS = [
@@ -89,22 +103,22 @@ const STEPS = [
 
 const REVIEWS = [
   {
-    avatar: "🌸",
+    avatar: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/11454283-4442-40ab-8e60-44e7208aa4b9.jpg",
     text: "«Моя любимая студия аэройоги! Хожу сюда с самого открытия и это действительно то место, где я отдыхаю и телом, и душой. Хочу поблагодарить Алёну Самарину за то, что благодаря ней я познакомилась с аэройогой. Мне очень нравятся занятия Здоровая спина у Даньшиной Евгении. И отдельно хочу отметить, что в студии работают прекрасные массажисты, остеопат и косметолог, услугами которых я пользуюсь регулярно.»",
     name: "Apple User", meta: "⭐⭐⭐⭐⭐",
   },
   {
-    avatar: "🌿",
+    avatar: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4d4b828d-0a8d-48e7-8c8b-9cac34a84e75.jpg",
     text: "«ЛУЧШАЯ СТУДИЯ В Г. АРТЁМ! Команда ФИТНСЛИМ чудесна, вежливый персонал, общение с клиентами на высшем уровне. Всегда чисто, уютно. Атмосфера в студии прекрасна, хочется возвращаться снова и снова. Мою любовь к аэройоге привила инструктор Елена. Хочется отметить Самарину Алену Владимировну — основательницу студии. После каждого занятия я чувствую прилив энергии и силы. Рекомендую!»",
     name: "Екатерина Трешина", meta: "⭐⭐⭐⭐⭐",
   },
   {
-    avatar: "🦋",
+    avatar: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1acac388-badd-4f99-a90b-b0157299374e.jpg",
     text: "«Моё знакомство с йогой случилось здесь 4 года назад. За это время изменилось и моё физическое тело, и общее здоровье, и даже мировосприятие. Перестала болеть спина, ушёл «вдовий горб», поясница пришла в норму. Дыхательные практики научили справляться с бессонницей. В студии каждый из инструкторов — мастер своего дела. Для каждого находится время, доброе слово и индивидуальный подход.»",
     name: "Наша Мокеева", meta: "⭐⭐⭐⭐⭐",
   },
   {
-    avatar: "🌺",
+    avatar: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b51a8cdb-ca09-4e44-bddb-d9fde22f0eda.jpg",
     text: "«О, я реально в восторге — это потрясающе божественное место! Тренер Оксана супер интегрированно ведёт аэройогу, после занятия дали чаю с орехами, ну а гигиенический душ во всех туалетах меня окончательно покорил.»",
     name: "Гость студии", meta: "⭐⭐⭐⭐⭐",
   },
@@ -219,7 +233,7 @@ function ReviewsCarousel() {
           <div style={{ color: "var(--pp-gold)", letterSpacing: 3, marginBottom: 20, fontSize: 18 }}>★★★★★</div>
           <p style={{ ...S, fontSize: "clamp(16px, 2vw, 19px)", fontStyle: "italic", color: "var(--pp-text)", lineHeight: 1.7, marginBottom: 28 }}>{r.text}</p>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{r.avatar}</div>
+            <img src={r.avatar} alt={r.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--pp-teal)", flexShrink: 0 }} />
             <div>
               <div style={{ fontSize: 15, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</div>
               <div style={{ fontSize: 13, color: "var(--pp-muted)" }}>{r.meta}</div>
