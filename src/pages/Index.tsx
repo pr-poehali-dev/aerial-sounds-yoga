@@ -532,11 +532,15 @@ export default function Index() {
           </div>
 
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-            {[["📞", "Позвонить"], ["💬", "Telegram"], ["📱", "WhatsApp"], ["📸", "Instagram"]].map(([e, t]) => (
-              <button key={t} className="pp-btn-ghost" style={{ padding: "10px 20px", fontSize: 13 }}>
-                <span>{e}</span> {t}
-              </button>
-            ))}
+            <a href="tel:+79147012883" className="pp-btn-ghost" style={{ padding: "10px 20px", fontSize: 13 }}>
+              <span>📞</span> +7 (914) 701-28-83
+            </a>
+            <a href="https://wa.me/79147012883" target="_blank" rel="noopener noreferrer" className="pp-btn-ghost" style={{ padding: "10px 20px", fontSize: 13 }}>
+              <span>📱</span> WhatsApp
+            </a>
+            <a href="https://t.me/+79147012883" target="_blank" rel="noopener noreferrer" className="pp-btn-ghost" style={{ padding: "10px 20px", fontSize: 13 }}>
+              <span>💬</span> Telegram
+            </a>
           </div>
         </div>
       </section>
@@ -563,9 +567,16 @@ export default function Index() {
             </div>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Контакты</div>
-              {["+7 (XXX) XXX-XX-XX", "г. Ваш город, ул. Адрес", "Instagram", "Telegram"].map(t => (
-                <div key={t} style={{ marginBottom: 10, fontSize: 13, color: "rgba(255,255,255,0.6)" }}>{t}</div>
-              ))}
+              <div style={{ marginBottom: 10 }}>
+                <a href="tel:+79147012883" style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", textDecoration: "none", fontWeight: 500 }}>+7 (914) 701-28-83</a>
+              </div>
+              <div style={{ marginBottom: 10 }}>
+                <a href="https://wa.me/79147012883" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>📱 WhatsApp</a>
+              </div>
+              <div style={{ marginBottom: 10 }}>
+                <a href="https://t.me/+79147012883" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>💬 Telegram</a>
+              </div>
+              <div style={{ marginBottom: 10, fontSize: 13, color: "rgba(255,255,255,0.6)" }}>г. Ваш город, ул. Адрес</div>
             </div>
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
