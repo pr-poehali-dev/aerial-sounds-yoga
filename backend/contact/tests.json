@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "POST — создать заявку",
+      "method": "POST",
+      "path": "/",
+      "body": { "name": "Тест Тестов", "phone": "+7 999 000-00-00", "service": "Аэройога" },
+      "expectedStatus": 200,
+      "expectedBody": { "success": true },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST — ошибка без телефона",
+      "method": "POST",
+      "path": "/",
+      "body": { "name": "Без телефона" },
+      "expectedStatus": 400,
+      "expectedBody": { "error": "Имя и телефон обязательны" },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "GET — список заявок",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": { "contacts": [] },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

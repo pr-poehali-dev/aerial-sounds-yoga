@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg";
 const IMG_GONG = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg";
+const API_URL = "https://functions.poehali.dev/460e133a-853d-4f85-aefa-16408cdddcab";
 
 const SERVICES = [
   {
@@ -99,11 +100,38 @@ export default function Index() {
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const resetForm = () => {
+    setName(""); setPhone(""); setService(""); setMessage("");
+    setError(""); setSubmitted(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, service, message }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error || "Что-то пошло не так. Попробуйте ещё раз.");
+      }
+    } catch {
+      setError("Ошибка сети. Проверьте подключение и попробуйте снова.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -550,50 +578,100 @@ export default function Index() {
       {/* ── МОДАЛЬНАЯ ФОРМА ──────────────────────────────── */}
       {showForm && (
         <div style={{ position: "fixed", inset: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
-          onClick={e => { if (e.target === e.currentTarget) { setShowForm(false); setSubmitted(false); } }}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(31,29,24,0.7)", backdropFilter: "blur(12px)" }} />
-          <div className="pp-card pp-fade" style={{ maxWidth: 460, width: "100%", padding: 48, position: "relative", zIndex: 1, borderRadius: 24 }}>
-            <button onClick={() => { setShowForm(false); setSubmitted(false); }}
-              style={{ position: "absolute", top: 20, right: 20, background: "transparent", border: "none", color: "var(--pp-faint)", cursor: "pointer", fontSize: 24, lineHeight: 1 }}>×</button>
+          onClick={e => { if (e.target === e.currentTarget) { setShowForm(false); resetForm(); } }}>
+          <div style={{ position: "absolute", inset: 0, background: "rgba(31,29,24,0.72)", backdropFilter: "blur(14px)" }} />
+          <div className="pp-card pp-fade" style={{ maxWidth: 480, width: "100%", padding: "44px 40px", position: "relative", zIndex: 1, borderRadius: 24, maxHeight: "90vh", overflowY: "auto" }}>
+            <button onClick={() => { setShowForm(false); resetForm(); }}
+              style={{ position: "absolute", top: 18, right: 18, width: 36, height: 36, borderRadius: "50%", background: "var(--pp-cream-3)", border: "none", color: "var(--pp-muted)", cursor: "pointer", fontSize: 20, lineHeight: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>×</button>
 
             {!submitted ? (
               <>
-                <div style={{ fontSize: 36, marginBottom: 16, textAlign: "center" }}>🪢</div>
-                <h3 style={{ ...S, fontSize: 32, fontWeight: 300, textAlign: "center", marginBottom: 8, lineHeight: 1.1 }}>
+                <div style={{ fontSize: 40, marginBottom: 14, textAlign: "center" }}>🪢</div>
+                <h3 style={{ ...S, fontSize: 34, fontWeight: 300, textAlign: "center", marginBottom: 6, lineHeight: 1.1 }}>
                   Записаться на <em style={{ color: "var(--pp-teal)" }}>занятие</em>
                 </h3>
-                <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28 }}>
-                  Первая тренировка бесплатно. Перезвоним в течение часа.
+                <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28, lineHeight: 1.6 }}>
+                  Первое занятие бесплатно. Перезвоним в течение часа.
                 </p>
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                  {/* Имя */}
                   <div>
-                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 8 }}>Имя</label>
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Имя *</label>
                     <input className="pp-input" value={name} onChange={e => setName(e.target.value)} required placeholder="Введите ваше имя" />
                   </div>
+
+                  {/* Телефон */}
                   <div>
-                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 8 }}>Телефон</label>
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Телефон *</label>
                     <input className="pp-input" value={phone} onChange={e => setPhone(e.target.value)} required placeholder="+7 (999) 000-00-00" type="tel" />
                   </div>
-                  <button type="submit" className="pp-btn-primary" style={{ justifyContent: "center", marginTop: 8 }}>
-                    Отправить заявку
+
+                  {/* Услуга */}
+                  <div>
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Интересует</label>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      {["Аэройога", "Гонг-медитация", "Aerial Sounds", "Обучение"].map(s => (
+                        <button key={s} type="button" onClick={() => setService(service === s ? "" : s)}
+                          style={{ padding: "8px 16px", borderRadius: 100, fontSize: 13, cursor: "pointer", transition: "all 0.18s", fontFamily: "'Golos Text', sans-serif", border: service === s ? "1.5px solid var(--pp-teal)" : "1.5px solid var(--pp-border)", background: service === s ? "var(--pp-teal-light)" : "transparent", color: service === s ? "var(--pp-teal)" : "var(--pp-muted)", fontWeight: service === s ? 600 : 400 }}>
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Сообщение */}
+                  <div>
+                    <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Вопрос или пожелание</label>
+                    <textarea className="pp-input" value={message} onChange={e => setMessage(e.target.value)}
+                      placeholder="Напишите, если есть вопросы..." rows={3}
+                      style={{ resize: "none", fontFamily: "'Golos Text', sans-serif" }} />
+                  </div>
+
+                  {/* Ошибка */}
+                  {error && (
+                    <div style={{ background: "#FEF2F2", border: "1px solid #FECACA", borderRadius: 10, padding: "10px 14px", fontSize: 13, color: "#DC2626", display: "flex", alignItems: "center", gap: 8 }}>
+                      <Icon name="AlertCircle" size={15} />
+                      {error}
+                    </div>
+                  )}
+
+                  <button type="submit" className="pp-btn-primary" disabled={loading} style={{ justifyContent: "center", marginTop: 4, opacity: loading ? 0.7 : 1, transition: "opacity 0.2s" }}>
+                    {loading ? (
+                      <>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ animation: "spin 0.8s linear infinite" }}><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                        Отправляем...
+                      </>
+                    ) : (
+                      <>
+                        <Icon name="Send" size={15} />
+                        Отправить заявку
+                      </>
+                    )}
                   </button>
                   <p style={{ fontSize: 11, color: "var(--pp-faint)", textAlign: "center" }}>Без обязательств · Ответим в течение часа</p>
                 </form>
               </>
             ) : (
-              <div style={{ textAlign: "center", padding: "20px 0" }}>
-                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                  <Icon name="Check" size={32} style={{ color: "var(--pp-teal)" }} />
+              <div style={{ textAlign: "center", padding: "24px 0" }}>
+                <div style={{ width: 80, height: 80, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
+                  <Icon name="Check" size={36} style={{ color: "var(--pp-teal)" }} />
                 </div>
-                <h3 style={{ ...S, fontSize: 30, marginBottom: 12, lineHeight: 1.1 }}>Заявка принята!</h3>
-                <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.6 }}>
-                  Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас!
+                <h3 style={{ ...S, fontSize: 34, marginBottom: 12, lineHeight: 1.1, fontWeight: 300 }}>
+                  Заявка <em style={{ color: "var(--pp-teal)" }}>принята!</em>
+                </h3>
+                <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 28 }}>
+                  Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас в Пространстве Пара!
                 </p>
+                <button className="pp-btn-ghost" onClick={() => { setShowForm(false); resetForm(); }} style={{ margin: "0 auto", display: "flex" }}>
+                  Закрыть
+                </button>
               </div>
             )}
           </div>
         </div>
       )}
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }
