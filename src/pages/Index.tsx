@@ -85,7 +85,7 @@ const TRUST = [
   { emoji: "👥", title: "Малые группы", text: "Максимум 8 человек — каждый под вниманием" },
   { emoji: "🎓", title: "Международный сертификат", text: "Международная ассоциация аэройоги, Альянс йоги, диплом гос. образца" },
   { emoji: "🔄", title: "Гибкое расписание", text: "Утренние, дневные, вечерние. Перенос без штрафов" },
-  { emoji: "💫", title: "Пробное — бесплатно", text: "Первое занятие без оплаты и обязательств" },
+  { emoji: "💫", title: "Пробное — по спец цене", text: "Первое занятие по специальной цене" },
   { emoji: "🌿", title: "Атмосфера, не спортзал", text: "Ароматерапия, растения, чай после занятия" },
 ];
 
@@ -297,7 +297,7 @@ export default function Index() {
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
               <button className="pp-btn-primary" onClick={() => setShowForm(true)}>
                 <Icon name="Sparkles" size={16} />
-                Первое занятие бесплатно
+                Первое занятие по спец цене
               </button>
               <a href="#services" className="pp-btn-ghost">
                 Узнать подробнее
@@ -608,7 +608,7 @@ export default function Index() {
           <div style={{ fontSize: 56, marginBottom: 24 }} className="pp-float">🪢</div>
           <div className="pp-label" style={{ marginBottom: 16 }}>Начни сегодня</div>
           <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20 }}>
-            Твой первый шаг —<br /><em style={{ color: "var(--pp-teal)" }}>бесплатно</em>
+            Твой первый шаг —<br /><em style={{ color: "var(--pp-teal)" }}>по спец цене</em>
           </h2>
           <hr className="pp-divider" style={{ margin: "0 auto 24px" }} />
           <p style={{ fontSize: 17, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 32 }}>
@@ -623,7 +623,7 @@ export default function Index() {
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
             <button className="pp-btn-primary" onClick={() => setShowForm(true)} style={{ padding: "18px 48px", fontSize: 16 }}>
               <Icon name="Sparkles" size={18} />
-              Записаться бесплатно
+              Записаться по спец цене
             </button>
           </div>
 
@@ -698,7 +698,7 @@ export default function Index() {
                   Записаться на <em style={{ color: "var(--pp-teal)" }}>занятие</em>
                 </h3>
                 <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28, lineHeight: 1.6 }}>
-                  Первое занятие бесплатно. Перезвоним в течение часа.
+                  Первое занятие по спец цене. Перезвоним в течение часа.
                 </p>
 
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
