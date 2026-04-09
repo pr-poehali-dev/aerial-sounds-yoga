@@ -290,9 +290,19 @@ export default function Index() {
               Почувствуй<br /><em style={{ color: "var(--pp-teal)" }}>лёгкость</em><br />тела и тишину ума
             </h1>
 
-            <p className="pp-fade-up d2" style={{ fontSize: 18, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 16, fontWeight: 400, maxWidth: 460 }}>
-              Аэройога · Хатха-йога · Айенгара йога · Йогатерапия · Йога для беременных · Гонг-медитации · Аэройога · Обучение инструкторов
+            <p className="pp-fade-up d2" style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-teal)", marginBottom: 12 }}>
+              Направления студии
             </p>
+            <div className="pp-fade-up d2" style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+              {["Аэройога", "Хатха-йога", "Айенгара йога", "Йогатерапия", "Йога для беременных", "Гонг-медитации", "Обучение инструкторов"].map(d => (
+                <span key={d} style={{ fontSize: 13, color: "var(--pp-muted)", background: "var(--pp-cream-3)", borderRadius: 100, padding: "5px 14px", border: "1px solid var(--pp-border)" }}>{d}</span>
+              ))}
+            </div>
+            <div className="pp-fade-up d2" style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 24 }}>
+              {["Групповые", "Индивидуальные программы"].map(d => (
+                <span key={d} style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-teal)", background: "var(--pp-teal-light)", borderRadius: 100, padding: "5px 14px" }}>{d}</span>
+              ))}
+            </div>
 
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
               <button className="pp-btn-primary" onClick={() => setShowForm(true)}>
