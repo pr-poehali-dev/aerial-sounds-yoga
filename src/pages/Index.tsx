@@ -171,6 +171,16 @@ function CounterStat() {
   );
 }
 
+function AboutCounter() {
+  const { count, ref } = useCountUp(500, 2200, 10);
+  return (
+    <div ref={ref} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
+      <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{count}+</div>
+      <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>учеников</div>
+    </div>
+  );
+}
+
 function ReviewsCarousel() {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -435,12 +445,13 @@ export default function Index() {
             </div>
 
             <div style={{ display: "flex", gap: 12 }}>
-              {[["7+", "лет в Артёме"], ["500+", "учеников"], ["10+", "инструкторов"]].map(([n, l]) => (
+              {[["7+", "лет в Артёме"], ["10+", "инструкторов"]].map(([n, l]) => (
                 <div key={l} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
                   <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>{l}</div>
                 </div>
               ))}
+              <AboutCounter />
             </div>
           </div>
         </div>
