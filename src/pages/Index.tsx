@@ -319,7 +319,7 @@ export default function Index() {
             </div>
 
             <div className="pp-fade-up d4" style={{ display: "flex", gap: 40, paddingTop: 32, borderTop: "1px solid var(--pp-border)", flexWrap: "wrap" }}>
-              {[["500+", "Учеников"], ["5 лет", "Практики"], ["98%", "Приходят снова"], ["4", "Формата"]].map(([n, l]) => (
+              {[["500+", "Учеников"], ["7 лет", "Практики"], ["98%", "Приходят снова"], ["4", "Формата"]].map(([n, l]) => (
                 <div key={l}>
                   <div style={{ ...S, fontSize: 34, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>{l}</div>
@@ -398,7 +398,7 @@ export default function Index() {
             </div>
 
             <div style={{ display: "flex", gap: 12 }}>
-              {[["5+", "лет в Артёме"], ["500+", "учеников"], ["10+", "инструкторов"]].map(([n, l]) => (
+              {[["7+", "лет в Артёме"], ["500+", "учеников"], ["10+", "инструкторов"]].map(([n, l]) => (
                 <div key={l} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
                   <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>{l}</div>
