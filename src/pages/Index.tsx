@@ -323,7 +323,7 @@ export default function Index() {
             {/* Бейдж */}
             <div style={{ position: "absolute", bottom: 28, left: -24, background: "var(--pp-cream-2)", borderRadius: 16, padding: "16px 20px", boxShadow: "0 12px 40px rgba(31,29,24,0.12)", border: "1px solid var(--pp-border)", maxWidth: 220 }}>
               <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)", marginBottom: 4 }}>🏅 Международная сертификация</div>
-              <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>AAYA · Yoga Alliance · Диплом гос. образца</div>
+              <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>Диплом государственного образца</div>
             </div>
             {/* Ярлычок Аэройога */}
             <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)" }}>
