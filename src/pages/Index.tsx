@@ -221,7 +221,7 @@ export default function Index() {
           <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
             <div style={{ width: 40, height: 40, borderRadius: "50%", border: "1.5px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🪢</div>
             <div>
-              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Пространство Пара</div>
+              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Фитнслим</div>
               <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Aerial · Sound · Wellness</div>
             </div>
           </a>
@@ -603,7 +603,7 @@ export default function Index() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
             <div>
-              <div style={{ ...S, fontSize: 24, fontStyle: "italic", color: "#fff", marginBottom: 12 }}>Пространство Пара</div>
+              <div style={{ ...S, fontSize: 24, fontStyle: "italic", color: "#fff", marginBottom: 12 }}>Фитнслим</div>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: "32ch" }}>
                 Студия аэройоги, гонг-медитаций и обучения инструкторов. Место, где тело парит, а разум молчит.
               </p>
@@ -633,7 +633,7 @@ export default function Index() {
             </div>
           </div>
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2026 Пространство Пара. Все права защищены.</span>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2026 Фитнслим. Все права защищены.</span>
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>Гамаки сертифицированы · нагрузка до 200 кг · первое занятие бесплатно</span>
           </div>
         </div>
@@ -717,7 +717,7 @@ export default function Index() {
                   Заявка <em style={{ color: "var(--pp-teal)" }}>принята!</em>
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 28 }}>
-                  Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас в Пространстве Пара!
+                  Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас в Фитнслим!
                 </p>
                 <button className="pp-btn-ghost" onClick={() => { setShowForm(false); resetForm(); }} style={{ margin: "0 auto", display: "flex" }}>
                   Закрыть
