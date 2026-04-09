@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const IMG_AERIAL = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg";
@@ -60,18 +60,23 @@ const STEPS = [
 const REVIEWS = [
   {
     avatar: "🌸",
-    text: "«После первой же гонг-медитации я спала 9 часов без пробуждений. До этого 2 года была бессонница. Не верила, что это работает.»",
-    name: "Марина К.", meta: "Посетительница, 38 лет",
+    text: "«Моя любимая студия аэройоги! Хожу сюда с самого открытия и это действительно то место, где я отдыхаю и телом, и душой. Хочу поблагодарить Алёну Самарину за то, что благодаря ней я познакомилась с аэройогой. Мне очень нравятся занятия Здоровая спина у Даньшиной Евгении. И отдельно хочу отметить, что в студии работают прекрасные массажисты, остеопат и косметолог, услугами которых я пользуюсь регулярно.»",
+    name: "Apple User", meta: "⭐⭐⭐⭐⭐",
   },
   {
     avatar: "🌿",
-    text: "«Думала, аэройога — это для гимнасток. Пришла с нулевой растяжкой, а через месяц делаю шпагат в гамаке. Спина перестала болеть.»",
-    name: "Ольга В.", meta: "Ученица аэройоги, 44 года",
+    text: "«ЛУЧШАЯ СТУДИЯ В Г. АРТЁМ! Команда fit'n'slim чудесна, вежливый персонал, общение с клиентами на высшем уровне. Всегда чисто, уютно. Атмосфера в студии прекрасна, хочется возвращаться снова и снова. Мою любовь к аэройоге привила инструктор Елена. Хочется отметить Самарину Алену Владимировну — основательницу студии. После каждого занятия я чувствую прилив энергии и силы. Рекомендую!»",
+    name: "Екатерина Трешина", meta: "⭐⭐⭐⭐⭐",
   },
   {
     avatar: "🦋",
-    text: "«Это единственное место, где я могу полностью отключить голову. Aerial Sounds — нечто невероятное. Хожу уже год.»",
-    name: "Елена Д.", meta: "Постоянная ученица, 35 лет",
+    text: "«Моё знакомство с йогой случилось здесь 4 года назад. За это время изменилось и моё физическое тело, и общее здоровье, и даже мировосприятие. Перестала болеть спина, ушёл «вдовий горб», поясница пришла в норму. Дыхательные практики научили справляться с бессонницей. В студии каждый из инструкторов — мастер своего дела. Для каждого находится время, доброе слово и индивидуальный подход.»",
+    name: "Наша Мокеева", meta: "⭐⭐⭐⭐⭐",
+  },
+  {
+    avatar: "🌺",
+    text: "«О, я реально в восторге — это потрясающе божественное место! Тренер Оксана супер интегрированно ведёт аэройогу, после занятия дали чаю с орехами, ну а гигиенический душ во всех туалетах меня окончательно покорил.»",
+    name: "Гость студии", meta: "⭐⭐⭐⭐⭐",
   },
 ];
 
@@ -94,6 +99,65 @@ const FAQS = [
 ];
 
 const S = { fontFamily: "'Cormorant', Georgia, serif" };
+
+function ReviewsCarousel() {
+  const [current, setCurrent] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const start = () => {
+    timerRef.current = setInterval(() => {
+      setCurrent(c => (c + 1) % REVIEWS.length);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    start();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  const goTo = (i: number) => {
+    setCurrent(i);
+    if (timerRef.current) clearInterval(timerRef.current);
+    start();
+  };
+
+  const r = REVIEWS[current];
+
+  return (
+    <section id="reviews" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <div style={{ marginBottom: 48, textAlign: "center" }}>
+          <div className="pp-label" style={{ marginBottom: 16 }}>Отзывы</div>
+          <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1 }}>
+            Как меняются люди уже через <em style={{ color: "var(--pp-teal)" }}>4 занятия</em>
+          </h2>
+        </div>
+
+        <div className="pp-card" style={{ padding: "40px 44px", minHeight: 260, display: "flex", flexDirection: "column", justifyContent: "space-between", transition: "opacity 0.4s" }}>
+          <div style={{ color: "var(--pp-gold)", letterSpacing: 3, marginBottom: 20, fontSize: 18 }}>★★★★★</div>
+          <p style={{ ...S, fontSize: "clamp(16px, 2vw, 19px)", fontStyle: "italic", color: "var(--pp-text)", lineHeight: 1.7, marginBottom: 28 }}>{r.text}</p>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{r.avatar}</div>
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</div>
+              <div style={{ fontSize: 13, color: "var(--pp-muted)" }}>{r.meta}</div>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "center", gap: 10, marginTop: 28 }}>
+          {REVIEWS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              style={{ width: i === current ? 28 : 10, height: 10, borderRadius: 5, border: "none", cursor: "pointer", background: i === current ? "var(--pp-teal)" : "var(--pp-teal-light)", transition: "all 0.3s", padding: 0 }}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -366,32 +430,7 @@ export default function Index() {
       </section>
 
       {/* ── ОТЗЫВЫ ───────────────────────────────────────── */}
-      <section id="reviews" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ marginBottom: 48 }}>
-            <div className="pp-label" style={{ marginBottom: 16 }}>Отзывы</div>
-            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1 }}>
-              Как меняются люди уже через <em style={{ color: "var(--pp-teal)" }}>4 занятия</em>
-            </h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-            {REVIEWS.map((r, i) => (
-              <div key={i} className="pp-card" style={{ padding: 28 }}>
-                <div style={{ color: "var(--pp-gold)", letterSpacing: 2, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
-                <p style={{ ...S, fontSize: 17, fontStyle: "italic", color: "var(--pp-text)", lineHeight: 1.6, marginBottom: 20 }}>{r.text}</p>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--pp-teal-light)", border: "2px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{r.avatar}</div>
-                  <div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</div>
-                    <div style={{ fontSize: 12, color: "var(--pp-muted)" }}>{r.meta}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReviewsCarousel />
 
       {/* ── ОБУЧЕНИЕ ─────────────────────────────────────── */}
       <section id="training" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
