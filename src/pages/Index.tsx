@@ -386,7 +386,7 @@ export default function Index() {
           </div>
 
           {/* Аэройога — главная карточка */}
-          <div style={{ background: "linear-gradient(135deg, #2A6355 0%, #3A7D6B 60%, #4A9480 100%)", borderRadius: 24, padding: "40px 48px", marginBottom: 20, display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", overflow: "hidden" }}>
+          <div style={{ background: "linear-gradient(135deg, #3d2472 0%, #6b3fa0 60%, #8B5CC8 100%)", borderRadius: 24, padding: "40px 48px", marginBottom: 20, display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", overflow: "hidden" }}>
             {/* Рябь гонга */}
             <div style={{ position: "absolute", right: 120, top: "50%", transform: "translateY(-50%)" }}>
               {[0, 1, 2].map(i => (
