@@ -258,7 +258,7 @@ export default function Index() {
             </h1>
 
             <p className="pp-fade-up d2" style={{ fontSize: 18, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 16, fontWeight: 400, maxWidth: 460 }}>
-              Уже после первого занятия. Аэройога · Гонг-медитации · Aerial Sounds · Обучение инструкторов
+              Аэройога · Хатха-йога · Айенгара йога · Йогатерапия · Йога для беременных · Гонг-медитации · Aerial Sounds · Обучение инструкторов
             </p>
 
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
