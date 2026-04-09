@@ -339,6 +339,11 @@ export default function Index() {
               <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>✨ Аэройога</div>
               <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>Только у нас</div>
             </div>
+
+            {/* Кнопка телефон */}
+            <a href="tel:+79147012883" style={{ position: "absolute", bottom: 24, right: -16, background: "#c8b8e8", borderRadius: 50, width: 56, height: 56, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 20px rgba(139,93,200,0.4)", textDecoration: "none", animation: "phonePulse 1.8s ease-in-out infinite" }}>
+              <Icon name="Phone" size={22} style={{ color: "#fff" }} />
+            </a>
           </div>
         </div>
       </section>
