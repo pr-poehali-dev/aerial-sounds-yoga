@@ -60,7 +60,7 @@ export default function Index() {
           <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
             <div style={{ width: 40, height: 40, borderRadius: "50%", border: "1.5px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🪢</div>
             <div>
-              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Студия Аэройоги и Йоги</div>
+              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Студия Аэройоги, Йоги и Спа</div>
               <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
             </div>
           </a>
