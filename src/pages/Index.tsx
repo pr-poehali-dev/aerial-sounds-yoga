@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 import ReviewsCarousel from "@/components/studio/ReviewsCarousel";
 import BackHealthSection from "@/components/studio/BackHealthSection";
 import ContactForm from "@/components/studio/ContactForm";
+import PrivacyModal from "@/components/studio/PrivacyModal";
 import {
   IMG_AERIAL, IMG_GONG,
   SERVICES, PAINS, BENEFITS, STEPS, TRUST, FAQ_TABS,
@@ -50,6 +51,7 @@ export default function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [faqTab, setFaqTab] = useState(0);
   const [showForm, setShowForm] = useState(false);
+  const [privacyModal, setPrivacyModal] = useState<"privacy" | "consent" | null>(null);
 
   return (
     <div style={{ background: "var(--pp-cream)", minHeight: "100vh", color: "var(--pp-text)" }}>
@@ -572,8 +574,21 @@ export default function Index() {
           </div>
 
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2019–2026 Фитнслим · г. Артём</span>
-            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>Гамаки сертифицированы · нагрузка до 200 кг · первое занятие бесплатно</span>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2019–2026 Студия Аэройоги, Йоги и Спа · г. Артём</span>
+            <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }}>
+              <button onClick={() => setPrivacyModal("privacy")}
+                style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", background: "none", border: "none", cursor: "pointer", padding: 0, transition: "color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}>
+                Политика конфиденциальности
+              </button>
+              <button onClick={() => setPrivacyModal("consent")}
+                style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", background: "none", border: "none", cursor: "pointer", padding: 0, transition: "color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}>
+                Согласие на обработку данных
+              </button>
+            </div>
           </div>
         </div>
       </footer>
@@ -581,6 +596,11 @@ export default function Index() {
       {/* ── МОДАЛЬНАЯ ФОРМА ──────────────────────────────── */}
       {showForm && (
         <ContactForm onClose={() => setShowForm(false)} />
+      )}
+
+      {/* ── МОДАЛКИ ПОЛИТИКИ ─────────────────────────────── */}
+      {privacyModal && (
+        <PrivacyModal type={privacyModal} onClose={() => setPrivacyModal(null)} />
       )}
 
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
