@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { API_URL } from "./data";
+import PrivacyModal from "./PrivacyModal";
 
 const S = { fontFamily: "var(--font-serif)" };
 
@@ -16,6 +17,8 @@ export default function ContactForm({ onClose }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [agreed, setAgreed] = useState(false);
+  const [privacyModal, setPrivacyModal] = useState<"privacy" | "consent" | null>(null);
 
   const resetForm = () => {
     setName(""); setPhone(""); setService(""); setMessage("");
@@ -48,6 +51,7 @@ export default function ContactForm({ onClose }: Props) {
   };
 
   return (
+    <>
     <div
       style={{ position: "fixed", inset: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
       onClick={e => { if (e.target === e.currentTarget) handleClose(); }}
@@ -99,7 +103,28 @@ export default function ContactForm({ onClose }: Props) {
                 </div>
               )}
 
-              <button type="submit" className="pp-btn-primary" disabled={loading} style={{ justifyContent: "center", marginTop: 4, opacity: loading ? 0.7 : 1, transition: "opacity 0.2s" }}>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer", userSelect: "none" }}>
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={e => setAgreed(e.target.checked)}
+                  style={{ marginTop: 2, width: 16, height: 16, accentColor: "var(--pp-teal)", flexShrink: 0, cursor: "pointer" }}
+                />
+                <span style={{ fontSize: 12, color: "var(--pp-muted)", lineHeight: 1.6 }}>
+                  Я ознакомился(-ась) с{" "}
+                  <button type="button" onClick={() => setPrivacyModal("consent")}
+                    style={{ background: "none", border: "none", padding: 0, fontSize: 12, color: "var(--pp-teal)", cursor: "pointer", textDecoration: "underline" }}>
+                    согласием на обработку персональных данных
+                  </button>{" "}
+                  и{" "}
+                  <button type="button" onClick={() => setPrivacyModal("privacy")}
+                    style={{ background: "none", border: "none", padding: 0, fontSize: 12, color: "var(--pp-teal)", cursor: "pointer", textDecoration: "underline" }}>
+                    политикой конфиденциальности
+                  </button>
+                </span>
+              </label>
+
+              <button type="submit" className="pp-btn-primary" disabled={loading || !agreed} style={{ justifyContent: "center", marginTop: 4, opacity: (loading || !agreed) ? 0.6 : 1, transition: "opacity 0.2s" }}>
                 {loading ? (
                   <>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ animation: "spin 0.8s linear infinite" }}><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
@@ -133,5 +158,10 @@ export default function ContactForm({ onClose }: Props) {
         )}
       </div>
     </div>
+
+    {privacyModal && (
+      <PrivacyModal type={privacyModal} onClose={() => setPrivacyModal(null)} />
+    )}
+  </>
   );
 }
