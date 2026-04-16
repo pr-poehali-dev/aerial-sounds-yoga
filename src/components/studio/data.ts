@@ -97,7 +97,7 @@ export const REVIEWS = [
 
 export const TRUST = [
   { emoji: "🏋️", img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/c5440adb-58ec-4501-b676-badfb1afa55e.jpg", title: "Гамаки до 200 кг", text: "Сертифицированные крепления, ежемесячная проверка" },
-  { emoji: "👥", img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/7f2f8908-52fe-4820-b70c-119adc8864b1.jpg", title: "Малые группы", text: "Максимум 8 человек — каждый под вниманием" },
+  { emoji: "👥", img: "https://cdn.poehali.dev/files/d0bc6fc1-32d8-4403-acea-c0a104210a90.jpg", title: "Малые группы", text: "Максимум 8 человек — каждый под вниманием" },
   { emoji: "🎓", title: "Международный сертификат", text: "Международная ассоциация аэройоги, Альянс йоги, диплом гос. образца" },
   { emoji: "🔄", title: "Гибкое расписание", text: "Утренние, дневные, вечерние. Перенос без штрафов" },
   { emoji: "💫", title: "Пробное — по спец цене", text: "Первое занятие по специальной цене" },
