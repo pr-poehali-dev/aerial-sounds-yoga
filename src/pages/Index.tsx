@@ -68,8 +68,8 @@ export default function Index() {
             </div>
           </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-            {["О нас", "Услуги", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
-              <a key={t} href={`#${["about","services","training","reviews","faq"][i]}`}
+            {["Главная", "Тренировки", "О нас", "Спец предложения", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
+              <a key={t} href={`#${["hero","services","about","specials","training","reviews","faq"][i]}`}
                 style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
                 onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
@@ -83,7 +83,7 @@ export default function Index() {
       </nav>
 
       {/* ── HERO ──────────────────────────────────────────── */}
-      <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 68 }}>
+      <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 68 }}>
         <div style={{ position: "absolute", top: "10%", right: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(58,125,107,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: "5%", left: "-5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,169,106,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
 
@@ -491,7 +491,7 @@ export default function Index() {
       </section>
 
       {/* ── ФИНАЛЬНЫЙ CTA ────────────────────────────────── */}
-      <section style={{ padding: "100px 24px", background: "var(--pp-cream)", position: "relative", overflow: "hidden" }}>
+      <section id="specials" style={{ padding: "100px 24px", background: "var(--pp-cream)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(58,125,107,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
           <div style={{ fontSize: 56, marginBottom: 24 }} className="pp-float">🪢</div>
