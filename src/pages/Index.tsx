@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import ReviewsCarousel from "@/components/studio/ReviewsCarousel";
+import DirectionsPoster from "@/components/studio/DirectionsPoster";
 import BackHealthSection from "@/components/studio/BackHealthSection";
 import ContactForm from "@/components/studio/ContactForm";
 import PrivacyModal from "@/components/studio/PrivacyModal";
@@ -288,6 +289,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <DirectionsPoster />
 
       {/* ── УСЛУГИ ───────────────────────────────────────── */}
       <section id="services" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
