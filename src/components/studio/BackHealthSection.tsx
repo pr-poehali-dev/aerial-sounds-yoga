@@ -15,7 +15,7 @@ const FORMATS = [
   { title: "Мини-группа", desc: "До 4 человек. Инструктор следит за каждым.", price: "от 600 ₽" },
   { title: "Индивидуально", desc: "Полностью под ваш диагноз и запрос.", price: "от 1500 ₽" },
   { title: "Курс 8 занятий", desc: "Полный цикл с ощутимым результатом.", price: "от 4200 ₽" },
-  { title: "По направлению врача", desc: "Работаем с остеопатами и неврологами.", price: "Уточнить" },
+
 ];
 
 interface Props {
@@ -31,7 +31,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
         <div style={{ marginBottom: 56, maxWidth: 680 }}>
           <div className="pp-label" style={{ marginBottom: 16 }}>Программа</div>
           <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
-            Здоровая <em style={{ color: "#e07b54" }}>спина</em>
+            Здоровая <em style={{ color: "var(--pp-teal)" }}>спина</em>
           </h2>
           <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75 }}>
             Авторская программа для тех, кто устал жить с болью. Мягкая декомпрессия позвоночника в гамаке + терапевтические упражнения с болстерами и ремнями — без таблеток и хирургии.
@@ -67,7 +67,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
                 "Индивидуальный подбор нагрузки",
               ].map((text, i) => (
                 <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                  <Icon name="CheckCircle" size={18} style={{ color: "#e07b54", flexShrink: 0, marginTop: 2 }} />
+                  <Icon name="CheckCircle" size={18} style={{ color: "var(--pp-teal)", flexShrink: 0, marginTop: 2 }} />
                   <span style={{ fontSize: 15, color: "var(--pp-text)", lineHeight: 1.5 }}>{text}</span>
                 </div>
               ))}
@@ -78,15 +78,15 @@ export default function BackHealthSection({ onShowForm }: Props) {
         {/* Результаты */}
         <div style={{ marginBottom: 56 }}>
           <h3 style={{ ...S, fontSize: 28, fontWeight: 400, marginBottom: 28, textAlign: "center" }}>
-            Что говорят <em style={{ color: "#e07b54" }}>после курса</em>
+            Что говорят <em style={{ color: "var(--pp-teal)" }}>после курса</em>
           </h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
             {RESULTS.map((r, i) => (
               <div key={i} className="pp-card" style={{ padding: "28px 32px" }}>
-                <div style={{ color: "#e07b54", letterSpacing: 3, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
+                <div style={{ color: "var(--pp-teal)", letterSpacing: 3, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
                 <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 20, fontStyle: "italic" }}>{r.result}</p>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <img src={r.img} alt={r.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid #e07b54" }} />
+                  <img src={r.img} alt={r.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--pp-teal)" }} />
                   <span style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</span>
                 </div>
               </div>
@@ -101,11 +101,11 @@ export default function BackHealthSection({ onShowForm }: Props) {
               <div key={i} style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 22px" }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 6 }}>{f.title}</div>
                 <div style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.5, marginBottom: 12 }}>{f.desc}</div>
-                <div style={{ fontSize: 18, fontWeight: 500, color: "#e07b54", fontFamily: "var(--font-serif)" }}>{f.price}</div>
+                <div style={{ fontSize: 18, fontWeight: 500, color: "var(--pp-teal)", fontFamily: "var(--font-serif)" }}>{f.price}</div>
               </div>
             ))}
           </div>
-          <div style={{ background: "linear-gradient(135deg, #e07b54 0%, #c4623e 100%)", borderRadius: 24, padding: "40px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div style={{ background: "linear-gradient(135deg, #c9a8e0 0%, #a87cc7 100%)", borderRadius: 24, padding: "40px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 16 }}>Запись на программу</div>
               <h3 style={{ ...S, fontSize: 32, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
@@ -116,7 +116,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#c4623e", justifyContent: "center", fontWeight: 600 }}>
+              <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#a87cc7", justifyContent: "center", fontWeight: 600 }}>
                 Записаться на первое занятие
               </button>
               <a href="https://wa.me/79147070440" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 14, color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
