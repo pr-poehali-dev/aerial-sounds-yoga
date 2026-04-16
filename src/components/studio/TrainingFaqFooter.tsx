@@ -83,7 +83,13 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {TRUST.map((t, i) => (
               <div key={i} className="pp-card" style={{ padding: "28px 20px", textAlign: "center" }}>
-                <div style={{ fontSize: 36, marginBottom: 12 }}>{t.emoji}</div>
+                {t.img ? (
+                  <div style={{ width: 64, height: 64, borderRadius: "50%", overflow: "hidden", margin: "0 auto 12px", border: "2px solid var(--pp-border)" }}>
+                    <img src={t.img} alt={t.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </div>
+                ) : (
+                  <div style={{ fontSize: 36, marginBottom: 12 }}>{t.emoji}</div>
+                )}
                 <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 6 }}>{t.title}</div>
                 <div style={{ fontSize: 12, color: "var(--pp-muted)", lineHeight: 1.5 }}>{t.text}</div>
               </div>
