@@ -9,7 +9,7 @@ export default function NavBar({ onShowForm }: Props) {
     <nav className="pp-nav">
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <img src="https://cdn.poehali.dev/files/afae13c0-0bc1-415f-a03b-03cd7f0778d7.png" alt="Логотип" style={{ width: 48, height: 48, objectFit: "contain" }} />
+          <img src="https://cdn.poehali.dev/files/afae13c0-0bc1-415f-a03b-03cd7f0778d7.png" alt="Логотип" style={{ width: 64, height: 64, objectFit: "contain" }} />
           <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
         </a>
         <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
