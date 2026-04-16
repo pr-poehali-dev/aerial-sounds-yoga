@@ -61,7 +61,7 @@ export default function ServicesSection({ onShowForm }: Props) {
 
           {/* Остальные услуги */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-            {SERVICES.slice(0, 2).map((s, i) => (
+            {SERVICES.filter(s => s.title !== "Аэройога в гамаках" && !("exclusive" in s)).map((s, i) => (
               <div key={i} className="pp-card" style={{ padding: 32, display: "flex", flexDirection: "column" }}>
                 <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", marginBottom: 20, border: "2px solid var(--pp-border)" }}>
                   <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
