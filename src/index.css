@@ -26,18 +26,18 @@
     --radius: 0.5rem;
 
     /* Пространство Пара Brand */
-    --pp-cream: #f4f0f8;
-    --pp-cream-2: #faf8fd;
-    --pp-cream-3: #ebe4f4;
-    --pp-teal: #a855f7;
-    --pp-teal-light: #f3e8ff;
-    --pp-teal-dark: #7c3aed;
-    --pp-gold: #e879f9;
-    --pp-gold-light: #fdf4ff;
-    --pp-text: #1a1025;
-    --pp-muted: #7c6f9a;
-    --pp-faint: #a99ec0;
-    --pp-border: #e2d9f3;
+    --pp-cream: #faf5ff;
+    --pp-cream-2: #faf5ff;
+    --pp-cream-3: #f0e8f8;
+    --pp-teal: #c47aaa;
+    --pp-teal-light: #fdf0f8;
+    --pp-teal-dark: #9b3eb8;
+    --pp-gold: #e8b4d0;
+    --pp-gold-light: #fff5fb;
+    --pp-text: #5a3a6e;
+    --pp-muted: #9070a0;
+    --pp-faint: #b89ec8;
+    --pp-border: #e8d8f0;
     --font-serif: "Playfair Display", Georgia, serif;
   }
 }
@@ -57,6 +57,7 @@
   h2,
   h3 {
     font-family: "Playfair Display", Georgia, serif;
+    color: #3d1260;
   }
 }
 
@@ -64,13 +65,13 @@
   0%,
   100% {
     box-shadow:
-      0 4px 20px rgba(139, 93, 200, 0.4),
-      0 0 0 0 rgba(200, 184, 232, 0.6);
+      0 4px 20px rgba(196, 122, 170, 0.4),
+      0 0 0 0 rgba(232, 180, 208, 0.6);
   }
   50% {
     box-shadow:
-      0 4px 20px rgba(139, 93, 200, 0.4),
-      0 0 0 12px rgba(200, 184, 232, 0);
+      0 4px 20px rgba(196, 122, 170, 0.4),
+      0 0 0 12px rgba(232, 180, 208, 0);
   }
 }
 
@@ -178,7 +179,7 @@
 }
 
 .pp-btn-primary {
-  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #c47aaa 0%, #9b3eb8 100%);
   color: #fff;
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -193,12 +194,12 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
+  box-shadow: 0 4px 20px rgba(196, 122, 170, 0.35);
 }
 .pp-btn-primary:hover {
-  background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%);
+  background: linear-gradient(135deg, #b86a9a 0%, #7b3a9a 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.45);
+  box-shadow: 0 8px 32px rgba(196, 122, 170, 0.45);
 }
 
 .pp-btn-ghost {
@@ -225,8 +226,8 @@
 }
 
 .pp-btn-gold {
-  background: linear-gradient(135deg, #e879f9 0%, #a855f7 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #e8b4d0 0%, #c47aaa 100%);
+  color: #3d1260;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
@@ -239,12 +240,12 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(232, 121, 249, 0.3);
+  box-shadow: 0 4px 20px rgba(232, 180, 208, 0.4);
 }
 .pp-btn-gold:hover {
-  background: linear-gradient(135deg, #d946ef 0%, #9333ea 100%);
+  background: linear-gradient(135deg, #dea4c4 0%, #b86a9a 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(232, 121, 249, 0.4);
+  box-shadow: 0 8px 28px rgba(232, 180, 208, 0.5);
 }
 
 .pp-card {
@@ -254,8 +255,8 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .pp-card:hover {
-  border-color: rgba(124, 92, 191, 0.3);
-  box-shadow: 0 20px 60px rgba(31, 29, 24, 0.08);
+  border-color: rgba(196, 122, 170, 0.35);
+  box-shadow: 0 20px 60px rgba(61, 18, 96, 0.08);
   transform: translateY(-3px);
 }
 
@@ -267,7 +268,7 @@
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(245, 241, 234, 0.9);
+  background: rgba(250, 245, 255, 0.92);
   border-bottom: 1px solid var(--pp-border);
 }
 
@@ -294,7 +295,7 @@
 .gong-ripple {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(124, 92, 191, 0.35);
+  border: 1px solid rgba(196, 122, 170, 0.35);
   animation: ripple 3s ease-out infinite;
 }
 
