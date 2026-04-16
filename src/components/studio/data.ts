@@ -14,16 +14,6 @@ export const SERVICES = [
     color: "var(--pp-teal)",
   },
   {
-    emoji: "🔔",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/70fc32d6-2106-42f0-8af9-fa47c0451d05.jpg",
-    title: "Гонг-медитации",
-    desc: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать — никакой подготовки не нужно. Подходит абсолютно всем.",
-    tags: ["Групповые", "VIP мини-группы", "Корпоративные"],
-    price: "от 1500 ₽",
-    per: "сеанс",
-    color: "var(--pp-gold)",
-  },
-  {
     emoji: "🦴",
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/86bc746d-101a-417d-9e53-7483e7971b23.jpg",
     title: "Здоровая спина",
@@ -32,6 +22,16 @@ export const SERVICES = [
     price: "от 600 ₽",
     per: "занятие",
     color: "#e07b54",
+  },
+  {
+    emoji: "🔔",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/70fc32d6-2106-42f0-8af9-fa47c0451d05.jpg",
+    title: "Гонг-медитации",
+    desc: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать — никакой подготовки не нужно. Подходит абсолютно всем.",
+    tags: ["Групповые", "VIP мини-группы", "Корпоративные"],
+    price: "от 1500 ₽",
+    per: "сеанс",
+    color: "var(--pp-gold)",
   },
   {
     emoji: "✨",
