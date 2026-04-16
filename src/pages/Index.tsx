@@ -60,12 +60,9 @@ export default function Index() {
       {/* ── НАВИГАЦИЯ ─────────────────────────────────────── */}
       <nav className="pp-nav">
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 68 }}>
-          <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <div style={{ width: 40, height: 40, borderRadius: "50%", border: "1.5px solid var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🪢</div>
-            <div>
-              <div style={{ ...S, fontSize: 18, fontWeight: 500, color: "var(--pp-text)", lineHeight: 1.1 }}>Студия Аэройоги, Йоги и Спа</div>
-              <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
-            </div>
+          <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+            <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/b78e0551-7d2f-42ec-815b-7a633122f4b8.png" alt="Логотип" style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }} />
+            <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
           </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
             {["Главная", "Тренировки", "О нас", "Спец предложения", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
