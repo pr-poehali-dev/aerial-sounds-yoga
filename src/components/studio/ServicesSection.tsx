@@ -1,5 +1,4 @@
 import Icon from "@/components/ui/icon";
-import DirectionsPoster from "./DirectionsPoster";
 import ReviewsCarousel from "./ReviewsCarousel";
 import { SERVICES } from "./data";
 
@@ -12,8 +11,6 @@ interface Props {
 export default function ServicesSection({ onShowForm }: Props) {
   return (
     <>
-      <DirectionsPoster />
-
       {/* ── УСЛУГИ ───────────────────────────────────────── */}
       <section id="services" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>

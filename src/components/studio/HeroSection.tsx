@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS } from "./data";
 import BackHealthSection from "./BackHealthSection";
+import DirectionsPoster from "./DirectionsPoster";
 
 const S = { fontFamily: "var(--font-serif)" };
 
@@ -63,15 +64,6 @@ export default function HeroSection({ onShowForm }: Props) {
               Почувствуй<br /><em style={{ color: "var(--pp-teal)" }}>лёгкость</em><br />тела и тишину ума
             </h1>
 
-            <p className="pp-fade-up d2" style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-teal)", marginBottom: 12 }}>
-              Направления студии
-            </p>
-            <div className="pp-fade-up d2" style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 32 }}>
-              {["🪢 Аэройога", "🔔 Гонг-медитации", "🧘 Хатха йога", "🤸 Йога Айенгара", "🌸 Йога для беременных", "🦴 Здоровая спина"].map(t => (
-                <span key={t} style={{ fontSize: 13, color: "var(--pp-muted)", background: "var(--pp-cream-3)", borderRadius: 100, padding: "6px 14px", border: "1px solid var(--pp-border)" }}>{t}</span>
-              ))}
-            </div>
-
             <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "16px 32px", fontSize: 15 }}>
                 <Icon name="Sparkles" size={17} />
@@ -110,6 +102,8 @@ export default function HeroSection({ onShowForm }: Props) {
           </div>
         </div>
       </section>
+
+      <DirectionsPoster />
 
       {/* ── О НАС ────────────────────────────────────────── */}
       <section id="about" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
