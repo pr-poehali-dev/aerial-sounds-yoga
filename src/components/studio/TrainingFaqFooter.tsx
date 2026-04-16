@@ -201,7 +201,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>Контакты</div>
               <div style={{ marginBottom: 10 }}>
                 <a href="tel:+79147012883" style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", textDecoration: "none" }}>+7 (914) 701-28-83</a>
-                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", marginTop: 2 }}>Фитнслим</div>
+                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", marginTop: 2 }}>Студия Аэройоги, Йоги и Фитнеса</div>
               </div>
               <div style={{ marginBottom: 10 }}>
                 <a href="tel:+79089803545" style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", textDecoration: "none" }}>+7 (908) 980-35-45</a>

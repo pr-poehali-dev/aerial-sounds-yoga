@@ -84,7 +84,7 @@ export default function HeroSection({ onShowForm }: Props) {
             </div>
 
             <div className="pp-fade-up d3" style={{ marginTop: 32, display: "flex", gap: 20 }}>
-              {[["7+", "лет в городе"], ["500+", "учеников"], ["10+", "инструкторов"]].map(([n, l]) => (
+              {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
                 <div key={l} style={{ textAlign: "center" }}>
                   <div style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>{n}</div>
                   <div style={{ fontSize: 11, color: "var(--pp-muted)", marginTop: 2 }}>{l}</div>
@@ -141,7 +141,7 @@ export default function HeroSection({ onShowForm }: Props) {
                   </div>
                   <div>
                     <div>+7 (914) 701-28-83</div>
-                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Фитнслим</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Студия Аэройоги, Йоги и Фитнеса</div>
                   </div>
                 </a>
                 <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>
@@ -166,7 +166,7 @@ export default function HeroSection({ onShowForm }: Props) {
             </div>
 
             <div style={{ display: "flex", gap: 12 }}>
-              {[["7+", "лет в Артёме"], ["10+", "инструкторов"]].map(([n, l]) => (
+              {[["7+", "лет в Артёме"]].map(([n, l]) => (
                 <div key={l} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
                   <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>{l}</div>
