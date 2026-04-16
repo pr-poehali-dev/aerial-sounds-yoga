@@ -57,7 +57,9 @@ export default function ServicesSection({ onShowForm }: Props) {
               </button>
             </div>
 
-            <div style={{ fontSize: 80, textAlign: "center", position: "relative", zIndex: 1 }} className="pp-float">🔔</div>
+            <div style={{ position: "relative", zIndex: 1, width: 260, flexShrink: 0 }} className="pp-float">
+              <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg" alt="Аэройога" style={{ width: "100%", height: 320, objectFit: "cover", objectPosition: "center top", borderRadius: 20, display: "block" }} />
+            </div>
           </div>
 
           {/* Остальные услуги */}
