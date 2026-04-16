@@ -26,18 +26,19 @@
     --radius: 0.5rem;
 
     /* Пространство Пара Brand */
-    --pp-cream: #f5f1ea;
-    --pp-cream-2: #faf8f3;
-    --pp-cream-3: #ede8df;
-    --pp-teal: #7c5cbf;
-    --pp-teal-light: #ede5f8;
-    --pp-teal-dark: #5e3fa3;
-    --pp-gold: #c8a96a;
-    --pp-gold-light: #f0e6d0;
-    --pp-text: #1f1d18;
-    --pp-muted: #8b7daa;
-    --pp-faint: #a8a49c;
-    --pp-border: #ddd8ce;
+    --pp-cream: #f4f0f8;
+    --pp-cream-2: #faf8fd;
+    --pp-cream-3: #ebe4f4;
+    --pp-teal: #a855f7;
+    --pp-teal-light: #f3e8ff;
+    --pp-teal-dark: #7c3aed;
+    --pp-gold: #e879f9;
+    --pp-gold-light: #fdf4ff;
+    --pp-text: #1a1025;
+    --pp-muted: #7c6f9a;
+    --pp-faint: #a99ec0;
+    --pp-border: #e2d9f3;
+    --font-serif: "Playfair Display", Georgia, serif;
   }
 }
 
@@ -48,14 +49,14 @@
   body {
     background-color: var(--pp-cream);
     color: var(--pp-text);
-    font-family: "Golos Text", sans-serif;
+    font-family: "Inter", sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
   h1,
   h2,
   h3 {
-    font-family: "Cormorant", Georgia, serif;
+    font-family: "Playfair Display", Georgia, serif;
   }
 }
 
@@ -159,7 +160,7 @@
 }
 
 .pp-display {
-  font-family: "Cormorant", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
 }
 .pp-label {
@@ -177,38 +178,38 @@
 }
 
 .pp-btn-primary {
-  background: var(--pp-teal);
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
   color: #fff;
-  font-family: "Golos Text", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  padding: 16px 40px;
-  border-radius: 100px;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  padding: 14px 36px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 24px rgba(124, 92, 191, 0.25);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
 }
 .pp-btn-primary:hover {
-  background: var(--pp-teal-dark);
+  background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(124, 92, 191, 0.35);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.45);
 }
 
 .pp-btn-ghost {
   background: transparent;
   color: var(--pp-muted);
-  font-family: "Golos Text", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  padding: 15px 32px;
-  border-radius: 100px;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  padding: 13px 32px;
+  border-radius: 12px;
   border: 1.5px solid var(--pp-border);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -224,25 +225,26 @@
 }
 
 .pp-btn-gold {
-  background: var(--pp-gold);
+  background: linear-gradient(135deg, #e879f9 0%, #a855f7 100%);
   color: #fff;
-  font-family: "Golos Text", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   padding: 14px 32px;
-  border-radius: 100px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(200, 169, 106, 0.3);
+  box-shadow: 0 4px 20px rgba(232, 121, 249, 0.3);
 }
 .pp-btn-gold:hover {
-  background: #b59450;
+  background: linear-gradient(135deg, #d946ef 0%, #9333ea 100%);
   transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232, 121, 249, 0.4);
 }
 
 .pp-card {
@@ -277,7 +279,7 @@
   padding: 14px 18px;
   color: var(--pp-text);
   font-size: 15px;
-  font-family: "Golos Text", sans-serif;
+  font-family: "Inter", sans-serif;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s;

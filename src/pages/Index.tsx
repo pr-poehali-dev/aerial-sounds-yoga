@@ -65,7 +65,7 @@ export default function Index() {
             <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
           </a>
           <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-            {["Главная", "Тренировки", "О нас", "Спец предложения", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
+            {["Главная", "Услуги", "О нас", "Спец предложения", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
               <a key={t} href={`#${["hero","services","about","specials","training","reviews","faq"][i]}`}
                 style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}

@@ -89,7 +89,7 @@ export default function ContactForm({ onClose }: Props) {
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                   {["Аэройога", "Гонг-медитация", "Аэройога", "Обучение"].map(s => (
                     <button key={s} type="button" onClick={() => setService(service === s ? "" : s)}
-                      style={{ padding: "8px 16px", borderRadius: 100, fontSize: 13, cursor: "pointer", transition: "all 0.18s", fontFamily: "'Golos Text', sans-serif", border: service === s ? "1.5px solid var(--pp-teal)" : "1.5px solid var(--pp-border)", background: service === s ? "var(--pp-teal-light)" : "transparent", color: service === s ? "var(--pp-teal)" : "var(--pp-muted)", fontWeight: service === s ? 600 : 400 }}>
+                      style={{ padding: "8px 16px", borderRadius: 100, fontSize: 13, cursor: "pointer", transition: "all 0.18s", fontFamily: "'Inter', sans-serif", border: service === s ? "1.5px solid var(--pp-teal)" : "1.5px solid var(--pp-border)", background: service === s ? "var(--pp-teal-light)" : "transparent", color: service === s ? "var(--pp-teal)" : "var(--pp-muted)", fontWeight: service === s ? 600 : 400 }}>
                       {s}
                     </button>
                   ))}
