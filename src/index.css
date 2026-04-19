@@ -75,6 +75,29 @@
   }
 }
 
+@keyframes btnPulseStrong {
+  0%,
+  100% {
+    box-shadow:
+      0 6px 32px rgba(155, 62, 184, 0.45),
+      0 0 0 0 rgba(155, 62, 184, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 6px 32px rgba(155, 62, 184, 0.45),
+      0 0 0 16px rgba(155, 62, 184, 0);
+    transform: scale(1.03);
+  }
+}
+
+.pp-btn-pulse-cta {
+  animation: btnPulseStrong 1.8s ease-in-out infinite !important;
+}
+.pp-btn-pulse-cta:hover {
+  animation: none !important;
+}
+
 @keyframes phonePulse {
   0%,
   100% {

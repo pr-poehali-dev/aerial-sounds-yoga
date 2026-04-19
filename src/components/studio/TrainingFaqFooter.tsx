@@ -150,11 +150,11 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           <div style={{ fontSize: 56, marginBottom: 24 }} className="pp-float">🪢</div>
           <div className="pp-label" style={{ marginBottom: 16 }}>Начни сегодня</div>
           <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20 }}>
-            Твой первый шаг —<br /><em style={{ color: "var(--pp-teal)" }}>по спец цене</em>
+            Твой первый шаг —<br /><em style={{ color: "var(--pp-teal)" }}>по специальной цене</em>
           </h2>
           <hr className="pp-divider" style={{ margin: "0 auto 24px" }} />
           <p style={{ fontSize: 17, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 32 }}>
-            Запишись на пробное занятие аэройогой или гонг-медитацию прямо сейчас.
+            Запишись на пробное занятие прямо сейчас и почувствуй лёгкость с первого раза.
           </p>
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(58,125,107,0.08)", border: "1px solid rgba(58,125,107,0.2)", borderRadius: 100, padding: "8px 20px", marginBottom: 36, fontSize: 13, color: "var(--pp-muted)" }}>
@@ -163,9 +163,9 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           </div>
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
-            <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "18px 48px", fontSize: 16 }}>
+            <button className="pp-btn-primary pp-btn-pulse-cta" onClick={onShowForm} style={{ padding: "20px 56px", fontSize: 17 }}>
               <Icon name="Sparkles" size={18} />
-              Записаться по спец цене
+              Записаться по специальной цене
             </button>
           </div>
 
