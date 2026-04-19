@@ -2,6 +2,7 @@ import { useState } from "react";
 import NavBar from "@/components/studio/NavBar";
 import HeroSection from "@/components/studio/HeroSection";
 import ServicesSection from "@/components/studio/ServicesSection";
+import GallerySection from "@/components/studio/GallerySection";
 import TrainingFaqFooter from "@/components/studio/TrainingFaqFooter";
 import ContactForm from "@/components/studio/ContactForm";
 import PrivacyModal from "@/components/studio/PrivacyModal";
@@ -15,6 +16,7 @@ export default function Index() {
       <NavBar onShowForm={() => setShowForm(true)} />
       <HeroSection onShowForm={() => setShowForm(true)} />
       <ServicesSection onShowForm={() => setShowForm(true)} />
+      <GallerySection />
       <TrainingFaqFooter onShowForm={() => setShowForm(true)} onShowPrivacy={setPrivacyModal} />
 
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}

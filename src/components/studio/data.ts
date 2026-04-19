@@ -124,6 +124,19 @@ export const TRUST = [
   { emoji: "🌿", title: "Атмосфера, не спортзал", text: "Ароматерапия, растения, чай после занятия" },
 ];
 
+export const GALLERY = [
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/f36291d5-b0d0-423e-ba84-98d1e00f59e6.jpg", title: "Аэройога — сольная практика", cat: "Аэройога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/14fe12c0-e8d5-47c9-887d-4d77711b7352.jpg", title: "Групповое занятие в гамаках", cat: "Аэройога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/156dce93-a4ca-4fa9-a285-f67fcdc78a57.jpg", title: "Перевёрнутые асаны", cat: "Аэройога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/ba3d66d2-73f4-446f-8172-4116917ec3c2.jpg", title: "Кокон — глубокое расслабление", cat: "Аэройога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/05f45da9-193d-4a42-b936-30172ed9b568.jpg", title: "Гонг-медитация", cat: "Гонг" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg", title: "Тибетские чаши и гонг", cat: "Гонг" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2739e5b1-00b3-485f-813f-55f94b338fcb.jpg", title: "Хатха йога — групповое занятие", cat: "Йога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5e4c4085-d411-4420-bb0e-85ed2774e384.jpg", title: "Йога для беременных", cat: "Йога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1ac733ee-4dcf-4654-bc36-e359c23f75f1.jpg", title: "Наша студия", cat: "Студия" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg", title: "Атмосфера студии", cat: "Студия" },
+];
+
 export const FAQ_TABS = [
   {
     label: "Аэройога & Гонг",
