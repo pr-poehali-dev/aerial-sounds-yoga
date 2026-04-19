@@ -188,7 +188,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
             <div>
-              <div style={{ ...S, fontSize: 24, fontStyle: "italic", color: "#fff", marginBottom: 12 }}>Фитнслим</div>
+              <div style={{ ...S, fontSize: 24, fontStyle: "italic", color: "#fff", marginBottom: 12 }}>Аэройога · Йога · Фитнес</div>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, maxWidth: "32ch" }}>
                 Студия аэройоги, гонг-медитаций и обучения инструкторов. Место, где тело парит, а разум молчит.
               </p>
