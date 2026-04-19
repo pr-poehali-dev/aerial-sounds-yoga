@@ -1,14 +1,14 @@
 const S = { fontFamily: "var(--font-serif)" };
 
 const directions = [
-  { label: "ГАМАК",        name: "АЭРОЙОГА",             sub: "Для начинающих и продолжающих" },
-  { label: "ГОНГ",         name: "ГОНГ-МЕДИТАЦИИ",        sub: "Тибетские чаши, гонг, монохорд" },
-  { label: "ЛОТОС",        name: "ХАТХА ЙОГА",            sub: "Классическая практика · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
-  { label: "БЛОК + РЕМЕНЬ",name: "ЙОГА АЙЕНГАРА",         sub: "Точность и выравнивание тела · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
-  { label: "ЦВЕТОК",       name: "ЙОГА ДЛЯ БЕРЕМЕННЫХ",  sub: "Бережная поддержка на каждом этапе · до 10 чел." },
-  { label: "ПОЗВОНОЧНИК",  name: "ЗДОРОВАЯ СПИНА",        sub: "Терапевтическая программа · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
-  { label: "КОВРИК",       name: "ФИТНЕС ТРЕНИРОВКИ",     sub: "Функциональный фитнес · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
-  { label: "КОВРИК",       name: "ЙОГАТЕРАПИЯ",           sub: "Терапевтическая практика · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/a3bbe7c3-7485-4953-a299-1eebeeb9bb57.jpg", name: "АЭРОЙОГА",             sub: "Для начинающих и продолжающих" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/51e3df72-7fb7-4a8b-8c41-f363d4d6d985.jpg", name: "ГОНГ-МЕДИТАЦИИ",        sub: "Тибетские чаши, гонг, монохорд" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/28a8b889-7bc4-4101-9f6f-52069389bfbb.jpg", name: "ХАТХА ЙОГА",            sub: "Классическая практика · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/12ebbf73-0f57-49b0-9543-23dbd20d4db7.jpg", name: "ЙОГА АЙЕНГАРА",         sub: "Точность и выравнивание тела · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/a23bb4f4-20a0-4dfc-ab5c-382de2889670.jpg", name: "ЙОГА ДЛЯ БЕРЕМЕННЫХ",  sub: "Бережная поддержка на каждом этапе · до 10 чел." },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc4642ee-fbed-41ee-b6e8-fc2931af9b60.jpg", name: "ЗДОРОВАЯ СПИНА",        sub: "Терапевтическая программа · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/bdd63353-93d4-48b2-bb7e-49b5e68a7757.jpg", name: "ФИТНЕС ТРЕНИРОВКИ",     sub: "Функциональный фитнес · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/849dc0ee-9fe5-44f1-999e-aa39e475ec40.jpg", name: "ЙОГАТЕРАПИЯ",           sub: "Терапевтическая практика · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
 ];
 
 export default function DirectionsPoster() {
@@ -52,20 +52,17 @@ export default function DirectionsPoster() {
                 (e.currentTarget as HTMLElement).style.boxShadow = "none";
               }}
             >
-              {/* Пилюля-лейбл */}
+              {/* Иконка-картинка */}
               <div style={{
                 flexShrink: 0,
-                padding: "6px 16px",
-                borderRadius: 100,
-                background: "var(--pp-teal)",
-                color: "#fff",
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.08em",
-                minWidth: 130,
-                textAlign: "center",
+                width: 56,
+                height: 56,
+                borderRadius: 12,
+                overflow: "hidden",
+                background: "var(--pp-cream-3)",
+                border: "1px solid var(--pp-border)",
               }}>
-                {d.label}
+                <img src={d.img} alt={d.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
 
               {/* Название */}
