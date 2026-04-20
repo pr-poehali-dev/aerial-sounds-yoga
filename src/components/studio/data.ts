@@ -142,7 +142,7 @@ export const GALLERY = [
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/05f45da9-193d-4a42-b936-30172ed9b568.jpg", title: "Гонг-медитация", cat: "Гонг" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg", title: "Тибетские чаши и гонг", cat: "Гонг" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2739e5b1-00b3-485f-813f-55f94b338fcb.jpg", title: "Хатха йога — групповое занятие", cat: "Йога" },
-  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5e4c4085-d411-4420-bb0e-85ed2774e384.jpg", title: "Йога для беременных", cat: "Йога" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/b2244731-8894-4232-ad93-bf3561f64a89.jpg", title: "Йога для беременных", cat: "Йога" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1ac733ee-4dcf-4654-bc36-e359c23f75f1.jpg", title: "Наша студия", cat: "Студия" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg", title: "Атмосфера студии", cat: "Студия" },
 ];
