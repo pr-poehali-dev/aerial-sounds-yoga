@@ -108,10 +108,6 @@ export default function HeroSection({ onShowForm }: Props) {
               <Icon name="Sparkles" size={15} />
               Записаться на пробное
             </button>
-            <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 8, padding: "13px 22px", fontSize: 14, color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 100, textDecoration: "none", backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.1)" }}>
-              <Icon name="Phone" size={14} />
-              Позвонить
-            </a>
           </div>
 
           <div style={{ display: "flex", gap: 24 }}>
@@ -131,11 +127,7 @@ export default function HeroSection({ onShowForm }: Props) {
           ))}
         </div>
 
-        {/* Кнопка звонка */}
-        <a href="tel:+79147012883" style={{ position: "absolute", bottom: 28, right: 32, background: "#c8b8e8", borderRadius: 50, padding: "10px 20px 10px 14px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 4px 20px rgba(139,93,200,0.4)", textDecoration: "none", animation: "phonePulse 1.8s ease-in-out infinite", zIndex: 2 }}>
-          <Icon name="Phone" size={18} style={{ color: "#fff", flexShrink: 0 }} />
-          <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", whiteSpace: "nowrap" }}>Начни прямо сейчас</span>
-        </a>
+
 
       </section>
 
