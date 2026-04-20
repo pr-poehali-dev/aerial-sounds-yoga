@@ -65,12 +65,11 @@ export default function ContactForm({ onClose }: Props) {
 
         {!submitted ? (
           <>
-            <div style={{ fontSize: 40, marginBottom: 14, textAlign: "center" }}>🪢</div>
             <h3 style={{ ...S, fontSize: 34, fontWeight: 300, textAlign: "center", marginBottom: 6, lineHeight: 1.1 }}>
               Записаться на <em style={{ color: "var(--pp-teal)" }}>занятие</em>
             </h3>
             <p style={{ fontSize: 14, color: "var(--pp-muted)", textAlign: "center", marginBottom: 28, lineHeight: 1.6 }}>
-              Записаться на пробное занятие. Перезвоним в течение часа.
+              Записаться на пробное занятие. Перезвоним в рабочее время студии.
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -87,7 +86,7 @@ export default function ContactForm({ onClose }: Props) {
               <div>
                 <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Интересует</label>
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["Аэройога", "Здоровая спина", "Хатха йога", "Йога для беременных", "Аэройога для детей", "Групповые", "Индивидуальные"].map(s => (
+                  {["Групповые", "Индивидуальные", "Обучение"].map(s => (
                     <button key={s} type="button" onClick={() => setService(service === s ? "" : s)}
                       style={{ padding: "8px 16px", borderRadius: 100, fontSize: 13, cursor: "pointer", transition: "all 0.18s", fontFamily: "'Inter', sans-serif", border: service === s ? "1.5px solid var(--pp-teal)" : "1.5px solid var(--pp-border)", background: service === s ? "var(--pp-teal-light)" : "transparent", color: service === s ? "var(--pp-teal)" : "var(--pp-muted)", fontWeight: service === s ? 600 : 400 }}>
                       {s}
