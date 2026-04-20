@@ -137,7 +137,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
           </div>
           <div style={{ borderRadius: 24, overflow: "hidden", position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 320 }}>
             {/* Фото хатха йоги на фоне */}
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2739e5b1-00b3-485f-813f-55f94b338fcb.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/8c175b00-b2d5-4bfe-a2dd-0d8e0389fb63.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(80,30,120,0.75) 0%, rgba(40,10,70,0.82) 100%)" }} />
 
             <div style={{ position: "relative", padding: "36px 36px 0" }}>
