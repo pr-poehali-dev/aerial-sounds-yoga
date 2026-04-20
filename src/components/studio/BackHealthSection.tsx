@@ -33,6 +33,9 @@ export default function BackHealthSection({ onShowForm }: Props) {
           <h2 style={{ ...S, fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
             Здоровая <em style={{ color: "var(--pp-teal)" }}>спина</em>
           </h2>
+          <p style={{ fontSize: 18, color: "var(--pp-text)", fontWeight: 500, lineHeight: 1.6, marginBottom: 12 }}>
+            Болит спина от сидячей жизни? Мы знаем как исправить!
+          </p>
           <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75 }}>
             Авторская программа для тех, кто устал жить с болью. Мягкая декомпрессия позвоночника в гамаке + терапевтические упражнения с болстерами и ремнями — без таблеток и хирургии.
           </p>
@@ -91,6 +94,33 @@ export default function BackHealthSection({ onShowForm }: Props) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Расписание */}
+        <div style={{ marginBottom: 48 }}>
+          <h3 style={{ ...S, fontSize: 26, fontWeight: 400, marginBottom: 24, textAlign: "center" }}>
+            Расписание <em style={{ color: "var(--pp-teal)" }}>занятий</em>
+          </h3>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, maxWidth: 640, margin: "0 auto" }}>
+            <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 24px", display: "flex", alignItems: "center", gap: 16 }}>
+              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <Icon name="Moon" size={20} style={{ color: "#fff" }} />
+              </div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Пн / Ср / Пт</div>
+                <div style={{ fontSize: 22, fontWeight: 300, color: "var(--pp-teal)", fontFamily: "var(--font-serif)" }}>18:30</div>
+              </div>
+            </div>
+            <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 24px", display: "flex", alignItems: "center", gap: 16 }}>
+              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#e07b54", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <Icon name="Sun" size={20} style={{ color: "#fff" }} />
+              </div>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Вт / Чт / Сб / Вс</div>
+                <div style={{ fontSize: 22, fontWeight: 300, color: "#e07b54", fontFamily: "var(--font-serif)" }}>09:00</div>
+              </div>
+            </div>
           </div>
         </div>
 
