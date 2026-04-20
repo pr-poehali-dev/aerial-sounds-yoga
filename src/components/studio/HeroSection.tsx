@@ -76,68 +76,67 @@ export default function HeroSection({ onShowForm }: Props) {
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────── */}
-      <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", position: "relative", overflow: "hidden", paddingTop: 68 }}>
-        <div style={{ position: "absolute", top: "10%", right: "5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(58,125,107,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "5%", left: "-5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,169,106,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
+      <section id="hero" style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
 
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 24px 80px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", width: "100%" }}>
-          <div>
-            <div className="pp-fade-up pp-label" style={{ marginBottom: 20 }}>
-              г. Артём
-            </div>
+        {/* Фон — карусель */}
+        <img
+          src={HERO_SLIDES[slide].src}
+          alt={HERO_SLIDES[slide].label}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.6s ease", opacity: fading ? 0 : 1 }}
+        />
 
-            <h1 className="pp-fade-up d1" style={{ ...S, fontSize: "clamp(48px, 6vw, 80px)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-0.01em", marginBottom: 24, color: "var(--pp-text)" }}>
-              Почувствуй<br /><em style={{ color: "var(--pp-teal)" }}>лёгкость</em><br />тела и тишину ума
-            </h1>
+        {/* Затемнение */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.75) 100%)" }} />
 
-            <div className="pp-fade-up d3" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "16px 32px", fontSize: 15 }}>
-                <Icon name="Sparkles" size={17} />
-                Записаться на пробное
-              </button>
-              <a href="tel:+79147012883" className="pp-btn-ghost" style={{ padding: "16px 24px", fontSize: 15 }}>
-                <Icon name="Phone" size={16} />
-                Позвонить
-              </a>
-            </div>
+        {/* Контент поверх */}
+        <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 6vw", paddingTop: 68 }}>
 
-            <div className="pp-fade-up d3" style={{ marginTop: 32, display: "flex", gap: 20 }}>
-              {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
-                <div key={l} style={{ textAlign: "center" }}>
-                  <div style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>{n}</div>
-                  <div style={{ fontSize: 11, color: "var(--pp-muted)", marginTop: 2 }}>{l}</div>
-                </div>
-              ))}
-            </div>
+          <div className="pp-fade-up pp-label" style={{ marginBottom: 14, color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.25)" }}>
+            г. Артём
           </div>
 
-          <div className="pp-fade-up d2" style={{ position: "relative" }}>
-            <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "3/4", boxShadow: "0 40px 100px rgba(31,29,24,0.15)" }}>
-              <img
-                src={HERO_SLIDES[slide].src}
-                alt={HERO_SLIDES[slide].label}
-                style={{ width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.4s ease", opacity: fading ? 0 : 1 }}
-              />
-            </div>
+          <h1 style={{ ...S, fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: 20, color: "#fff", maxWidth: 640 }}>
+            Почувствуй <em style={{ color: "var(--pp-gold)" }}>лёгкость</em><br />тела и тишину ума
+          </h1>
 
-            <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)", transition: "opacity 0.4s ease", opacity: fading ? 0 : 1 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>{HERO_SLIDES[slide].label}</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>{HERO_SLIDES[slide].sub}</div>
-            </div>
+          <p style={{ fontSize: "clamp(13px, 1.4vw, 16px)", color: "rgba(255,255,255,0.75)", marginBottom: 28, maxWidth: 420, lineHeight: 1.6 }}>
+            {HERO_SLIDES[slide].label} · {HERO_SLIDES[slide].sub}
+          </p>
 
-            {/* Точки-переключатели */}
-            <div style={{ position: "absolute", bottom: 80, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8 }}>
-              {HERO_SLIDES.map((_, i) => (
-                <button key={i} onClick={() => goTo(i)} style={{ width: i === slide ? 24 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer", background: i === slide ? "#fff" : "rgba(255,255,255,0.5)", transition: "all 0.3s ease", padding: 0 }} />
-              ))}
-            </div>
-
-            <a href="tel:+79147012883" style={{ position: "absolute", bottom: 24, right: -16, background: "#c8b8e8", borderRadius: 50, padding: "10px 20px 10px 14px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 4px 20px rgba(139,93,200,0.4)", textDecoration: "none", animation: "phonePulse 1.8s ease-in-out infinite" }}>
-              <Icon name="Phone" size={20} style={{ color: "#fff", flexShrink: 0 }} />
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", whiteSpace: "nowrap" }}>Начни прямо сейчас</span>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 40 }}>
+            <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "13px 28px", fontSize: 14 }}>
+              <Icon name="Sparkles" size={15} />
+              Записаться на пробное
+            </button>
+            <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 8, padding: "13px 22px", fontSize: 14, color: "#fff", border: "1px solid rgba(255,255,255,0.4)", borderRadius: 100, textDecoration: "none", backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.1)" }}>
+              <Icon name="Phone" size={14} />
+              Позвонить
             </a>
           </div>
+
+          <div style={{ display: "flex", gap: 24 }}>
+            {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
+              <div key={l}>
+                <div style={{ ...S, fontSize: 20, fontWeight: 400, color: "var(--pp-gold)" }}>{n}</div>
+                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{l}</div>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Точки-переключатели */}
+        <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8, zIndex: 2 }}>
+          {HERO_SLIDES.map((_, i) => (
+            <button key={i} onClick={() => goTo(i)} style={{ width: i === slide ? 28 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer", background: i === slide ? "#fff" : "rgba(255,255,255,0.4)", transition: "all 0.3s ease", padding: 0 }} />
+          ))}
+        </div>
+
+        {/* Кнопка звонка */}
+        <a href="tel:+79147012883" style={{ position: "absolute", bottom: 28, right: 32, background: "#c8b8e8", borderRadius: 50, padding: "10px 20px 10px 14px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 4px 20px rgba(139,93,200,0.4)", textDecoration: "none", animation: "phonePulse 1.8s ease-in-out infinite", zIndex: 2 }}>
+          <Icon name="Phone" size={18} style={{ color: "#fff", flexShrink: 0 }} />
+          <span style={{ fontSize: 13, fontWeight: 600, color: "#fff", whiteSpace: "nowrap" }}>Начни прямо сейчас</span>
+        </a>
+
       </section>
 
       <DirectionsPoster />
