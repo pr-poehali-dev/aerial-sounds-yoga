@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS } from "./data";
 
 const HERO_SLIDES = [
-  { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Только у нас" },
+  { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Обучение на инструктора аэройоги" },
   { src: IMG_GONG,   label: "🔔 Гонг-медитация", sub: "Звуковые практики" },
   { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
 ];
