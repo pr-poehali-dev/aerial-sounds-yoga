@@ -73,6 +73,26 @@ export default function ServicesSection({ onShowForm }: Props) {
                     <span key={t} style={{ fontSize: 11, color: "var(--pp-muted)", background: "var(--pp-cream-3)", borderRadius: 100, padding: "3px 12px" }}>{t}</span>
                   ))}
                 </div>
+
+                {s.title === "Фитнес Микс" && (
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+                    <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 12, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10 }}>
+                      <Icon name="Moon" size={16} style={{ color: "#e07b54", flexShrink: 0 }} />
+                      <div>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: "var(--pp-text)" }}>Пн / Ср / Пт</div>
+                        <div style={{ fontSize: 16, fontWeight: 300, color: "#e07b54", fontFamily: "var(--font-serif)" }}>18:30</div>
+                      </div>
+                    </div>
+                    <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 12, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10 }}>
+                      <Icon name="Sun" size={16} style={{ color: "var(--pp-teal)", flexShrink: 0 }} />
+                      <div>
+                        <div style={{ fontSize: 11, fontWeight: 700, color: "var(--pp-text)" }}>Вт / Чт / Сб / Вс</div>
+                        <div style={{ fontSize: 16, fontWeight: 300, color: "var(--pp-teal)", fontFamily: "var(--font-serif)" }}>09:00</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 20 }}>
                   <span style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)" }}>{s.price}</span>
                   <span style={{ fontSize: 13, color: "var(--pp-muted)" }}>/ {s.per}</span>
