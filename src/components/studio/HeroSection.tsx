@@ -83,7 +83,7 @@ export default function HeroSection({ onShowForm }: Props) {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 24px 80px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", width: "100%" }}>
           <div>
             <div className="pp-fade-up pp-label" style={{ marginBottom: 20 }}>
-              Центр ФИТНСЛИМ
+              г. Артём
             </div>
 
             <h1 className="pp-fade-up d1" style={{ ...S, fontSize: "clamp(48px, 6vw, 80px)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-0.01em", marginBottom: 24, color: "var(--pp-text)" }}>
@@ -155,7 +155,7 @@ export default function HeroSection({ onShowForm }: Props) {
               Чтобы каждый нашёл свой путь к здоровью.
             </p>
             <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 16 }}>
-              Центр Фитнслим & Пространство Пара работает в Артёме с 2019 года. За это время мы стали местом, куда приходят не просто за тренировкой — а за ощущением себя живым, лёгким и счастливым.
+              Наш центр работает в Артёме с 2019 года. За это время мы стали местом, куда приходят не просто за тренировкой — а за ощущением себя живым, лёгким и счастливым.
             </p>
             <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.75 }}>
               Наши инструкторы — сертифицированные специалисты с опытом от 5 лет. Работаем по авторским программам, адаптированным для любого уровня: от новичков до продвинутых практиков.
@@ -172,7 +172,7 @@ export default function HeroSection({ onShowForm }: Props) {
                   </div>
                   <div>
                     <div>+7 (914) 701-28-83</div>
-                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Центр ФИТНСЛИМ</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Йога, фитнес и спа</div>
                   </div>
                 </a>
                 <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>

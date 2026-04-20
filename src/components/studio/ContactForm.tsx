@@ -149,7 +149,7 @@ export default function ContactForm({ onClose }: Props) {
               Заявка <em style={{ color: "var(--pp-teal)" }}>принята!</em>
             </h3>
             <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 28 }}>
-              Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас в Фитнслим!
+              Мы свяжемся с вами в течение часа и запишем на ближайшее удобное занятие. Ждём вас!
             </p>
             <button className="pp-btn-ghost" onClick={handleClose} style={{ margin: "0 auto", display: "flex" }}>
               Закрыть
