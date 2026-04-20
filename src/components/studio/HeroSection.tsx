@@ -57,7 +57,7 @@ export default function HeroSection({ onShowForm }: Props) {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "60px 24px 80px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", width: "100%" }}>
           <div>
             <div className="pp-fade-up pp-label" style={{ marginBottom: 20 }}>
-              Студия аэройоги и звуковых практик
+              Центр ФИТНСЛИМ
             </div>
 
             <h1 className="pp-fade-up d1" style={{ ...S, fontSize: "clamp(48px, 6vw, 80px)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-0.01em", marginBottom: 24, color: "var(--pp-text)" }}>
@@ -135,7 +135,7 @@ export default function HeroSection({ onShowForm }: Props) {
                   </div>
                   <div>
                     <div>+7 (914) 701-28-83</div>
-                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Студия Аэройоги, Йоги и Фитнеса</div>
+                    <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>Центр ФИТНСЛИМ</div>
                   </div>
                 </a>
                 <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", color: "var(--pp-text)", fontSize: 15, fontWeight: 500 }}>
