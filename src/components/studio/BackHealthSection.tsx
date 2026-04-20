@@ -135,19 +135,24 @@ export default function BackHealthSection({ onShowForm }: Props) {
               </div>
             ))}
           </div>
-          <div style={{ background: "linear-gradient(135deg, #c9a8e0 0%, #a87cc7 100%)", borderRadius: 24, padding: "40px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-            <div>
-              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 16 }}>Запись на программу</div>
-              <h3 style={{ ...S, fontSize: 32, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
-                Первое занятие — по специальной цене
+          <div style={{ borderRadius: 24, overflow: "hidden", position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 320 }}>
+            {/* Фото хатха йоги на фоне */}
+            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2739e5b1-00b3-485f-813f-55f94b338fcb.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(80,30,120,0.75) 0%, rgba(40,10,70,0.82) 100%)" }} />
+
+            <div style={{ position: "relative", padding: "36px 36px 0" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>Запись на программу</div>
+              <h3 style={{ ...S, fontSize: 30, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
+                Первое занятие —<br />по специальной цене
               </h3>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: 1.7, marginBottom: 32 }}>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7 }}>
                 Расскажем о программе, оценим ваш запрос и подберём оптимальный формат.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#a87cc7", justifyContent: "center", fontWeight: 600 }}>
-                Записаться на первое занятие
+
+            <div style={{ position: "relative", padding: "24px 36px 36px", display: "flex", flexDirection: "column", gap: 12 }}>
+              <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#a87cc7", justifyContent: "center", fontWeight: 700, animation: "ctaPulse 1.6s ease-in-out infinite" }}>
+                Начни прямо сейчас
               </button>
               <a href="https://wa.me/79147070440" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 14, color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
                 <Icon name="MessageCircle" size={16} /> Написать в WhatsApp
