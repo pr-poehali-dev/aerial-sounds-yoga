@@ -92,7 +92,7 @@ export default function HeroSection({ onShowForm }: Props) {
         <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 6vw", paddingTop: 68 }}>
 
           <div className="pp-fade-up pp-label" style={{ marginBottom: 14, color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.25)" }}>
-            г. Артём
+            Приморский край, г. Артём
           </div>
 
           <h1 style={{ ...S, fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: 20, color: "#fff", maxWidth: 640 }}>
