@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS } from "./data";
+
+const HERO_SLIDES = [
+  { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Только у нас" },
+  { src: IMG_GONG,   label: "🔔 Гонг-медитация", sub: "Звуковые практики" },
+  { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc4642ee-fbed-41ee-b6e8-fc2931af9b60.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
+];
 import BackHealthSection from "./BackHealthSection";
 import DirectionsPoster from "./DirectionsPoster";
 
@@ -47,6 +53,26 @@ interface Props {
 }
 
 export default function HeroSection({ onShowForm }: Props) {
+  const [slide, setSlide] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setSlide(s => (s + 1) % HERO_SLIDES.length);
+        setFading(false);
+      }, 400);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goTo = (i: number) => {
+    if (i === slide) return;
+    setFading(true);
+    setTimeout(() => { setSlide(i); setFading(false); }, 400);
+  };
+
   return (
     <>
       {/* ── HERO ──────────────────────────────────────────── */}
@@ -85,14 +111,25 @@ export default function HeroSection({ onShowForm }: Props) {
             </div>
           </div>
 
-          <div className="pp-fade-up d2 pp-float" style={{ position: "relative" }}>
+          <div className="pp-fade-up d2" style={{ position: "relative" }}>
             <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "3/4", boxShadow: "0 40px 100px rgba(31,29,24,0.15)" }}>
-              <img src={IMG_AERIAL} alt="Аэройога в гамаках" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img
+                src={HERO_SLIDES[slide].src}
+                alt={HERO_SLIDES[slide].label}
+                style={{ width: "100%", height: "100%", objectFit: "cover", transition: "opacity 0.4s ease", opacity: fading ? 0 : 1 }}
+              />
             </div>
 
-            <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)" }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>✨ Аэройога</div>
-              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>Только у нас</div>
+            <div style={{ position: "absolute", top: 24, right: -16, background: "var(--pp-teal)", borderRadius: 12, padding: "10px 16px", boxShadow: "0 8px 24px rgba(58,125,107,0.3)", transition: "opacity 0.4s ease", opacity: fading ? 0 : 1 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#fff", letterSpacing: "0.04em" }}>{HERO_SLIDES[slide].label}</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.8)" }}>{HERO_SLIDES[slide].sub}</div>
+            </div>
+
+            {/* Точки-переключатели */}
+            <div style={{ position: "absolute", bottom: 80, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8 }}>
+              {HERO_SLIDES.map((_, i) => (
+                <button key={i} onClick={() => goTo(i)} style={{ width: i === slide ? 24 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer", background: i === slide ? "#fff" : "rgba(255,255,255,0.5)", transition: "all 0.3s ease", padding: 0 }} />
+              ))}
             </div>
 
             <a href="tel:+79147012883" style={{ position: "absolute", bottom: 24, right: -16, background: "#c8b8e8", borderRadius: 50, padding: "10px 20px 10px 14px", display: "flex", alignItems: "center", gap: 10, boxShadow: "0 4px 20px rgba(139,93,200,0.4)", textDecoration: "none", animation: "phonePulse 1.8s ease-in-out infinite" }}>
