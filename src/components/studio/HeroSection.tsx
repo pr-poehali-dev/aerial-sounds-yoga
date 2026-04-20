@@ -5,7 +5,7 @@ import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS } from "./data";
 const HERO_SLIDES = [
   { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Только у нас" },
   { src: IMG_GONG,   label: "🔔 Гонг-медитация", sub: "Звуковые практики" },
-  { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc4642ee-fbed-41ee-b6e8-fc2931af9b60.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
+  { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
 ];
 import BackHealthSection from "./BackHealthSection";
 import DirectionsPoster from "./DirectionsPoster";
