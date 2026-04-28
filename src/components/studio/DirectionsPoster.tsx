@@ -51,8 +51,10 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/714cab2e-d0b0-40c5-9b7b-5dfefb37020c.jpg",
     name: "МФР + Аэройога",
     sub: "Миофасциальный релиз и воздушная йога",
-    price: "5 800 ₽",
-    per: "абонемент 8 занятий · 60 мин",
+    price: "1 200 ₽",
+    per: "разовое · 60 мин",
+    price2: "5 800 ₽",
+    per2: "абонемент 8 занятий",
     pos: "center center",
   },
   {
