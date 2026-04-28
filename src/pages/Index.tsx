@@ -37,8 +37,8 @@ export default function Index() {
       {showHint && (
         <div style={{ position: "fixed", bottom: 28, left: 28, zIndex: 999, maxWidth: 320, animation: "slideUp 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
           <div style={{ borderRadius: 20, boxShadow: "0 8px 40px rgba(31,29,24,0.25)", overflow: "hidden", position: "relative" }}>
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/92bc1dea-ff7a-4057-9d75-56c546f92181.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
-            <div style={{ position: "absolute", inset: 0, background: "rgba(20,12,8,0.58)" }} />
+            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/70246e78-d5a5-4b2a-9070-6d144045008f.png)", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
+            <div style={{ position: "absolute", inset: 0, background: "rgba(10,6,4,0.62)" }} />
             <div style={{ position: "relative", padding: "24px 24px 20px" }}>
               <button onClick={handleHintClose} style={{ position: "absolute", top: 12, right: 14, background: "rgba(255,255,255,0.15)", border: "none", fontSize: 16, color: "#fff", cursor: "pointer", lineHeight: 1, width: 28, height: 28, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>×</button>
               <div style={{ fontSize: 28, marginBottom: 10 }}>💬</div>
