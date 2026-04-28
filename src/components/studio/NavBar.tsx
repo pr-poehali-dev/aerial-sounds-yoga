@@ -20,6 +20,12 @@ export default function NavBar({ onShowForm }: Props) {
               onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
               className="hidden md:block">{t}</a>
           ))}
+          <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 7, textDecoration: "none", color: "var(--pp-text)", fontSize: 14, fontWeight: 500, opacity: 0.85, transition: "opacity 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "0.85")}>
+            <span style={{ fontSize: 15 }}>📞</span>
+            +7 (914) 701-28-83
+          </a>
           <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "10px 24px", fontSize: 13 }}>
             Записаться
           </button>
