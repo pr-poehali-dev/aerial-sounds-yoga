@@ -15,10 +15,8 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
   return (
     <>
       {/* ── ОБУЧЕНИЕ ─────────────────────────────────────── */}
-      <section id="training" style={{ padding: "100px 24px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg)", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "rgba(248,245,240,0.88)" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start", position: "relative", zIndex: 1 }}>
+      <section id="training" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
           <div>
             <div className="pp-label" style={{ marginBottom: 16 }}>Для инструкторов</div>
             <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
@@ -43,6 +41,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           </div>
 
           <div style={{ background: "rgba(58,125,107,0.07)", border: "1px solid rgba(58,125,107,0.18)", borderRadius: 24, overflow: "hidden" }}>
+            <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg" alt="Обучение аэройоге" style={{ width: "100%", height: 380, objectFit: "cover", objectPosition: "center 30%", display: "block" }} />
             <div style={{ padding: 36 }}>
             <h3 style={{ ...S, fontSize: 24, fontStyle: "italic", marginBottom: 24, color: "var(--pp-text)" }}>После курса ты сможешь:</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
