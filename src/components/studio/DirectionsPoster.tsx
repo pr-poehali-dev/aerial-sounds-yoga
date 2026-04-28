@@ -51,8 +51,10 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/36ffee5d-74d6-4441-b7ce-77ced0cba167.jpg",
     name: "Здоровая спина",
     sub: "Терапевтическая программа",
-    price: "от 800 ₽",
-    per: "90 мин",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "8 120 ₽",
+    per2: "абонемент 8 занятий",
     pos: "center center",
   },
   {
