@@ -32,7 +32,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4f890d93-3096-4f59-a9d5-f8e8b72cb233.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6dbd44de-93c3-4db3-b7f2-aae6f9c0f16a.jpg",
     name: "Фитнес в гамаках",
     sub: "Силовые тренировки в подвесной системе",
     price: "5 800 ₽",
