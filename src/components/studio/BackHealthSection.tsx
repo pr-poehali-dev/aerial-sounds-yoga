@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const S = { fontFamily: "var(--font-serif)" };
 
-const IMG_BOLSTER = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/58c72269-e016-453f-bcdc-a9f9180489d6.jpg";
+const IMG_BOLSTER = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b74a587c-4f08-4f80-9b4d-7c90c793160c.jpg";
 const IMG_PROPS = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc82a53e-e285-48b4-8aa3-ac2afe97536f.jpg";
 
 const RESULTS = [
@@ -52,7 +52,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
             Болит спина от сидячей жизни? Мы знаем как исправить!
           </p>
           <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75 }}>
-            Авторская программа для тех, кто устал жить с болью. Мягкая декомпрессия позвоночника + терапевтические упражнения с болстерами и ремнями — без таблеток и хирургии.
+            Авторская программа на основе Йоги Айенгара для тех, кто устал жить с болью. Мягкая декомпрессия позвоночника + терапевтические упражнения с болстерами и ремнями — без таблеток и хирургии.
           </p>
         </div>
 
