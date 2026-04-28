@@ -129,24 +129,13 @@ export default function BackHealthSection({ onShowForm }: Props) {
               </div>
             ))}
           </div>
-          <div style={{ borderRadius: 24, background: "linear-gradient(135deg, #6b3fa0 0%, #3a1060 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 320, padding: "36px" }}>
-            <div>
-              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>Запись на программу</div>
-              <h3 style={{ ...S, fontSize: 30, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
-                Первое занятие —<br />по специальной цене
-              </h3>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7 }}>
-                Расскажем о программе, оценим ваш запрос и подберём оптимальный формат.
-              </p>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 24 }}>
-              <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#a87cc7", justifyContent: "center", fontWeight: 700, animation: "ctaPulse 1.6s ease-in-out infinite" }}>
-                Начни прямо сейчас
-              </button>
-              <a href="https://wa.me/79147070440" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 14, color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>
-                <Icon name="MessageCircle" size={16} /> Написать в WhatsApp
-              </a>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, justifyContent: "center" }}>
+            <button className="pp-btn" onClick={onShowForm} style={{ justifyContent: "center", fontWeight: 700, animation: "ctaPulse 1.6s ease-in-out infinite" }}>
+              Записаться на первое занятие
+            </button>
+            <a href="https://wa.me/79147070440" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 14, color: "var(--pp-muted)", textDecoration: "none" }}>
+              <Icon name="MessageCircle" size={16} /> Написать в WhatsApp
+            </a>
           </div>
         </div>
 
