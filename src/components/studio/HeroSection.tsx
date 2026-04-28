@@ -131,7 +131,7 @@ export default function HeroSection({ onShowForm }: Props) {
 
       </section>
 
-      <DirectionsPoster />
+      <DirectionsPoster onShowForm={onShowForm} />
 
       {/* ── О НАС ────────────────────────────────────────── */}
       <section id="about" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
