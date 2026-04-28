@@ -6,6 +6,7 @@ const HERO_SLIDES = [
   { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Обучение на инструктора аэройоги" },
   { src: IMG_GONG,   label: "🔔 Гонг-медитация", sub: "Звуковые практики" },
   { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
+  { src: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png", label: "💪 Фитнес Микс", sub: "Силовые + кардио · для всех" },
 ];
 import BackHealthSection from "./BackHealthSection";
 import DirectionsPoster from "./DirectionsPoster";
