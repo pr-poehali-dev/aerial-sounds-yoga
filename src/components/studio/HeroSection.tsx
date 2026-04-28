@@ -130,8 +130,10 @@ export default function HeroSection({ onShowForm }: Props) {
       <DirectionsPoster onShowForm={onShowForm} />
 
       {/* ── О НАС ────────────────────────────────────────── */}
-      <section id="about" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+      <section id="about" style={{ padding: "100px 24px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/55c9c9fe-fe69-487c-ba0d-74df88f6e4b5.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(248,245,240,0.92)" }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start", position: "relative", zIndex: 1 }}>
           <div>
             <div className="pp-label" style={{ marginBottom: 16 }}>О студии</div>
             <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
