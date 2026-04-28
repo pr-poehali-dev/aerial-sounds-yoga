@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const S = { fontFamily: "var(--font-serif)" };
 
-const IMG_BOLSTER = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg";
+const IMG_BOLSTER = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/58c72269-e016-453f-bcdc-a9f9180489d6.jpg";
 const IMG_PROPS = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc82a53e-e285-48b4-8aa3-ac2afe97536f.jpg";
 
 const RESULTS = [
