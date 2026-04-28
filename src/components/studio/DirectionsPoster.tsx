@@ -41,8 +41,10 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/70246e78-d5a5-4b2a-9070-6d144045008f.png",
     name: "Йога для беременных",
     sub: "Бережная поддержка на каждом этапе",
-    price: "от 800 ₽",
-    per: "занятие",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "3 850 ₽",
+    per2: "абонемент 4 занятия",
     pos: "center 65%",
   },
   {
@@ -125,9 +127,17 @@ export default function DirectionsPoster({ onShowForm }: Props) {
                 <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 16, lineHeight: 1.5 }}>{d.sub}</div>
 
                 {/* Цена */}
-                <div style={{ marginBottom: 16, marginTop: "auto" }}>
-                  <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price}</span>
-                  <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per}</span>
+                <div style={{ marginBottom: 16, marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
+                  <div>
+                    <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price}</span>
+                    <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per}</span>
+                  </div>
+                  {d.price2 && (
+                    <div>
+                      <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price2}</span>
+                      <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per2}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Кнопка */}
