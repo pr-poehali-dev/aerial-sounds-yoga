@@ -6,11 +6,12 @@ interface Props {
 
 const directions = [
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/86541cdf-3434-4d4e-96a0-fc38c959e03a.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/77b141e6-7eec-4f02-b57d-47a17c04a291.jpg",
     name: "Аэройога",
     sub: "Для начинающих и продолжающих",
     price: "от 500 ₽",
     per: "занятие",
+    pos: "center center",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/3e231d9b-ba97-4d02-be53-7a30d34ee9f1.jpg",
@@ -18,6 +19,7 @@ const directions = [
     sub: "Тибетские чаши, гонг, монохорд",
     price: "от 1500 ₽",
     per: "сеанс",
+    pos: "center center",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/76eff1a3-2252-43e1-974c-ef008a2af7ec.jpg",
@@ -25,13 +27,15 @@ const directions = [
     sub: "Классическая практика",
     price: "от 800 ₽",
     per: "90 мин",
+    pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2b720a89-7d46-400d-b449-f1a9b4827fe9.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/9f052fc9-253d-4b61-8a2a-ef5cea940beb.jpg",
     name: "Йога Айенгара",
     sub: "Точность и выравнивание тела",
     price: "от 800 ₽",
     per: "занятие",
+    pos: "center center",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/70246e78-d5a5-4b2a-9070-6d144045008f.png",
@@ -39,13 +43,15 @@ const directions = [
     sub: "Бережная поддержка на каждом этапе",
     price: "от 800 ₽",
     per: "занятие",
+    pos: "center 30%",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/adbf2a78-5f4d-4008-99ac-e0b6084c54cf.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/36ffee5d-74d6-4441-b7ce-77ced0cba167.jpg",
     name: "Здоровая спина",
     sub: "Терапевтическая программа",
     price: "от 800 ₽",
     per: "90 мин",
+    pos: "center center",
   },
   {
     img: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png",
@@ -53,6 +59,7 @@ const directions = [
     sub: "Силовые + кардио · для всех",
     price: "от 500 ₽",
     per: "занятие",
+    pos: "center top",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5e4ef1b1-2294-478f-8a31-7d5a1cf71fa6.jpg",
@@ -60,6 +67,7 @@ const directions = [
     sub: "Восстановление после травм",
     price: "от 800 ₽",
     per: "90 мин",
+    pos: "center center",
   },
 ];
 
@@ -105,7 +113,7 @@ export default function DirectionsPoster({ onShowForm }: Props) {
                 <img
                   src={d.img}
                   alt={d.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.3s" }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: d.pos ?? "center center", display: "block", transition: "transform 0.3s" }}
                   onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                   onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
                 />
