@@ -7,9 +7,9 @@ const IMG_BOLSTER = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b6
 const IMG_PROPS = "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dc82a53e-e285-48b4-8aa3-ac2afe97536f.jpg";
 
 const RESULTS = [
-  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4d4b828d-0a8d-48e7-8c8b-9cac34a84e75.jpg", name: "Марина, 42 года", result: "«Перестала болеть спина после 4 занятий. Врач сказал, что грыжа уменьшилась. Я в шоке в хорошем смысле!»" },
-  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1acac388-badd-4f99-a90b-b0157299374e.jpg", name: "Ольга, 38 лет", result: "«Ходила с болью в пояснице 3 года. После курса «Здоровая спина» забыла, что это такое. Рекомендую всем!»" },
-  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b51a8cdb-ca09-4e44-bddb-d9fde22f0eda.jpg", name: "Светлана, 55 лет", result: "«Остеохондроз мучил меня годами. Здесь за 8 занятий я почувствовала себя лет на 20 моложе — спина ровная, движения свободные.»" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2cc6b1d0-da19-4b9a-b622-a971fa7a013b.jpg", name: "Марина, 42 года", result: "«Перестала болеть спина после 4 занятий. Врач сказал, что грыжа уменьшилась. Я в шоке в хорошем смысле!»" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/ae94f848-c389-4165-8829-12df3ac5f8e6.jpg", name: "Ольга, 38 лет", result: "«Ходила с болью в пояснице 3 года. После курса «Здоровая спина» забыла, что это такое. Рекомендую всем!»" },
+  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2bfd49de-433b-4f38-aa11-d38ff57fa83d.jpg", name: "Светлана, 55 лет", result: "«Остеохондроз мучил меня годами. Здесь за 8 занятий я почувствовала себя лет на 20 моложе — спина ровная, движения свободные.»" },
 ];
 
 const FORMATS = [

@@ -13,21 +13,21 @@ const directions = [
     per: "занятие",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/115d7733-a92c-4161-a02f-cdeb9acfa68e.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/3e231d9b-ba97-4d02-be53-7a30d34ee9f1.jpg",
     name: "Гонг-медитации",
     sub: "Тибетские чаши, гонг, монохорд",
     price: "от 1500 ₽",
     per: "сеанс",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/a47e99de-d7cf-44f5-9e68-b09207da3d80.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/76eff1a3-2252-43e1-974c-ef008a2af7ec.jpg",
     name: "Хатха йога",
     sub: "Классическая практика",
     price: "от 800 ₽",
     per: "90 мин",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2d040737-9bf6-4224-8ce0-0914acd4ea5b.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2b720a89-7d46-400d-b449-f1a9b4827fe9.jpg",
     name: "Йога Айенгара",
     sub: "Точность и выравнивание тела",
     price: "от 800 ₽",
@@ -41,7 +41,7 @@ const directions = [
     per: "занятие",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6134b8b0-9a43-4064-af59-a11dd5689212.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/adbf2a78-5f4d-4008-99ac-e0b6084c54cf.jpg",
     name: "Здоровая спина",
     sub: "Терапевтическая программа",
     price: "от 800 ₽",
@@ -55,7 +55,7 @@ const directions = [
     per: "занятие",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/25d0d360-9113-4b2e-91e2-b25e8fd6e309.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5e4ef1b1-2294-478f-8a31-7d5a1cf71fa6.jpg",
     name: "Йогатерапия",
     sub: "Восстановление после травм",
     price: "от 800 ₽",
