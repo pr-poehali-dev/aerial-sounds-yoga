@@ -104,12 +104,7 @@ export default function HeroSection({ onShowForm }: Props) {
             {HERO_SLIDES[slide].label} · {HERO_SLIDES[slide].sub}
           </p>
 
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 40 }}>
-            <button className="pp-btn-primary" onClick={onShowForm} style={{ padding: "13px 28px", fontSize: 14 }}>
-              <Icon name="Sparkles" size={15} />
-              Записаться на пробное
-            </button>
-          </div>
+
 
           <div style={{ display: "flex", gap: 24 }}>
             {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
