@@ -9,8 +9,16 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/77b141e6-7eec-4f02-b57d-47a17c04a291.jpg",
     name: "Аэройога",
     sub: "Для начинающих и продолжающих",
-    price: "от 500 ₽",
-    per: "занятие",
+    price: "5 800 ₽",
+    per: "абонемент 8 занятий · 60 мин",
+    pos: "center center",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/e58e708e-c112-48a3-b768-bb0f001b57f1.jpg",
+    name: "Аэрокидс",
+    sub: "Аэройога для детей",
+    price: "5 800 ₽",
+    per: "абонемент 8 занятий · 60 мин",
     pos: "center center",
   },
   {
