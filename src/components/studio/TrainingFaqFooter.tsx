@@ -41,7 +41,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           </div>
 
           <div style={{ background: "rgba(58,125,107,0.07)", border: "1px solid rgba(58,125,107,0.18)", borderRadius: 24, overflow: "hidden" }}>
-            <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg" alt="Обучение аэройоге" style={{ width: "100%", height: 480, objectFit: "cover", objectPosition: "center 20%", display: "block" }} />
+            <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg" alt="Обучение аэройоге" style={{ width: "100%", height: 560, objectFit: "cover", objectPosition: "center 10%", display: "block" }} />
             <div style={{ padding: 36 }}>
             <h3 style={{ ...S, fontSize: 24, fontStyle: "italic", marginBottom: 24, color: "var(--pp-text)" }}>После курса ты сможешь:</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
