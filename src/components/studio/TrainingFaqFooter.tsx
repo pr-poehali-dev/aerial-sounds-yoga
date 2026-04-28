@@ -11,7 +11,6 @@ interface Props {
 
 export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [faqTab, setFaqTab] = useState(0);
 
   return (
     <>
@@ -117,16 +116,9 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
           </div>
 
           <div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
-              {FAQ_TABS.map((tab, ti) => (
-                <button key={ti} onClick={() => { setFaqTab(ti); setOpenFaq(null); }}
-                  style={{ padding: "8px 18px", borderRadius: 100, border: `1px solid ${faqTab === ti ? "var(--pp-teal)" : "var(--pp-border)"}`, background: faqTab === ti ? "var(--pp-teal)" : "transparent", color: faqTab === ti ? "#fff" : "var(--pp-muted)", fontSize: 13, fontWeight: 600, cursor: "pointer", transition: "all 0.2s" }}>
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {FAQ_TABS[faqTab].items.map((f, i) => (
+              {FAQ_TABS[0].items.map((f, i) => (
                 <div key={i} style={{ background: "var(--pp-cream)", border: `1px solid ${openFaq === i ? "rgba(107,63,160,0.35)" : "var(--pp-border)"}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.2s" }}>
                   <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     style={{ width: "100%", padding: "18px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
