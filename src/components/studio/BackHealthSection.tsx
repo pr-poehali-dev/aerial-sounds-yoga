@@ -97,33 +97,6 @@ export default function BackHealthSection({ onShowForm }: Props) {
           </div>
         </div>
 
-        {/* Расписание */}
-        <div style={{ marginBottom: 48 }}>
-          <h3 style={{ ...S, fontSize: 26, fontWeight: 400, marginBottom: 24, textAlign: "center" }}>
-            Расписание <em style={{ color: "var(--pp-teal)" }}>занятий</em>
-          </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, maxWidth: 640, margin: "0 auto" }}>
-            <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 24px", display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "var(--pp-teal)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <Icon name="Moon" size={20} style={{ color: "#fff" }} />
-              </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Пн / Ср / Пт</div>
-                <div style={{ fontSize: 22, fontWeight: 300, color: "var(--pp-teal)", fontFamily: "var(--font-serif)" }}>18:30</div>
-              </div>
-            </div>
-            <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 24px", display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#e07b54", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <Icon name="Sun" size={20} style={{ color: "#fff" }} />
-              </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Вт / Чт / Сб / Вс</div>
-                <div style={{ fontSize: 22, fontWeight: 300, color: "#e07b54", fontFamily: "var(--font-serif)" }}>09:00</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Форматы + CTA */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
