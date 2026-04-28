@@ -7,7 +7,7 @@ const directions = [
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2d040737-9bf6-4224-8ce0-0914acd4ea5b.jpg", name: "ЙОГА АЙЕНГАРА",         sub: "Точность и выравнивание тела · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/70246e78-d5a5-4b2a-9070-6d144045008f.png", name: "ЙОГА ДЛЯ БЕРЕМЕННЫХ",  sub: "Бережная поддержка на каждом этапе · до 10 чел." },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6134b8b0-9a43-4064-af59-a11dd5689212.jpg", name: "ЗДОРОВАЯ СПИНА",        sub: "Терапевтическая программа · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
-  { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/bdd63353-93d4-48b2-bb7e-49b5e68a7757.jpg", name: "ФИТНЕС МИКС",           sub: "Силовые + кардио · подходит женщинам и мужчинам · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
+  { img: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png", name: "ФИТНЕС МИКС",           sub: "Силовые + кардио · подходит женщинам и мужчинам · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
   { img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/25d0d360-9113-4b2e-91e2-b25e8fd6e309.jpg", name: "ЙОГАТЕРАПИЯ",           sub: "Терапевтическая практика · до 15 чел. (большой зал) / до 10 чел. (малый зал)" },
 ];
 
