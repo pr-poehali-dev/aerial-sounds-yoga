@@ -39,9 +39,15 @@ export default function ServicesSection({ onShowForm }: Props) {
               <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 20, maxWidth: 500 }}>
                 2 вида гамаков на выбор: шелковые гамаки и гамаки с ручками. Подбираем формат под твои цели и уровень подготовки.
               </p>
-              <div style={{ display: "flex", gap: 12, marginBottom: 24 }}>
-                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 12, padding: "10px 18px", fontSize: 13, color: "#E8F4F0" }}>🪢 Шелковые гамаки</div>
-                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 12, padding: "10px 18px", fontSize: 13, color: "#E8F4F0" }}>🤸 Гамаки с ручками</div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 24 }}>
+                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 14, padding: "16px 20px" }}>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E8F4F0", marginBottom: 6 }}>🪢 Шелковые гамаки</div>
+                  <div style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", lineHeight: 1.55 }}>Мягкая ткань обволакивает тело — идеально для расслабления, растяжки и декомпрессии позвоночника. Подходит для новичков.</div>
+                </div>
+                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 14, padding: "16px 20px" }}>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E8F4F0", marginBottom: 6 }}>🤸 Гамаки с ручками</div>
+                  <div style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", lineHeight: 1.55 }}>Жёсткие петли с рукоятями — для силовых элементов, акробатики и уверенного контроля тела в воздухе.</div>
+                </div>
               </div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
                 {["Групповой", "VIP мини-группа", "Индивидуальный"].map(t => (
