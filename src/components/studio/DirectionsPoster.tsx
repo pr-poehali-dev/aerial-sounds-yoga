@@ -66,7 +66,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/93b65b79-291e-4cec-8001-7f2fcb5b3edc.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4aabafc2-467a-47e7-b5b5-255f60ac1a30.jpg",
     name: "Растяжка",
     sub: "Стретчинг для всех уровней",
     price: "5 800 ₽",
