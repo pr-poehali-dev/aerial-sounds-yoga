@@ -16,7 +16,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/e58e708e-c112-48a3-b768-bb0f001b57f1.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/c60dd3d7-32fb-441b-be98-bcd055040864.jpg",
     name: "Аэрокидс",
     sub: "Аэройога для детей · 50 мин",
     price: "1 200 ₽",
