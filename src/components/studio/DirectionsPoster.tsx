@@ -43,7 +43,7 @@ const directions = [
     sub: "Бережная поддержка на каждом этапе",
     price: "от 800 ₽",
     per: "занятие",
-    pos: "center 30%",
+    pos: "center 65%",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/36ffee5d-74d6-4441-b7ce-77ced0cba167.jpg",
@@ -59,7 +59,7 @@ const directions = [
     sub: "Силовые + кардио · для всех",
     price: "от 500 ₽",
     per: "занятие",
-    pos: "center top",
+    pos: "center 40%",
   },
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/5e4ef1b1-2294-478f-8a31-7d5a1cf71fa6.jpg",
