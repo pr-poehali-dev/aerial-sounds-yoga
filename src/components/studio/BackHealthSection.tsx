@@ -129,12 +129,8 @@ export default function BackHealthSection({ onShowForm }: Props) {
               </div>
             ))}
           </div>
-          <div style={{ borderRadius: 24, overflow: "hidden", position: "relative", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 320 }}>
-            {/* Фото хатха йоги на фоне */}
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/8c175b00-b2d5-4bfe-a2dd-0d8e0389fb63.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(80,30,120,0.75) 0%, rgba(40,10,70,0.82) 100%)" }} />
-
-            <div style={{ position: "relative", padding: "36px 36px 0" }}>
+          <div style={{ borderRadius: 24, background: "linear-gradient(135deg, #6b3fa0 0%, #3a1060 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 320, padding: "36px" }}>
+            <div>
               <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: 16 }}>Запись на программу</div>
               <h3 style={{ ...S, fontSize: 30, fontWeight: 300, color: "#fff", lineHeight: 1.2, marginBottom: 16 }}>
                 Первое занятие —<br />по специальной цене
@@ -143,8 +139,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
                 Расскажем о программе, оценим ваш запрос и подберём оптимальный формат.
               </p>
             </div>
-
-            <div style={{ position: "relative", padding: "24px 36px 36px", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 24 }}>
               <button className="pp-btn" onClick={onShowForm} style={{ background: "#fff", color: "#a87cc7", justifyContent: "center", fontWeight: 700, animation: "ctaPulse 1.6s ease-in-out infinite" }}>
                 Начни прямо сейчас
               </button>
