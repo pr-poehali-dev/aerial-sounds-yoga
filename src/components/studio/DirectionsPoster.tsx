@@ -97,8 +97,12 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/76eff1a3-2252-43e1-974c-ef008a2af7ec.jpg",
     name: "Хатха йога",
     sub: "Классическая практика",
-    price: "от 800 ₽",
-    per: "90 мин",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
     pos: "center center",
   },
   {
@@ -115,8 +119,10 @@ const directions = [
     sub: "Бережная поддержка на каждом этапе",
     price: "1 500 ₽",
     per: "разовое · 90 мин",
-    price2: "3 850 ₽",
+    price2: "5 100 ₽",
     per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
     pos: "center 65%",
   },
   {
@@ -125,8 +131,10 @@ const directions = [
     sub: "Терапевтическая программа",
     price: "1 500 ₽",
     per: "разовое · 90 мин",
-    price2: "8 120 ₽",
-    per2: "абонемент 8 занятий",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
     pos: "center center",
   },
   {
@@ -143,8 +151,48 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/18ac39e0-034c-4075-9171-a120d098d277.jpg",
     name: "Йогатерапия",
     sub: "Восстановление после травм",
-    price: "от 800 ₽",
-    per: "90 мин",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
+    pos: "center center",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/945d9849-1e39-485a-83c9-0e7f0142e9f1.jpg",
+    name: "Функциональная йога",
+    sub: "Движение и осознанность тела",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
+    pos: "center center",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/3d5649dd-41c6-480e-9f0c-98d3f6dd3035.jpg",
+    name: "Двигательная терапия",
+    sub: "Мягкое восстановление через движение",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
+    pos: "center center",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6b0c7237-4e59-4a3a-b0b6-727095218a1d.jpg",
+    name: "Спина без боли",
+    sub: "Терапия и профилактика болей в спине",
+    price: "1 500 ₽",
+    per: "разовое · 90 мин",
+    price2: "5 100 ₽",
+    per2: "абонемент 4 занятия",
+    price3: "8 120 ₽",
+    per3: "абонемент 8 занятий",
     pos: "center center",
   },
 ];
@@ -212,6 +260,12 @@ export default function DirectionsPoster({ onShowForm }: Props) {
                     <div>
                       <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price2}</span>
                       <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per2}</span>
+                    </div>
+                  )}
+                  {d.price3 && (
+                    <div>
+                      <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price3}</span>
+                      <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per3}</span>
                     </div>
                   )}
                 </div>
