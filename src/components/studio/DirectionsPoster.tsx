@@ -48,7 +48,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/e1fa0f55-f9c2-4db3-8d3a-77c64a9d27fd.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/714cab2e-d0b0-40c5-9b7b-5dfefb37020c.jpg",
     name: "МФР + Аэройога",
     sub: "Миофасциальный релиз и воздушная йога",
     price: "5 800 ₽",
