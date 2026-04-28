@@ -164,7 +164,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/945d9849-1e39-485a-83c9-0e7f0142e9f1.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/76b3a705-7718-4c27-bd8d-6c2f7df7987e.jpg",
     name: "Функциональная йога",
     sub: "Движение и осознанность тела",
     price: "1 500 ₽",
