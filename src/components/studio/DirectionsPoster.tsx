@@ -24,7 +24,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/a10f3179-fd2c-4aee-9ab3-056426708de2.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/aeaccb1b-09ba-4086-9a1b-4534c8f33572.jpg",
     name: "Растяжка + Пилатес в гамаках",
     sub: "Гибкость и пластика тела",
     price: "5 800 ₽",
@@ -32,11 +32,13 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6dbd44de-93c3-4db3-b7f2-aae6f9c0f16a.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4ea1ec4c-3f2c-45d3-a415-de9c5ec75e4a.jpg",
     name: "Фитнес в гамаках",
     sub: "Силовые тренировки в подвесной системе",
-    price: "5 800 ₽",
-    per: "абонемент 8 занятий · 60 мин",
+    price: "1 200 ₽",
+    per: "разовое · 60 мин",
+    price2: "5 800 ₽",
+    per2: "абонемент 8 занятий",
     pos: "center center",
   },
   {
