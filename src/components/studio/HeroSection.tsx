@@ -104,7 +104,10 @@ export default function HeroSection({ onShowForm }: Props) {
             {HERO_SLIDES[slide].label} · {HERO_SLIDES[slide].sub}
           </p>
 
-
+          <button className="pp-btn-gold pp-btn-pulse-cta" onClick={onShowForm} style={{ marginBottom: 36, padding: "16px 40px", fontSize: 16 }}>
+            <Icon name="Sparkles" size={17} />
+            Записаться
+          </button>
 
           <div style={{ display: "flex", gap: 24 }}>
             {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
