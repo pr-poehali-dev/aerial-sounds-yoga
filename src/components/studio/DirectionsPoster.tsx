@@ -59,8 +59,10 @@ const directions = [
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg",
     name: "Красивая осанка",
     sub: "Коррекция и выравнивание позвоночника",
-    price: "5 800 ₽",
-    per: "абонемент 8 занятий · 55 мин",
+    price: "1 200 ₽",
+    per: "разовое · 55 мин",
+    price2: "5 800 ₽",
+    per2: "абонемент 8 занятий",
     pos: "center center",
   },
   {
