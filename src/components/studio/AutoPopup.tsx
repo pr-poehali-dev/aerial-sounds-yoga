@@ -50,10 +50,10 @@ export default function AutoPopup({ onClose }: Props) {
       >
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,10,35,0.78)", backdropFilter: "blur(16px)" }} />
 
-        <div style={{ position: "relative", zIndex: 1, display: "flex", borderRadius: 24, overflow: "hidden", maxWidth: 820, width: "100%", maxHeight: "92vh", boxShadow: "0 32px 80px rgba(0,0,0,0.4)", animation: "popupIn 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
+        <div style={{ position: "relative", zIndex: 1, display: "flex", borderRadius: 20, overflow: "hidden", maxWidth: 480, width: "100%", maxHeight: "92vh", boxShadow: "0 32px 80px rgba(0,0,0,0.4)", animation: "popupIn 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
 
           {/* Фото слева */}
-          <div style={{ flex: "0 0 42%", position: "relative", minHeight: 540 }}>
+          <div style={{ flex: "0 0 38%", position: "relative", minHeight: 420 }}>
             <img
               src={PHOTO}
               alt="Девушка в позе лотоса"
@@ -69,7 +69,7 @@ export default function AutoPopup({ onClose }: Props) {
           </div>
 
           {/* Форма справа */}
-          <div style={{ flex: 1, background: "var(--pp-cream)", padding: "44px 40px", overflowY: "auto", position: "relative" }}>
+          <div style={{ flex: 1, background: "var(--pp-cream)", padding: "28px 24px", overflowY: "auto", position: "relative" }}>
             <button
               onClick={onClose}
               style={{ position: "absolute", top: 18, right: 18, width: 36, height: 36, borderRadius: "50%", background: "var(--pp-cream-3)", border: "none", color: "var(--pp-muted)", cursor: "pointer", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -78,14 +78,14 @@ export default function AutoPopup({ onClose }: Props) {
             {!submitted ? (
               <>
                 <div className="pp-label" style={{ marginBottom: 12 }}>Специальное предложение</div>
-                <h3 style={{ ...S, fontSize: 28, fontWeight: 400, lineHeight: 1.2, marginBottom: 12, paddingRight: 32 }}>
+                <h3 style={{ ...S, fontSize: 20, fontWeight: 400, lineHeight: 1.2, marginBottom: 10, paddingRight: 32 }}>
                   Новые услуги и <em style={{ color: "var(--pp-teal)" }}>специальные предложения</em> студии
                 </h3>
-                <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 28 }}>
+                <p style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.6, marginBottom: 18 }}>
                   Оставь заявку — и узнай обо всех наших выгодных предложениях.
                 </p>
 
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                   <div>
                     <label style={{ display: "block", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-muted)", marginBottom: 7 }}>Ваше имя *</label>
                     <input className="pp-input" value={name} onChange={e => setName(e.target.value)} required placeholder="Введите ваше имя" />
