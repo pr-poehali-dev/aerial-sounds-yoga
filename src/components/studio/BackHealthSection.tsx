@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const S = { fontFamily: "var(--font-serif)" };
@@ -23,6 +24,20 @@ interface Props {
 }
 
 export default function BackHealthSection({ onShowForm }: Props) {
+  const [slide, setSlide] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTimer = () => {
+    timerRef.current = setInterval(() => setSlide(c => (c + 1) % RESULTS.length), 4000);
+  };
+  useEffect(() => { startTimer(); return () => { if (timerRef.current) clearInterval(timerRef.current); }; }, []);
+
+  const goTo = (i: number) => {
+    setSlide(i);
+    if (timerRef.current) clearInterval(timerRef.current);
+    startTimer();
+  };
+
   return (
     <section id="back-health" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -78,22 +93,26 @@ export default function BackHealthSection({ onShowForm }: Props) {
           </div>
         </div>
 
-        {/* Результаты */}
+        {/* Результаты — карусель */}
         <div style={{ marginBottom: 56 }}>
           <h3 style={{ ...S, fontSize: 28, fontWeight: 400, marginBottom: 28, textAlign: "center" }}>
-            Что говорят <em style={{ color: "var(--pp-teal)" }}>после курса</em>
+            Те, кто приходит <em style={{ color: "var(--pp-teal)" }}>снова и снова</em>
           </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-            {RESULTS.map((r, i) => (
-              <div key={i} className="pp-card" style={{ padding: "28px 32px" }}>
-                <div style={{ color: "var(--pp-teal)", letterSpacing: 3, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
-                <p style={{ fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 20, fontStyle: "italic" }}>{r.result}</p>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <img src={r.img} alt={r.name} style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--pp-teal)" }} />
-                  <span style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{r.name}</span>
-                </div>
+          <div style={{ position: "relative", maxWidth: 600, margin: "0 auto" }}>
+            <div className="pp-card" style={{ padding: "36px 40px", minHeight: 180, transition: "opacity 0.3s" }}>
+              <div style={{ color: "var(--pp-teal)", letterSpacing: 3, marginBottom: 16, fontSize: 16 }}>★★★★★</div>
+              <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 24, fontStyle: "italic" }}>{RESULTS[slide].result}</p>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <img src={RESULTS[slide].img} alt={RESULTS[slide].name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", border: "2px solid var(--pp-teal)" }} />
+                <span style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)" }}>{RESULTS[slide].name}</span>
               </div>
-            ))}
+            </div>
+            {/* Точки */}
+            <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 20 }}>
+              {RESULTS.map((_, i) => (
+                <button key={i} onClick={() => goTo(i)} style={{ width: i === slide ? 24 : 8, height: 8, borderRadius: 4, background: i === slide ? "var(--pp-teal)" : "var(--pp-border)", border: "none", cursor: "pointer", padding: 0, transition: "all 0.3s" }} />
+              ))}
+            </div>
           </div>
         </div>
 
