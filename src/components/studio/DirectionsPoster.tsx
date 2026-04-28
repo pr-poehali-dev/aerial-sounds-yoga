@@ -62,7 +62,7 @@ const directions = [
     pos: "center 40%",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/cce18a4e-844c-4a82-a1f2-35829e7db3d3.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/18ac39e0-034c-4075-9171-a120d098d277.jpg",
     name: "Йогатерапия",
     sub: "Восстановление после травм",
     price: "от 800 ₽",
