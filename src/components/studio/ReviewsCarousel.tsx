@@ -32,7 +32,7 @@ export default function ReviewsCarousel() {
         <div style={{ marginBottom: 48, textAlign: "center" }}>
           <div className="pp-label" style={{ marginBottom: 16 }}>Отзывы</div>
           <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1 }}>
-            Что говорят <em style={{ color: "var(--pp-teal)" }}>после курса</em>
+            Отзывы наших <em style={{ color: "var(--pp-teal)" }}>клиентов</em>
           </h2>
         </div>
 
