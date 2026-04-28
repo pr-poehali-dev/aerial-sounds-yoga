@@ -6,7 +6,7 @@ interface Props {
 
 const directions = [
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/77b141e6-7eec-4f02-b57d-47a17c04a291.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6f579330-810b-4a91-81ff-18ea9196e864.jpg",
     name: "Аэройога",
     sub: "Для начинающих и продолжающих",
     price: "1 200 ₽",
@@ -26,7 +26,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/aeaccb1b-09ba-4086-9a1b-4534c8f33572.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/a6e65447-3aa5-49f8-95a1-0d9a4e8c69e1.jpg",
     name: "Растяжка + Пилатес в гамаках",
     sub: "Гибкость и пластика тела",
     price: "1 200 ₽",
@@ -36,7 +36,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4ea1ec4c-3f2c-45d3-a415-de9c5ec75e4a.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6afe8304-7e00-46e3-ac84-9fc7b1fdfbb0.jpg",
     name: "Фитнес в гамаках",
     sub: "Силовые тренировки в подвесной системе",
     price: "1 200 ₽",
@@ -46,7 +46,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4767ed85-7b4a-478b-ae62-af08c4ef5b44.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/f026c5ed-30c4-4cf6-8e04-50d7aefc0fd7.jpg",
     name: "Фитнес на коврике",
     sub: "Функциональные тренировки",
     price: "1 200 ₽",
@@ -56,7 +56,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/714cab2e-d0b0-40c5-9b7b-5dfefb37020c.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/12ca0a5c-4f94-46b7-b4ca-f5906fa18341.jpg",
     name: "МФР + Аэройога",
     sub: "Миофасциальный релиз и воздушная йога",
     price: "1 200 ₽",
@@ -66,7 +66,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/23e5d97d-66bb-4df6-bb0b-a8c0f1453121.jpg",
     name: "Красивая осанка",
     sub: "Коррекция и выравнивание позвоночника",
     price: "1 200 ₽",
@@ -76,7 +76,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4aabafc2-467a-47e7-b5b5-255f60ac1a30.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/763a092e-b635-4a55-a86e-d3309e04482f.jpg",
     name: "Растяжка",
     sub: "Стретчинг для всех уровней",
     price: "1 200 ₽",
@@ -94,7 +94,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/76eff1a3-2252-43e1-974c-ef008a2af7ec.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/2dae0cf6-a5bf-472d-bd41-908fbec5eaa0.jpg",
     name: "Хатха йога",
     sub: "Классическая практика",
     price: "1 500 ₽",
@@ -106,7 +106,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/9f052fc9-253d-4b61-8a2a-ef5cea940beb.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/62b2c36b-8286-4a58-a6c9-9a8cb9075106.jpg",
     name: "Йога Айенгара",
     sub: "Точность и выравнивание тела",
     price: "1 500 ₽",
@@ -130,7 +130,7 @@ const directions = [
     pos: "center 65%",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/36ffee5d-74d6-4441-b7ce-77ced0cba167.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/f3329fa7-2fdf-41cd-ab18-ca7e1113e761.jpg",
     name: "Здоровая спина",
     sub: "Терапевтическая программа",
     price: "1 500 ₽",
@@ -142,7 +142,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/acd731c1-d8fb-41bb-a0a2-814ab15d23ea.jpg",
     name: "Фитнес Микс",
     sub: "Силовые + кардио · для всех",
     price: "1 200 ₽",
@@ -176,7 +176,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/3d5649dd-41c6-480e-9f0c-98d3f6dd3035.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/ebf7e2f8-7bf6-43e9-bb4f-e346a440f0cb.jpg",
     name: "Двигательная терапия",
     sub: "Мягкое восстановление через движение",
     price: "1 500 ₽",
@@ -188,7 +188,7 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6b0c7237-4e59-4a3a-b0b6-727095218a1d.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/b56ce2c7-6a49-4c48-89eb-87fb7d0a5f55.jpg",
     name: "Спина без боли",
     sub: "Терапия и профилактика болей в спине",
     price: "1 500 ₽",
