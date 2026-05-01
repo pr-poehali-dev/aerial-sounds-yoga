@@ -52,7 +52,7 @@ export default function ContactForm({ onClose }: Props) {
         style={{ position: "fixed", inset: 0, zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}
         onClick={e => { if (e.target === e.currentTarget) handleClose(); }}
       >
-        <div style={{ position: "absolute", inset: 0, background: "rgba(20,10,35,0.78)", backdropFilter: "blur(16px)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(28,16,8,0.75)", backdropFilter: "blur(16px)" }} />
 
         <div style={{ position: "relative", zIndex: 1, display: "flex", borderRadius: 24, overflow: "hidden", maxWidth: 860, width: "100%", maxHeight: "92vh", boxShadow: "0 32px 80px rgba(0,0,0,0.35)" }}>
 

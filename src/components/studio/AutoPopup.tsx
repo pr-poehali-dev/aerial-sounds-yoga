@@ -48,7 +48,7 @@ export default function AutoPopup({ onClose }: Props) {
         style={{ position: "fixed", inset: 0, zIndex: 1100, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, animation: "fadeIn 0.35s ease" }}
         onClick={e => { if (e.target === e.currentTarget) onClose(); }}
       >
-        <div style={{ position: "absolute", inset: 0, background: "rgba(20,10,35,0.78)", backdropFilter: "blur(16px)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(28,16,8,0.75)", backdropFilter: "blur(16px)" }} />
 
         <div style={{ position: "relative", zIndex: 1, display: "flex", borderRadius: 20, overflow: "hidden", maxWidth: 480, width: "100%", maxHeight: "92vh", boxShadow: "0 32px 80px rgba(0,0,0,0.4)", animation: "popupIn 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
 
@@ -59,7 +59,7 @@ export default function AutoPopup({ onClose }: Props) {
               alt="Девушка в позе лотоса"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
             />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(80,30,120,0.15) 0%, rgba(40,10,70,0.45) 100%)" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(44,26,14,0.05) 0%, rgba(44,26,14,0.45) 100%)" }} />
             <div style={{ position: "absolute", bottom: 28, left: 20, right: 20 }}>
               <div style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(12px)", borderRadius: 14, padding: "14px 18px", border: "1px solid rgba(255,255,255,0.25)" }}>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: 5 }}>Аэройога · Йога · Фитнес</div>
