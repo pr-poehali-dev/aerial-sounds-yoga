@@ -264,8 +264,8 @@
 }
 
 .pp-btn-gold {
-  background: linear-gradient(135deg, #e8b4d0 0%, #c47aaa 100%);
-  color: #3d1260;
+  background: linear-gradient(135deg, #e8dcc8 0%, #d4b896 100%);
+  color: #3b2a1a;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
@@ -281,9 +281,9 @@
   animation: btnPulse 2.4s ease-in-out infinite;
 }
 .pp-btn-gold:hover {
-  background: linear-gradient(135deg, #dea4c4 0%, #b86a9a 100%);
+  background: linear-gradient(135deg, #ddd0b8 0%, #c4a882 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(232, 180, 208, 0.5);
+  box-shadow: 0 8px 28px rgba(180, 148, 100, 0.4);
   animation: none;
 }
 
