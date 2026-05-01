@@ -7,7 +7,7 @@ const S = { fontFamily: "var(--font-serif)" };
 
 const HAMMOCK_DIRS = [
   {
-    title: "Аэройога",
+    title: "Аэройога · Растяжка в гамаках",
     sub: "Растяжка, сила, баланс в воздухе",
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg",
     price: "от 500 ₽",
@@ -23,12 +23,6 @@ const HAMMOCK_DIRS = [
     sub: "Игровой формат, с 5 лет",
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg",
     price: "от 400 ₽",
-  },
-  {
-    title: "Растяжка в гамаках",
-    sub: "Мягкое раскрытие тела без боли",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
-    price: "от 500 ₽",
   },
 ];
 
@@ -77,7 +71,7 @@ export default function ServicesSection({ onShowForm }: Props) {
             </button>
 
             {/* Раскрывающиеся направления */}
-            <div style={{ maxHeight: open ? 600 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
+            <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
               <div style={{ padding: "0 48px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 14 }}>
                 {HAMMOCK_DIRS.map((d, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden", display: "flex", alignItems: "stretch" }}>
