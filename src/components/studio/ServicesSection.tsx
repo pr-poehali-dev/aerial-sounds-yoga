@@ -9,7 +9,7 @@ const HAMMOCK_DIRS = [
   {
     title: "Аэройога",
     sub: "Растяжка, сила, баланс в воздухе",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg",
     price: "от 500 ₽",
   },
   {
@@ -27,7 +27,7 @@ const HAMMOCK_DIRS = [
   {
     title: "Растяжка в гамаках",
     sub: "Мягкое раскрытие тела без боли",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
     price: "от 500 ₽",
   },
 ];
