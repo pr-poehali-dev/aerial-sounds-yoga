@@ -78,16 +78,16 @@ export default function ServicesSection({ onShowForm }: Props) {
 
             {/* Раскрывающиеся направления */}
             <div style={{ maxHeight: open ? 600 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
-              <div style={{ padding: "0 48px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
+              <div style={{ padding: "0 48px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 14 }}>
                 {HAMMOCK_DIRS.map((d, i) => (
-                  <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden" }}>
-                    <img src={d.img} alt={d.title} style={{ width: "100%", height: 140, objectFit: "cover", objectPosition: "center top", display: "block" }} />
-                    <div style={{ padding: "16px 18px 20px" }}>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: "#e8dcc8", marginBottom: 4 }}>{d.title}</div>
-                      <div style={{ fontSize: 12, color: "rgba(232,220,200,0.55)", lineHeight: 1.5, marginBottom: 14 }}>{d.sub}</div>
+                  <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden", display: "flex", alignItems: "stretch" }}>
+                    <img src={d.img} alt={d.title} style={{ width: 140, flexShrink: 0, objectFit: "cover", objectPosition: "center", display: "block" }} />
+                    <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", justifyContent: "center", flex: 1 }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: "#e8dcc8", marginBottom: 5 }}>{d.title}</div>
+                      <div style={{ fontSize: 13, color: "rgba(232,220,200,0.55)", lineHeight: 1.5, marginBottom: 16 }}>{d.sub}</div>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                         <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
-                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#2c1a0e", background: "#e8dcc8", border: "none", borderRadius: 8, padding: "6px 14px", cursor: "pointer" }}>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#2c1a0e", background: "#e8dcc8", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>
                           Записаться
                         </button>
                       </div>
