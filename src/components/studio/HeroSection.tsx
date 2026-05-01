@@ -102,6 +102,11 @@ export default function HeroSection({ onShowForm }: Props) {
         {/* Затемнение */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.75) 100%)" }} />
 
+        {/* Кнопка — правый верхний угол */}
+        <button onClick={onShowForm} className="pp-btn-pulse-cta" style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, padding: "13px 32px", fontSize: 14, fontWeight: 600, background: "#2c1a0e", color: "#e8dcc8", border: "1px solid rgba(232,220,200,0.2)", borderRadius: 12, cursor: "pointer", letterSpacing: "0.02em", fontFamily: "Inter, sans-serif" }}>
+          Записаться
+        </button>
+
         {/* Контент поверх */}
         <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 6vw", paddingTop: 68 }}>
 
@@ -117,10 +122,7 @@ export default function HeroSection({ onShowForm }: Props) {
             {HERO_SLIDES[slide].label} · {HERO_SLIDES[slide].sub}
           </p>
 
-          <button className="pp-btn-gold pp-btn-pulse-cta" onClick={onShowForm} style={{ marginBottom: 36, padding: "16px 40px", fontSize: 16 }}>
-            <Icon name="Sparkles" size={17} />
-            Записаться
-          </button>
+
 
           <div style={{ display: "flex", gap: 24 }}>
             {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
