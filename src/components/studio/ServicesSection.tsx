@@ -1,14 +1,44 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import ReviewsCarousel from "./ReviewsCarousel";
 import { SERVICES } from "./data";
 
 const S = { fontFamily: "var(--font-serif)" };
 
+const HAMMOCK_DIRS = [
+  {
+    title: "Аэройога",
+    sub: "Растяжка, сила, баланс в воздухе",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/dadad880-36bc-46af-bbbb-f39c2b3ae72e.jpg",
+    price: "от 500 ₽",
+  },
+  {
+    title: "Фитнес в гамаках",
+    sub: "Кардио + силовые в подвесе",
+    img: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png",
+    price: "от 500 ₽",
+  },
+  {
+    title: "Дети в гамаках",
+    sub: "Игровой формат, с 5 лет",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg",
+    price: "от 400 ₽",
+  },
+  {
+    title: "Растяжка в гамаках",
+    sub: "Мягкое раскрытие тела без боли",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg",
+    price: "от 500 ₽",
+  },
+];
+
 interface Props {
   onShowForm: () => void;
 }
 
 export default function ServicesSection({ onShowForm }: Props) {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       {/* ── УСЛУГИ ───────────────────────────────────────── */}
@@ -21,47 +51,50 @@ export default function ServicesSection({ onShowForm }: Props) {
             </h2>
           </div>
 
-          {/* Аэройога — главная карточка */}
-          <div style={{ background: "linear-gradient(135deg, #3d2472 0%, #6b3fa0 60%, #8B5CC8 100%)", borderRadius: 24, padding: "40px 48px", marginBottom: 20, display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", right: 120, top: "50%", transform: "translateY(-50%)" }}>
-              {[0, 1, 2].map(i => (
-                <div key={i} className="gong-ripple" style={{ width: 160, height: 160, top: -80, left: -80, animationDelay: `${i * 1}s` }} />
-              ))}
-            </div>
+          {/* Аэройога в гамаках — раскрывающаяся карточка */}
+          <div style={{ background: "#2c1a0e", borderRadius: 24, marginBottom: 20, overflow: "hidden" }}>
+            <button
+              onClick={() => setOpen(o => !o)}
+              style={{ width: "100%", padding: "36px 48px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg"
+                  alt="Аэройога"
+                  style={{ width: 72, height: 72, borderRadius: 16, objectFit: "cover", objectPosition: "center top", flexShrink: 0 }}
+                />
+                <div>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(232,220,200,0.55)", marginBottom: 6 }}>★ Только у нас в городе</div>
+                  <div style={{ ...S, fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 300, color: "#e8dcc8", lineHeight: 1.1 }}>
+                    Аэройога в гамаках — <em style={{ color: "#d4b896" }}>4 направления</em>
+                  </div>
+                  <div style={{ fontSize: 14, color: "rgba(232,220,200,0.6)", marginTop: 6 }}>Шелковые гамаки и гамаки с ручками · Групповые, мини-группы, индивидуально</div>
+                </div>
+              </div>
+              <div style={{ width: 44, height: 44, borderRadius: "50%", background: "rgba(232,220,200,0.1)", border: "1px solid rgba(232,220,200,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, transition: "transform 0.3s ease", transform: open ? "rotate(45deg)" : "none" }}>
+                <Icon name="Plus" size={20} style={{ color: "#e8dcc8" }} />
+              </div>
+            </button>
 
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <div style={{ display: "inline-block", background: "rgba(200,169,106,0.25)", border: "1px solid rgba(200,169,106,0.5)", borderRadius: 100, padding: "4px 16px", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pp-gold)", marginBottom: 16 }}>
-                ★ Только у нас в городе
-              </div>
-              <h3 style={{ ...S, fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 300, color: "#E8F4F0", lineHeight: 1.1, marginBottom: 12 }}>
-                Аэройога —<br /><em style={{ color: "var(--pp-gold)" }}>только у нас</em>
-              </h3>
-              <p style={{ fontSize: 15, color: "rgba(232,244,240,0.8)", lineHeight: 1.7, marginBottom: 20, maxWidth: 500 }}>
-                2 вида гамаков на выбор: шелковые гамаки и гамаки с ручками. Подбираем формат под твои цели и уровень подготовки.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 24 }}>
-                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 14, padding: "16px 20px" }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E8F4F0", marginBottom: 6 }}>🪢 Шелковые гамаки</div>
-                  <div style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", lineHeight: 1.55 }}>Мягкая ткань обволакивает тело — идеально для расслабления, растяжки и декомпрессии позвоночника. Подходит для новичков.</div>
-                </div>
-                <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 14, padding: "16px 20px" }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E8F4F0", marginBottom: 6 }}>🤸 Гамаки с ручками</div>
-                  <div style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", lineHeight: 1.55 }}>Жёсткие петли с рукоятями — для силовых элементов, акробатики и уверенного контроля тела в воздухе.</div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
-                {["Групповой", "VIP мини-группа", "Индивидуальный"].map(t => (
-                  <span key={t} style={{ fontSize: 12, color: "rgba(232,244,240,0.7)", background: "rgba(255,255,255,0.1)", borderRadius: 100, padding: "4px 14px" }}>{t}</span>
+            {/* Раскрывающиеся направления */}
+            <div style={{ maxHeight: open ? 600 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
+              <div style={{ padding: "0 48px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
+                {HAMMOCK_DIRS.map((d, i) => (
+                  <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden" }}>
+                    <img src={d.img} alt={d.title} style={{ width: "100%", height: 140, objectFit: "cover", objectPosition: "center top", display: "block" }} />
+                    <div style={{ padding: "16px 18px 20px" }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: "#e8dcc8", marginBottom: 4 }}>{d.title}</div>
+                      <div style={{ fontSize: 12, color: "rgba(232,220,200,0.55)", lineHeight: 1.5, marginBottom: 14 }}>{d.sub}</div>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                        <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#2c1a0e", background: "#e8dcc8", border: "none", borderRadius: 8, padding: "6px 14px", cursor: "pointer" }}>
+                          Записаться
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
-              <button className="pp-btn-gold" onClick={onShowForm}>
-                <Icon name="Sparkles" size={15} />
-                Записаться
-              </button>
-            </div>
-
-            <div style={{ position: "relative", zIndex: 1, width: 260, flexShrink: 0 }} className="pp-float">
-              <img src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/5abbbc41-bea7-433c-9e72-bfdbc0275298.jpg" alt="Аэройога" style={{ width: "100%", height: 320, objectFit: "cover", objectPosition: "center top", borderRadius: 20, display: "block" }} />
             </div>
           </div>
 
