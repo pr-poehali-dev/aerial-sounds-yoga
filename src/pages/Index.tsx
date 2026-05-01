@@ -17,7 +17,7 @@ export default function Index() {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!autoPopupDismissed && !showForm) setShowAutoPopup(true);
-    }, 20000);
+    }, 60000);
     return () => clearTimeout(timer);
   }, [autoPopupDismissed, showForm]);
 
