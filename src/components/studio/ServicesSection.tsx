@@ -15,7 +15,7 @@ const HAMMOCK_DIRS = [
   {
     title: "Фитнес в гамаках",
     sub: "Кардио + силовые в подвесе",
-    img: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4ea1ec4c-3f2c-45d3-a415-de9c5ec75e4a.jpg",
     price: "от 500 ₽",
   },
   {
