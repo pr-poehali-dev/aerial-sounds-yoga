@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
-import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS } from "./data";
+import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS, FAQ_TABS } from "./data";
 
 const HERO_SLIDES = [
   { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Обучение на инструктора аэройоги" },
@@ -45,6 +45,19 @@ function AboutCounter() {
     <div ref={ref} style={{ flex: 1, background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 16px", textAlign: "center" }}>
       <div style={{ ...S, fontSize: 28, fontWeight: 400, color: "var(--pp-teal)", lineHeight: 1 }}>{count}+</div>
       <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 6, lineHeight: 1.3 }}>учеников</div>
+    </div>
+  );
+}
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ background: "var(--pp-cream)", border: `1px solid ${open ? "rgba(196,122,170,0.35)" : "var(--pp-border)"}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.2s" }}>
+      <button onClick={() => setOpen(o => !o)} style={{ width: "100%", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+        <span style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", lineHeight: 1.4 }}>{q}</span>
+        <span style={{ color: "var(--pp-teal)", fontSize: 20, flexShrink: 0, transition: "transform 0.2s", transform: open ? "rotate(45deg)" : "none" }}>+</span>
+      </button>
+      {open && <div style={{ padding: "0 20px 14px", fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.7 }}>{a}</div>}
     </div>
   );
 }
@@ -197,6 +210,16 @@ export default function HeroSection({ onShowForm }: Props) {
               ))}
               <AboutCounter />
             </div>
+          </div>
+        </div>
+
+        {/* Частые вопросы */}
+        <div style={{ maxWidth: 1200, margin: "48px auto 0", position: "relative", zIndex: 1 }}>
+          <div className="pp-label" style={{ marginBottom: 16 }}>Частые вопросы</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 10 }}>
+            {FAQ_TABS[0].items.map((f, i) => (
+              <FaqItem key={i} q={f.q} a={f.a} />
+            ))}
           </div>
         </div>
       </section>

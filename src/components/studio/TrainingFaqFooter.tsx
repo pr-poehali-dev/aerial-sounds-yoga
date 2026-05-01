@@ -1,6 +1,5 @@
-import { useState } from "react";
 import Icon from "@/components/ui/icon";
-import { STEPS, TRUST, FAQ_TABS } from "./data";
+import { STEPS, TRUST } from "./data";
 
 const S = { fontFamily: "var(--font-serif)" };
 
@@ -10,8 +9,6 @@ interface Props {
 }
 
 export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <>
       {/* ── ОБУЧЕНИЕ ─────────────────────────────────────── */}
@@ -96,44 +93,6 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
                 <div style={{ fontSize: 12, color: "var(--pp-muted)", lineHeight: 1.5 }}>{t.text}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ──────────────────────────────────────────── */}
-      <section id="faq" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 64, alignItems: "start" }}>
-          <div>
-            <div className="pp-label" style={{ marginBottom: 16 }}>Вопросы</div>
-            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
-              Отвечаем <em style={{ color: "var(--pp-teal)" }}>честно</em>
-            </h2>
-            <hr className="pp-divider" style={{ margin: "16px 0 20px" }} />
-            <p style={{ fontSize: 15, color: "var(--pp-muted)", lineHeight: 1.7, marginBottom: 24 }}>
-              Если не нашли ответ — напишите нам, ответим в течение 15 минут.
-            </p>
-            <button className="pp-btn-ghost" onClick={onShowForm}>
-              <Icon name="MessageCircle" size={15} />
-              Написать нам
-            </button>
-          </div>
-
-          <div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {FAQ_TABS[0].items.map((f, i) => (
-                <div key={i} style={{ background: "var(--pp-cream)", border: `1px solid ${openFaq === i ? "rgba(107,63,160,0.35)" : "var(--pp-border)"}`, borderRadius: 14, overflow: "hidden", transition: "border-color 0.2s" }}>
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    style={{ width: "100%", padding: "18px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
-                    <span style={{ fontSize: 15, fontWeight: 600, color: "var(--pp-text)", lineHeight: 1.4 }}>{f.q}</span>
-                    <span style={{ color: "var(--pp-teal)", fontSize: 22, flexShrink: 0, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "none" }}>+</span>
-                  </button>
-                  {openFaq === i && (
-                    <div style={{ padding: "0 24px 18px", fontSize: 14, color: "var(--pp-muted)", lineHeight: 1.7 }}>{f.a}</div>
-                  )}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

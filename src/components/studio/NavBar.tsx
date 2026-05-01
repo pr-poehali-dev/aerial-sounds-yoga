@@ -13,8 +13,8 @@ export default function NavBar({ onShowForm }: Props) {
           <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
         </a>
         <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-          {["Услуги", "О нас", "Спец предложения", "Обучение", "Отзывы", "FAQ"].map((t, i) => (
-            <a key={t} href={`#${["services","about","specials","training","reviews","faq"][i]}`}
+          {["Услуги", "О нас", "Спец предложения", "Обучение", "Отзывы"].map((t, i) => (
+            <a key={t} href={`#${["services","about","specials","training","reviews"][i]}`}
               style={{ fontSize: 14, color: "var(--pp-muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500 }}
               onMouseEnter={e => (e.currentTarget.style.color = "var(--pp-teal)")}
               onMouseLeave={e => (e.currentTarget.style.color = "var(--pp-muted)")}
