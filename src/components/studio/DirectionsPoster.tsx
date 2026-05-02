@@ -195,7 +195,7 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
           onClick={onShowForm}
           style={{
             width: "100%", padding: "12px", borderRadius: 10, border: "none",
-            background: "var(--pp-teal)", color: "#fff", fontSize: 14, fontWeight: 600,
+            background: "#3b1f0e", color: "#fff", fontSize: 14, fontWeight: 600,
             cursor: "pointer", transition: "opacity 0.2s", fontFamily: "'Inter', sans-serif",
           }}
           onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
@@ -259,7 +259,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
               onClick={onShowForm}
               style={{
                 width: "100%", padding: "12px", borderRadius: 10, border: "none",
-                background: "var(--pp-gold)", color: "#fff", fontSize: 14, fontWeight: 600,
+                background: "#3b1f0e", color: "#fff", fontSize: 14, fontWeight: 600,
                 cursor: "pointer", fontFamily: "'Inter', sans-serif",
               }}
             >Записаться</button>
@@ -305,7 +305,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
             onClick={onShowForm}
             style={{
               padding: "12px 28px", borderRadius: 10,
-              border: "2px solid #fff", background: "transparent",
+              border: "none", background: "#3b1f0e",
               color: "#fff", fontSize: 14, fontWeight: 600,
               cursor: "pointer", fontFamily: "'Inter', sans-serif",
             }}
@@ -564,7 +564,7 @@ export default function DirectionsPoster({ onShowForm }: Props) {
                     padding: "12px",
                     borderRadius: 10,
                     border: "none",
-                    background: "var(--pp-teal)",
+                    background: "#3b1f0e",
                     color: "#fff",
                     fontSize: 14,
                     fontWeight: 600,
