@@ -209,72 +209,86 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
 }
 
 function SpinCard({ onShowForm }: { onShowForm: () => void }) {
-  const [hovered, setHovered] = useState(false);
-
   return (
-    <div
-      style={{
-        borderRadius: 16, overflow: "hidden", background: "var(--pp-cream)",
-        border: "2px solid var(--pp-gold)", display: "flex", flexDirection: "column",
-        boxShadow: hovered ? "0 8px 32px rgba(184,148,72,0.22)" : "0 2px 12px rgba(184,148,72,0.1)",
-        transition: "box-shadow 0.3s",
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Фото с постоянным вращением */}
-      <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative" }}>
-        <img
-          src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg"
-          alt="Красивая осанка"
-          style={{
-            width: "130%", height: "130%",
-            objectFit: "cover", objectPosition: "center center",
-            display: "block",
-            marginLeft: "-15%", marginTop: "-15%",
-            animation: "spinFull 8s linear infinite",
-            transformOrigin: "center center",
-          }}
-        />
-        {/* Бадж «Набор открыт» */}
-        <div style={{
-          position: "absolute", top: 12, right: 12,
-          background: "var(--pp-gold)", color: "#fff",
-          fontSize: 11, fontWeight: 700, letterSpacing: "0.06em",
-          padding: "5px 10px", borderRadius: 20,
-          textTransform: "uppercase", boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
-        }}>
-          Набор открыт
-        </div>
-      </div>
+    <div style={{ perspective: "1000px" }}>
+      <div style={{ animation: "spinCardY 6s linear infinite", transformStyle: "preserve-3d", position: "relative" }}>
 
-      {/* Контент */}
-      <div style={{ padding: "20px 20px 24px", display: "flex", flexDirection: "column", flex: 1 }}>
-        <div style={{ fontSize: 17, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Красивая осанка</div>
-        <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 4, lineHeight: 1.5 }}>Коррекция и выравнивание позвоночника</div>
-        <div style={{ fontSize: 12, color: "var(--pp-gold)", fontWeight: 600, marginBottom: 16 }}>✦ Новое направление</div>
-        <div style={{ marginBottom: 16, marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
-          <div>
-            <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>1 200 ₽</span>
-            <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ разовое · 60 мин</span>
+        {/* Лицевая сторона */}
+        <div style={{
+          borderRadius: 16, overflow: "hidden", background: "var(--pp-cream)",
+          border: "2px solid var(--pp-gold)", display: "flex", flexDirection: "column",
+          boxShadow: "0 4px 24px rgba(184,148,72,0.18)",
+          backfaceVisibility: "hidden",
+        }}>
+          <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative" }}>
+            <img
+              src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg"
+              alt="Красивая осанка"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+            <div style={{
+              position: "absolute", top: 12, right: 12,
+              background: "var(--pp-gold)", color: "#fff",
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.06em",
+              padding: "5px 10px", borderRadius: 20,
+              textTransform: "uppercase", boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+            }}>Набор открыт</div>
           </div>
-          <div>
-            <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>5 800 ₽</span>
-            <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ абонемент 8 занятий</span>
+          <div style={{ padding: "20px 20px 24px", display: "flex", flexDirection: "column", flex: 1 }}>
+            <div style={{ fontSize: 17, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Красивая осанка</div>
+            <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 4, lineHeight: 1.5 }}>Коррекция и выравнивание позвоночника</div>
+            <div style={{ fontSize: 12, color: "var(--pp-gold)", fontWeight: 600, marginBottom: 16 }}>✦ Новое направление</div>
+            <div style={{ marginBottom: 16, marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
+              <div>
+                <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>1 200 ₽</span>
+                <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ разовое · 60 мин</span>
+              </div>
+              <div>
+                <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>5 800 ₽</span>
+                <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ абонемент 8 занятий</span>
+              </div>
+            </div>
+            <button
+              onClick={onShowForm}
+              style={{
+                width: "100%", padding: "12px", borderRadius: 10, border: "none",
+                background: "var(--pp-gold)", color: "#fff", fontSize: 14, fontWeight: 600,
+                cursor: "pointer", fontFamily: "'Inter', sans-serif",
+              }}
+            >Записаться</button>
           </div>
         </div>
-        <button
-          onClick={e => { e.stopPropagation(); onShowForm(); }}
-          style={{
-            width: "100%", padding: "12px", borderRadius: 10, border: "none",
-            background: "var(--pp-gold)", color: "#fff", fontSize: 14, fontWeight: 600,
-            cursor: "pointer", transition: "opacity 0.2s", fontFamily: "'Inter', sans-serif",
-          }}
-          onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-          onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-        >
-          Записаться
-        </button>
+
+        {/* Оборотная сторона */}
+        <div style={{
+          position: "absolute", inset: 0,
+          borderRadius: 16, background: "var(--pp-teal)",
+          border: "2px solid var(--pp-gold)",
+          display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center",
+          backfaceVisibility: "hidden",
+          transform: "rotateY(180deg)",
+          padding: 32, textAlign: "center",
+          boxShadow: "0 4px 24px rgba(184,148,72,0.18)",
+        }}>
+          <div style={{ fontSize: 36, marginBottom: 16 }}>🧘</div>
+          <div style={{ ...S, fontSize: 24, fontWeight: 300, color: "#fff", lineHeight: 1.3, marginBottom: 12 }}>
+            Красивая осанка
+          </div>
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: 24 }}>
+            Идёт набор в группу<br />· 60 минут · новое направление ·
+          </div>
+          <button
+            onClick={onShowForm}
+            style={{
+              padding: "12px 28px", borderRadius: 10,
+              border: "2px solid #fff", background: "transparent",
+              color: "#fff", fontSize: 14, fontWeight: 600,
+              cursor: "pointer", fontFamily: "'Inter', sans-serif",
+            }}
+          >Записаться</button>
+        </div>
+
       </div>
     </div>
   );

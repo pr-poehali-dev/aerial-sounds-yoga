@@ -11,6 +11,15 @@
   }
 }
 
+@keyframes spinCardY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
