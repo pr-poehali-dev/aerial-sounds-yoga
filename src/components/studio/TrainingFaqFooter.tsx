@@ -183,6 +183,22 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
             </div>
           </div>
 
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 32, marginBottom: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", width: "100%", textAlign: "center", marginBottom: 8, letterSpacing: "0.08em", textTransform: "uppercase" }}>Скачать приложение</div>
+            <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer"
+              style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", borderRadius: 12, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff", textDecoration: "none", fontSize: 13, fontWeight: 600, transition: "background 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.14)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}>
+              🍎 App Store
+            </a>
+            <a href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797" target="_blank" rel="noopener noreferrer"
+              style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", borderRadius: 12, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff", textDecoration: "none", fontSize: 13, fontWeight: 600, transition: "background 0.2s" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.14)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}>
+              🤖 RuStore
+            </a>
+          </div>
+
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>© 2019–2026 Студия Аэройоги, Йоги и Спа · г. Артём</span>
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }}>
