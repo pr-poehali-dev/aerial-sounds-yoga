@@ -269,7 +269,9 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
         {/* Оборотная сторона */}
         <div style={{
           position: "absolute", inset: 0,
-          borderRadius: 16, background: "var(--pp-teal)",
+          borderRadius: 16,
+          backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1c72da26-3a71-4da6-b9be-2c1b029d83f8.jpg)",
+          backgroundSize: "cover", backgroundPosition: "center",
           border: "2px solid var(--pp-gold)",
           display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center",
@@ -277,7 +279,10 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
           transform: "rotateY(180deg)",
           padding: 32, textAlign: "center",
           boxShadow: "0 4px 24px rgba(184,148,72,0.18)",
+          overflow: "hidden",
         }}>
+          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.38)", borderRadius: 14 }} />
+          <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
           <div style={{ ...S, fontSize: 24, fontWeight: 300, color: "#fff", lineHeight: 1.3, marginBottom: 12 }}>
             Красивая осанка
           </div>
@@ -305,6 +310,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
               cursor: "pointer", fontFamily: "'Inter', sans-serif",
             }}
           >Записаться</button>
+          </div>
         </div>
 
       </div>
