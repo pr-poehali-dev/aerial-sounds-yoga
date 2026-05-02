@@ -21,8 +21,8 @@ const HAMMOCK_DIRS = [
   {
     title: "Дети в гамаках",
     sub: "Игровой формат, с 5 лет",
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg",
-    price: "от 400 ₽",
+    img: "https://cdn.poehali.dev/files/c98ec227-3e9d-4cf0-9e7a-a50ea0ed46f7.png",
+    price: "от 600 ₽",
   },
 ];
 
