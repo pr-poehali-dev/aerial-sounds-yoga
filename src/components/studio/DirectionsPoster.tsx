@@ -208,6 +208,106 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
   );
 }
 
+function SpinCard({ onShowForm }: { onShowForm: () => void }) {
+  const [spinning, setSpinning] = useState(false);
+  const [deg, setDeg] = useState(0);
+  const [hovered, setHovered] = useState(false);
+  const rafRef = useRef<number | null>(null);
+  const startRef = useRef<number>(0);
+  const startDeg = useRef<number>(0);
+
+  const spin = () => {
+    if (spinning) return;
+    setSpinning(true);
+    startRef.current = performance.now();
+    startDeg.current = deg;
+    const duration = 1000;
+    const animate = (now: number) => {
+      const elapsed = now - startRef.current;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+      setDeg(startDeg.current + 360 * ease);
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        setDeg(startDeg.current + 360);
+        setSpinning(false);
+      }
+    };
+    rafRef.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); }, []);
+
+  return (
+    <div
+      style={{
+        borderRadius: 16, overflow: "hidden", background: "var(--pp-cream)",
+        border: "2px solid var(--pp-gold)", display: "flex", flexDirection: "column",
+        boxShadow: hovered ? "0 8px 32px rgba(184,148,72,0.22)" : "0 2px 12px rgba(184,148,72,0.1)",
+        transition: "box-shadow 0.3s",
+        cursor: "pointer",
+      }}
+      onMouseEnter={() => { setHovered(true); spin(); }}
+      onMouseLeave={() => setHovered(false)}
+      onClick={spin}
+    >
+      {/* Фото с вращением */}
+      <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative" }}>
+        <img
+          src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg"
+          alt="Красивая осанка"
+          style={{
+            width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center",
+            display: "block",
+            transform: `rotate(${deg}deg)`,
+            transformOrigin: "center center",
+          }}
+        />
+        {/* Бадж «Набор открыт» */}
+        <div style={{
+          position: "absolute", top: 12, right: 12,
+          background: "var(--pp-gold)", color: "#fff",
+          fontSize: 11, fontWeight: 700, letterSpacing: "0.06em",
+          padding: "5px 10px", borderRadius: 20,
+          textTransform: "uppercase", boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+        }}>
+          Набор открыт
+        </div>
+      </div>
+
+      {/* Контент */}
+      <div style={{ padding: "20px 20px 24px", display: "flex", flexDirection: "column", flex: 1 }}>
+        <div style={{ fontSize: 17, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Красивая осанка</div>
+        <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 4, lineHeight: 1.5 }}>Коррекция и выравнивание позвоночника</div>
+        <div style={{ fontSize: 12, color: "var(--pp-gold)", fontWeight: 600, marginBottom: 16 }}>✦ Новое направление</div>
+        <div style={{ marginBottom: 16, marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
+          <div>
+            <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>1 200 ₽</span>
+            <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ разовое · 60 мин</span>
+          </div>
+          <div>
+            <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>5 800 ₽</span>
+            <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ абонемент 8 занятий</span>
+          </div>
+        </div>
+        <button
+          onClick={e => { e.stopPropagation(); onShowForm(); }}
+          style={{
+            width: "100%", padding: "12px", borderRadius: 10, border: "none",
+            background: "var(--pp-gold)", color: "#fff", fontSize: 14, fontWeight: 600,
+            cursor: "pointer", transition: "opacity 0.2s", fontFamily: "'Inter', sans-serif",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+          onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+        >
+          Записаться
+        </button>
+      </div>
+    </div>
+  );
+}
+
 const yogaGroup = [
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/3d5649dd-41c6-480e-9f0c-98d3f6dd3035.jpg",
@@ -306,16 +406,7 @@ const directions = [
     per2: "абонемент 8 занятий",
     pos: "center center",
   },
-  {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg",
-    name: "Красивая осанка",
-    sub: "Коррекция и выравнивание позвоночника",
-    price: "1 200 ₽",
-    per: "разовое · 55 мин",
-    price2: "5 800 ₽",
-    per2: "абонемент 8 занятий",
-    pos: "center center",
-  },
+
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4aabafc2-467a-47e7-b5b5-255f60ac1a30.jpg",
     name: "Растяжка",
@@ -380,6 +471,8 @@ export default function DirectionsPoster({ onShowForm }: Props) {
           <FlipCarouselCard items={aeroyogaGroup} onShowForm={onShowForm} />
           {/* Карточка-карусель для йоги 90 мин */}
           <FlipCarouselCard items={yogaGroup} onShowForm={onShowForm} />
+          {/* Красивая осанка — новое направление с вращением 360° */}
+          <SpinCard onShowForm={onShowForm} />
           {directions.map((d, i) => (
             <div
               key={i}
