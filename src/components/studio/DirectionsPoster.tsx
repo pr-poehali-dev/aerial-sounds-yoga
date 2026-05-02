@@ -211,7 +211,7 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
 function SpinCard({ onShowForm }: { onShowForm: () => void }) {
   return (
     <div style={{ perspective: "1000px" }}>
-      <div style={{ animation: "spinCardY 6s linear infinite", transformStyle: "preserve-3d", position: "relative" }}>
+      <div style={{ animation: "spinCardY 12s linear infinite", transformStyle: "preserve-3d", position: "relative" }}>
 
         {/* Лицевая сторона */}
         <div style={{
@@ -278,12 +278,23 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
           padding: 32, textAlign: "center",
           boxShadow: "0 4px 24px rgba(184,148,72,0.18)",
         }}>
-          <div style={{ fontSize: 36, marginBottom: 16 }}>🧘</div>
           <div style={{ ...S, fontSize: 24, fontWeight: 300, color: "#fff", lineHeight: 1.3, marginBottom: 12 }}>
             Красивая осанка
           </div>
-          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: 24 }}>
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", lineHeight: 1.6, marginBottom: 20 }}>
             Идёт набор в группу<br />· 60 минут · новое направление ·
+          </div>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            background: "rgba(220,60,60,0.85)", color: "#fff",
+            fontSize: 12, fontWeight: 700,
+            padding: "6px 14px", borderRadius: 20, marginBottom: 20,
+          }}>
+            <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 0C6.5 0 10 3.5 10 7C10 8.2 9.6 9.3 8.9 10.1C9 9.6 9 9.1 8.8 8.6C8.3 9.8 7.3 10.7 6.1 11.1C6.4 10.5 6.5 9.8 6.3 9.1C5.7 10 4.8 10.6 3.8 10.8C2.1 9.9 1 8.1 1 6C1 3 4 0.5 6.5 0ZM6.5 6C6.5 7.4 5.4 8.5 4 8.5C4.5 9.3 5.4 9.8 6.5 9.8C7.9 9.8 9 8.7 9 7.3C9 6 8 5 6.8 4.8C6.9 5.2 6.8 5.6 6.5 6Z" fill="white"/>
+              <path d="M6.5 11C5 12 4.5 13.5 5 15C4 14.2 3.5 13 3.5 11.8C2.5 12.5 2 13.8 2.2 15C1.2 13.8 1 12 2 10.5C2.5 11.5 3.8 12 5 11.5C5.5 11.2 6 10.5 6.5 9.8C6.5 10.2 6.5 10.6 6.5 11Z" fill="white"/>
+            </svg>
+            Осталось 3 места
           </div>
           <button
             onClick={onShowForm}
