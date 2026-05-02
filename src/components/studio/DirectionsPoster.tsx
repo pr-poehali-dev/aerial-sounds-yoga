@@ -1,10 +1,12 @@
+import { useState, useEffect, useRef } from "react";
+
 const S = { fontFamily: "var(--font-serif)" };
 
 interface Props {
   onShowForm: () => void;
 }
 
-const directions = [
+const aeroyogaGroup = [
   {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/77b141e6-7eec-4f02-b57d-47a17c04a291.jpg",
     name: "Аэройога",
@@ -46,21 +48,173 @@ const directions = [
     pos: "center center",
   },
   {
-    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4767ed85-7b4a-478b-ae62-af08c4ef5b44.jpg",
-    name: "Фитнес на коврике",
-    sub: "Функциональные тренировки",
-    price: "1 200 ₽",
-    per: "разовое · 55 мин",
-    price2: "5 800 ₽",
-    per2: "абонемент 8 занятий",
-    pos: "center center",
-  },
-  {
     img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/714cab2e-d0b0-40c5-9b7b-5dfefb37020c.jpg",
     name: "МФР + Аэройога",
     sub: "Миофасциальный релиз и воздушная йога",
     price: "1 200 ₽",
     per: "разовое · 60 мин",
+    price2: "5 800 ₽",
+    per2: "абонемент 8 занятий",
+    pos: "center center",
+  },
+];
+
+function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; onShowForm: () => void }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState<number | null>(null);
+  const [flipping, setFlipping] = useState(false);
+  const [flipped, setFlipped] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scheduledNext = useRef<number | null>(null);
+
+  const goTo = (idx: number) => {
+    if (flipping || idx === currentIndex) return;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    scheduledNext.current = idx;
+    setNextIndex(idx);
+    setFlipping(true);
+    setFlipped(false);
+    timerRef.current = setTimeout(() => {
+      setFlipped(true);
+      timerRef.current = setTimeout(() => {
+        setCurrentIndex(idx);
+        setNextIndex(null);
+        setFlipping(false);
+        setFlipped(false);
+        scheduledNext.current = null;
+      }, 400);
+    }, 400);
+  };
+
+  const goNext = () => {
+    const next = (currentIndex + 1) % items.length;
+    goTo(next);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(goNext, 3500);
+    return () => clearInterval(interval);
+  }, [currentIndex, flipping]);
+
+  const cur = items[currentIndex];
+  const nxt = nextIndex !== null ? items[nextIndex] : null;
+
+  const rotateY = flipping ? (flipped ? "rotateY(0deg)" : "rotateY(-90deg)") : "rotateY(0deg)";
+  const opacity = flipping && !flipped ? 0 : 1;
+
+  return (
+    <div style={{ borderRadius: 16, overflow: "hidden", background: "var(--pp-cream)", border: "1px solid var(--pp-border)", display: "flex", flexDirection: "column" }}>
+      {/* Фото-флип */}
+      <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative", perspective: "800px", cursor: "pointer" }}>
+        {/* Текущее фото (уходит) */}
+        <div
+          style={{
+            position: "absolute", inset: 0,
+            transform: flipping ? (flipped ? "rotateY(90deg)" : "rotateY(0deg)") : "rotateY(0deg)",
+            transformOrigin: "center center",
+            transition: flipping ? "transform 0.4s ease-in-out" : "none",
+            backfaceVisibility: "hidden",
+          }}
+        >
+          <img
+            src={cur.img}
+            alt={cur.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: cur.pos, display: "block" }}
+          />
+        </div>
+        {/* Следующее фото (приходит) */}
+        {nxt && (
+          <div
+            style={{
+              position: "absolute", inset: 0,
+              transform: flipped ? "rotateY(0deg)" : "rotateY(-90deg)",
+              transformOrigin: "center center",
+              transition: "transform 0.4s ease-in-out",
+              backfaceVisibility: "hidden",
+            }}
+          >
+            <img
+              src={nxt.img}
+              alt={nxt.name}
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: nxt.pos, display: "block" }}
+            />
+          </div>
+        )}
+        {/* Точки навигации */}
+        <div style={{ position: "absolute", bottom: 10, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 6 }}>
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              style={{
+                width: i === currentIndex ? 18 : 8,
+                height: 8,
+                borderRadius: 4,
+                border: "none",
+                background: i === currentIndex ? "#fff" : "rgba(255,255,255,0.5)",
+                cursor: "pointer",
+                padding: 0,
+                transition: "all 0.3s",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Контент — плавно меняется */}
+      <div
+        style={{
+          padding: "20px 20px 24px",
+          display: "flex", flexDirection: "column", flex: 1,
+          opacity, transition: "opacity 0.3s",
+        }}
+      >
+        <div style={{ fontSize: 17, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>
+          {(nxt && flipped) ? nxt.name : cur.name}
+        </div>
+        <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 16, lineHeight: 1.5 }}>
+          {(nxt && flipped) ? nxt.sub : cur.sub}
+        </div>
+        <div style={{ marginBottom: 16, marginTop: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
+          {(() => {
+            const d = (nxt && flipped) ? nxt : cur;
+            return <>
+              <div>
+                <span style={{ ...S, fontSize: 22, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price}</span>
+                <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per}</span>
+              </div>
+              {d.price2 && <div>
+                <span style={{ ...S, fontSize: 18, fontWeight: 400, color: "var(--pp-teal)" }}>{d.price2}</span>
+                <span style={{ fontSize: 12, color: "var(--pp-muted)", marginLeft: 6 }}>/ {d.per2}</span>
+              </div>}
+            </>;
+          })()}
+        </div>
+        <button
+          onClick={onShowForm}
+          style={{
+            width: "100%", padding: "12px", borderRadius: 10, border: "none",
+            background: "var(--pp-teal)", color: "#fff", fontSize: 14, fontWeight: 600,
+            cursor: "pointer", transition: "opacity 0.2s", fontFamily: "'Inter', sans-serif",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+          onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+        >
+          Записаться
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const directions = [
+  {
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/4767ed85-7b4a-478b-ae62-af08c4ef5b44.jpg",
+    name: "Фитнес на коврике",
+    sub: "Функциональные тренировки",
+    price: "1 200 ₽",
+    per: "разовое · 55 мин",
     price2: "5 800 ₽",
     per2: "абонемент 8 занятий",
     pos: "center center",
@@ -219,6 +373,8 @@ export default function DirectionsPoster({ onShowForm }: Props) {
 
         {/* Сетка карточек */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
+          {/* Карточка-карусель для направлений в гамаках */}
+          <FlipCarouselCard items={aeroyogaGroup} onShowForm={onShowForm} />
           {directions.map((d, i) => (
             <div
               key={i}
