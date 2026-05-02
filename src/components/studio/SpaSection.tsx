@@ -14,8 +14,8 @@ export default function SpaSection() {
 
         <div style={{ position: "relative", zIndex: 1, padding: "80px 6vw", maxWidth: 600 }}>
           <div className="pp-label" style={{ marginBottom: 16, color: "rgba(255,220,180,0.7)" }}>Спа услуги</div>
-          <h2 style={{ ...S, fontSize: "clamp(32px, 4.5vw, 58px)", fontWeight: 300, lineHeight: 1.1, color: "#8B4513", marginBottom: 16 }}>
-            Пространство <em style={{ color: "#6B2E0A" }}>пара</em>
+          <h2 style={{ ...S, fontSize: "clamp(32px, 4.5vw, 58px)", fontWeight: 300, lineHeight: 1.1, color: "#fff", marginBottom: 16 }}>
+            Пространство <em style={{ color: "#D2691E" }}>пара</em>
           </h2>
           <hr style={{ border: "none", borderTop: "1px solid rgba(255,255,255,0.15)", margin: "16px 0 24px", width: 60 }} />
           <p style={{ fontSize: 16, color: "rgba(255,220,180,0.8)", lineHeight: 1.75, marginBottom: 32, maxWidth: 420 }}>
