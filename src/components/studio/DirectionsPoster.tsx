@@ -233,6 +233,13 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
               padding: "5px 10px", borderRadius: 20,
               textTransform: "uppercase", boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
             }}>Набор открыт</div>
+            <div style={{
+              position: "absolute", bottom: 12, left: 12,
+              background: "rgba(220,60,60,0.9)", color: "#fff",
+              fontSize: 11, fontWeight: 700, letterSpacing: "0.04em",
+              padding: "5px 10px", borderRadius: 20,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+            }}>🔥 Осталось 3 места</div>
           </div>
           <div style={{ padding: "20px 20px 24px", display: "flex", flexDirection: "column", flex: 1 }}>
             <div style={{ fontSize: 17, fontWeight: 700, color: "var(--pp-text)", marginBottom: 4 }}>Красивая осанка</div>
