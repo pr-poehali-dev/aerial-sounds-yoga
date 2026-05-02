@@ -40,7 +40,7 @@ export default function GallerySection() {
   }, [lightbox]);
 
   return (
-    <section style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+    <section id="gallery" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Заголовок */}
