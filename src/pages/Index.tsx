@@ -4,6 +4,7 @@ import HeroSection from "@/components/studio/HeroSection";
 import ServicesSection from "@/components/studio/ServicesSection";
 import GallerySection from "@/components/studio/GallerySection";
 import TrainingFaqFooter from "@/components/studio/TrainingFaqFooter";
+import SpaSection from "@/components/studio/SpaSection";
 import ContactForm from "@/components/studio/ContactForm";
 import AutoPopup from "@/components/studio/AutoPopup";
 import PrivacyModal from "@/components/studio/PrivacyModal";
@@ -27,6 +28,7 @@ export default function Index() {
       <HeroSection onShowForm={() => setShowForm(true)} />
       <ServicesSection onShowForm={() => setShowForm(true)} />
       <GallerySection />
+      <SpaSection />
       <TrainingFaqFooter onShowForm={() => setShowForm(true)} onShowPrivacy={setPrivacyModal} />
 
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}

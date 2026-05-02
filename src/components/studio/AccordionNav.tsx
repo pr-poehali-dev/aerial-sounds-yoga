@@ -8,7 +8,7 @@ const ITEMS = [
   { label: "Галерея", id: "gallery" },
   { label: "Отзывы", id: "reviews" },
   { label: "Спец предложения", id: "specials" },
-  { label: "Спа услуги", id: "services" },
+  { label: "Спа услуги", id: "spa" },
   { label: "Контакты", id: "specials" },
   { label: "О нас", id: "about" },
 ];
