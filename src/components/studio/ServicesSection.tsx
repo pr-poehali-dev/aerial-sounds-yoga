@@ -49,7 +49,7 @@ export default function ServicesSection({ onShowForm }: Props) {
           <div style={{ background: "#2c1a0e", borderRadius: 24, marginBottom: 20, overflow: "hidden" }}>
             <button
               onClick={() => setOpen(o => !o)}
-              style={{ width: "100%", padding: "36px 48px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
+              style={{ width: "100%", padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
                 <img
@@ -108,7 +108,7 @@ export default function ServicesSection({ onShowForm }: Props) {
                 </div>
 
                 {s.title === "Фитнес Микс" && (
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+                  <div className="pp-grid-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
                     <div style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 12, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10 }}>
                       <Icon name="Moon" size={16} style={{ color: "#e07b54", flexShrink: 0 }} />
                       <div>
