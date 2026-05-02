@@ -81,7 +81,7 @@ export default function ServicesSection({ onShowForm }: Props) {
                       <div style={{ fontSize: 13, color: "rgba(232,220,200,0.55)", lineHeight: 1.5, marginBottom: 16 }}>{d.sub}</div>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                         <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
-                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#2c1a0e", background: "#e8dcc8", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#3b1f0e", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>
                           Записаться
                         </button>
                       </div>
