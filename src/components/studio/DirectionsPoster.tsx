@@ -461,11 +461,27 @@ const directions = [
 
 export default function DirectionsPoster({ onShowForm }: Props) {
   return (
-    <section style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
+    <section style={{ padding: "100px 24px", background: "linear-gradient(160deg, var(--pp-cream-3) 0%, var(--pp-cream) 100%)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Заголовок */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
+
+          {/* Рамка-бейдж */}
+          <div style={{
+            display: "inline-block",
+            border: "2px solid var(--pp-gold)",
+            borderRadius: 14,
+            padding: "14px 32px",
+            marginBottom: 32,
+            background: "rgba(255,255,255,0.6)",
+            backdropFilter: "blur(4px)",
+          }}>
+            <div style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(15px,1.8vw,20px)", fontWeight: 600, color: "var(--pp-teal-dark)", letterSpacing: "0.02em" }}>
+              Аэройога №1 в Приморском крае — это наша визитная карточка с 2019 г.
+            </div>
+          </div>
+
           <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px,2.5vw,30px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-text)", lineHeight: 1.6, maxWidth: 680, margin: "0 auto 20px", padding: 0, border: "none" }}>
             «Йога — это путешествие внутрь себя. Аэройога — это шаг в это путешествие с лёгкостью и радостью.»
           </blockquote>
