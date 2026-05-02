@@ -270,7 +270,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
         <div style={{
           position: "absolute", inset: 0,
           borderRadius: 16,
-          backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/fa0ac91b-ff6c-4c39-b811-e4aedbf4ac61.jpg)",
+          backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/26c72c75-8a6d-4bbf-9282-437eb4922ec9.jpg)",
           backgroundSize: "cover", backgroundPosition: "center",
           border: "2px solid var(--pp-gold)",
           display: "flex", flexDirection: "column",
