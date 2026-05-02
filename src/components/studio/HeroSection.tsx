@@ -124,13 +124,30 @@ export default function HeroSection({ onShowForm }: Props) {
 
 
 
-          <div style={{ display: "flex", gap: 24 }}>
+          <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
             {[["7 лет", "опыта"], ["300+", "клиентов"], ["98%", "довольных"]].map(([n, l]) => (
               <div key={l}>
                 <div style={{ ...S, fontSize: 20, fontWeight: 400, color: "var(--pp-gold)" }}>{n}</div>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{l}</div>
               </div>
             ))}
+            <a
+              href="https://yandex.ru/maps/org/193809257456"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex", alignItems: "center", gap: 6,
+                padding: "6px 14px", borderRadius: 100,
+                background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
+                textDecoration: "none", transition: "background 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
+            >
+              <span style={{ fontSize: 15 }}>⭐⭐⭐⭐⭐</span>
+              <span style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>5.0</span>
+              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>Яндекс</span>
+            </a>
           </div>
         </div>
 
