@@ -24,6 +24,25 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
               Для тренеров, йогов и новичков с нуля — если хочешь превратить любовь к практике в профессию и зарабатывать на любимом деле.
             </p>
 
+            {/* Блок об Алёне */}
+            <div style={{ background: "var(--pp-teal-light)", border: "1px solid rgba(58,125,107,0.25)", borderRadius: 20, padding: "24px 28px", marginBottom: 32 }}>
+              <div style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 16 }}>
+                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--pp-teal)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0, fontFamily: "var(--font-serif)" }}>А</div>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: "var(--pp-text)", marginBottom: 2 }}>Алёна Самарина</div>
+                  <div style={{ fontSize: 12, color: "var(--pp-teal)", fontWeight: 600, letterSpacing: 0.5 }}>Руководитель студии · Ваш преподаватель</div>
+                </div>
+              </div>
+              <p style={{ fontSize: 14, color: "var(--pp-text)", lineHeight: 1.7, marginBottom: 14 }}>
+                Один из <strong>13 сертифицированных преподавателей аэройоги 3-го уровня в мире</strong>. Прямой ученик основателя методики Unnata — Мишель Дортеньяк. В фитнесе с 2006 года, в аэройоге с 2018.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {["Unnata Aerial Yoga, уровень 3", "Хатха-йога · Индия", "Звуковые практики · Индия", "Тибетские чаши (В. Огуй)", "Вибро-акустическая терапия", "Пилатес с малым оборудованием"].map(tag => (
+                  <span key={tag} style={{ fontSize: 11, color: "var(--pp-teal)", background: "#fff", border: "1px solid rgba(58,125,107,0.2)", borderRadius: 100, padding: "3px 12px", fontWeight: 500 }}>{tag}</span>
+                ))}
+              </div>
+            </div>
+
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {STEPS.map((step, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, padding: "20px 24px", background: "var(--pp-cream)", border: "1px solid var(--pp-border)", borderRadius: 16 }}>
