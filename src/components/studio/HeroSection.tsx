@@ -125,7 +125,7 @@ export default function HeroSection({ onShowForm }: Props) {
 
 
           <div style={{ display: "flex", gap: 24 }}>
-            {[["7+", "лет в городе"], ["500+", "учеников"]].map(([n, l]) => (
+            {[["7 лет", "опыта"], ["300+", "клиентов"], ["98%", "довольных"]].map(([n, l]) => (
               <div key={l}>
                 <div style={{ ...S, fontSize: 20, fontWeight: 400, color: "var(--pp-gold)" }}>{n}</div>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{l}</div>
