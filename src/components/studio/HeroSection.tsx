@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
-import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS, FAQ_TABS } from "./data";
+import { IMG_AERIAL, IMG_GONG, PAINS, FAQ_TABS } from "./data";
 
 const HERO_SLIDES = [
   { src: IMG_AERIAL, label: "Аэройога", sub: "Обучение на инструктора аэройоги" },
@@ -301,50 +301,6 @@ export default function HeroSection({ onShowForm }: Props) {
       {/* ── ЗДОРОВАЯ СПИНА ────────────────────────────────── */}
       <BackHealthSection onShowForm={onShowForm} />
 
-      {/* ── РЕШЕНИЕ ───────────────────────────────────────── */}
-      <section style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
-        <div className="pp-grid-2col" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
-          <div>
-            <div className="pp-label" style={{ marginBottom: 16 }}>Наш подход</div>
-            <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>
-              Пространство, где тело <em style={{ color: "var(--pp-teal)" }}>парит</em>, а разум молчит
-            </h2>
-            <hr className="pp-divider" style={{ margin: "20px 0 24px" }} />
-            <p style={{ fontSize: 16, color: "var(--pp-muted)", lineHeight: 1.75, marginBottom: 32 }}>
-              Мы создали место, где аэройога встречается со звуковой терапией — уникальное сочетание, работающее одновременно на физическом и эмоциональном уровне.
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {BENEFITS.map((b, i) => (
-                <div key={i} className="pp-card" style={{ padding: "16px 20px", display: "flex", gap: 14, alignItems: "flex-start" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "var(--pp-teal-light)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon name={b.icon} fallback="Leaf" size={18} style={{ color: "var(--pp-teal)" }} />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 2 }}>{b.title}</div>
-                    <div style={{ fontSize: 13, color: "var(--pp-muted)", lineHeight: 1.5 }}>{b.text}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ position: "relative" }}>
-            <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "4/5", boxShadow: "0 30px 80px rgba(31,29,24,0.12)" }}>
-              <img src={IMG_GONG} alt="Гонг-медитация" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </div>
-            <div className="pp-gong-badge" style={{ position: "absolute", top: 32, left: -28, background: "var(--pp-cream-2)", borderRadius: 16, padding: "20px 24px", boxShadow: "0 12px 40px rgba(31,29,24,0.1)", border: "1px solid var(--pp-border)" }}>
-              <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                <Icon name="Bell" size={24} style={{ color: "var(--pp-teal)" }} />
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)" }}>Гонг-медитация</div>
-                  <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>Тибетские чаши · Гонг · Монохорд</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
