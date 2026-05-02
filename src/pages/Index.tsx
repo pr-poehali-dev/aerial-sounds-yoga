@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import NavBar from "@/components/studio/NavBar";
 import HeroSection from "@/components/studio/HeroSection";
 import ServicesSection from "@/components/studio/ServicesSection";
@@ -6,21 +6,12 @@ import GallerySection from "@/components/studio/GallerySection";
 import TrainingFaqFooter from "@/components/studio/TrainingFaqFooter";
 import SpaSection from "@/components/studio/SpaSection";
 import ContactForm from "@/components/studio/ContactForm";
-import AutoPopup from "@/components/studio/AutoPopup";
 import PrivacyModal from "@/components/studio/PrivacyModal";
 
 export default function Index() {
   const [showForm, setShowForm] = useState(false);
   const [privacyModal, setPrivacyModal] = useState<"privacy" | "consent" | null>(null);
-  const [showAutoPopup, setShowAutoPopup] = useState(false);
-  const [autoPopupDismissed, setAutoPopupDismissed] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!autoPopupDismissed && !showForm) setShowAutoPopup(true);
-    }, 60000);
-    return () => clearTimeout(timer);
-  }, [autoPopupDismissed, showForm]);
 
   return (
     <div style={{ background: "var(--pp-cream)", minHeight: "100vh", color: "var(--pp-text)" }}>
@@ -32,9 +23,6 @@ export default function Index() {
       <TrainingFaqFooter onShowForm={() => setShowForm(true)} onShowPrivacy={setPrivacyModal} />
 
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}
-      {showAutoPopup && !showForm && (
-        <AutoPopup onClose={() => { setShowAutoPopup(false); setAutoPopupDismissed(true); }} />
-      )}
       {privacyModal && <PrivacyModal type={privacyModal} onClose={() => setPrivacyModal(null)} />}
 
       <style>{`
