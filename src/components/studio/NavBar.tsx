@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Icon from "@/components/ui/icon";
 import { fontSerif as S } from "./shared";
 import AccordionNav from "./AccordionNav";
 
@@ -19,7 +20,7 @@ export default function NavBar({ onShowForm }: Props) {
           </a>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
             <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "var(--pp-text)", fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>
-              <span className="pp-blink" style={{ fontSize: 16 }}>📞</span>
+              <Icon name="Phone" size={15} className="pp-blink" style={{ color: "var(--pp-teal)" }} />
               +7 (914) 701-28-83
             </a>
             <button

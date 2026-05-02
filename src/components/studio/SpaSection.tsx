@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Icon from "@/components/ui/icon";
 
 const S = { fontFamily: "var(--font-serif)" };
 
@@ -12,9 +13,9 @@ const PHOTOS = [
 ];
 
 const FEATURES = [
-  { icon: "🔥", label: "Авторские программы" },
-  { icon: "🌿", label: "Пар мастера" },
-  { icon: "❄️", label: "Термальная зона" },
+  { icon: "Flame", label: "Авторские программы" },
+  { icon: "Leaf", label: "Пар мастера" },
+  { icon: "Snowflake", label: "Термальная зона" },
 ];
 
 export default function SpaSection() {
@@ -86,7 +87,7 @@ export default function SpaSection() {
                 border: "1px solid rgba(210,105,30,0.4)",
                 fontSize: 13, color: "rgba(255,220,180,0.9)",
               }}>
-                <span>{f.icon}</span>
+                <Icon name={f.icon} size={13} />
                 {f.label}
               </div>
             ))}
@@ -104,7 +105,7 @@ export default function SpaSection() {
             onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
             onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
           >
-            <span>📞</span>
+            <Icon name="Phone" size={16} />
             Записаться — +7 (908) 980-35-45
           </a>
         </div>

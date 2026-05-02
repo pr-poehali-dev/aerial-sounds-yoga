@@ -3,10 +3,10 @@ import Icon from "@/components/ui/icon";
 import { IMG_AERIAL, IMG_GONG, PAINS, BENEFITS, FAQ_TABS } from "./data";
 
 const HERO_SLIDES = [
-  { src: IMG_AERIAL, label: "✨ Аэройога", sub: "Обучение на инструктора аэройоги" },
+  { src: IMG_AERIAL, label: "Аэройога", sub: "Обучение на инструктора аэройоги" },
   { src: IMG_GONG,   label: "Гонг-медитация", sub: "Звуковые практики" },
-  { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg", label: "🦴 Здоровая спина", sub: "Без боли и таблеток" },
-  { src: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png", label: "💪 Фитнес Микс", sub: "Силовые + кардио · для всех" },
+  { src: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/08443f09-a33a-4642-bc38-f9008b4f7b8d.jpg", label: "Здоровая спина", sub: "Без боли и таблеток" },
+  { src: "https://cdn.poehali.dev/files/e332e9bb-a6e5-4967-9dec-7382c12ad3fd.png", label: "Фитнес Микс", sub: "Силовые + кардио · для всех" },
 ];
 import BackHealthSection from "./BackHealthSection";
 import DirectionsPoster from "./DirectionsPoster";
@@ -105,10 +105,10 @@ export default function HeroSection({ onShowForm }: Props) {
         {/* Кнопка — правый верхний угол */}
         <div style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, display: "flex", gap: 10, alignItems: "center" }}>
           <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#000", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
-            🍎 App Store
+            App Store
           </a>
           <a href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#4a90e2", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
-            🤖 RuStore
+            RuStore
           </a>
           <button onClick={onShowForm} className="pp-btn-pulse-cta" style={{ padding: "13px 32px", fontSize: 14, fontWeight: 600, background: "#2c1a0e", color: "#e8dcc8", border: "1px solid rgba(232,220,200,0.2)", borderRadius: 12, cursor: "pointer", letterSpacing: "0.02em", fontFamily: "Inter, sans-serif" }}>
             Записаться
@@ -152,7 +152,7 @@ export default function HeroSection({ onShowForm }: Props) {
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
             >
-              <span style={{ fontSize: 15 }}>⭐⭐⭐⭐⭐</span>
+              <span style={{ fontSize: 15, letterSpacing: 1 }}>★★★★★</span>
               <span style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>5.0</span>
               <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>Яндекс</span>
             </a>
@@ -335,7 +335,7 @@ export default function HeroSection({ onShowForm }: Props) {
             </div>
             <div style={{ position: "absolute", top: 32, left: -28, background: "var(--pp-cream-2)", borderRadius: 16, padding: "20px 24px", boxShadow: "0 12px 40px rgba(31,29,24,0.1)", border: "1px solid var(--pp-border)" }}>
               <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                <div style={{ fontSize: 28 }}>🔔</div>
+                <Icon name="Bell" size={24} style={{ color: "var(--pp-teal)" }} />
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pp-text)" }}>Гонг-медитация</div>
                   <div style={{ fontSize: 11, color: "var(--pp-muted)" }}>Тибетские чаши · Гонг · Монохорд</div>

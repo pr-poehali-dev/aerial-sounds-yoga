@@ -58,7 +58,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
               ))}
             </div>
             <div style={{ paddingTop: 24, borderTop: "1px solid rgba(58,125,107,0.15)" }}>
-              <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 16 }}>📅 Ближайший поток — уточни дату</div>
+              <div style={{ fontSize: 13, color: "var(--pp-muted)", marginBottom: 16 }}>Ближайший поток — уточни дату</div>
               <button className="pp-btn-primary" onClick={onShowForm}>
                 <Icon name="GraduationCap" size={16} />
                 Записаться на обучение
@@ -101,7 +101,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
       <section id="specials" style={{ padding: "100px 24px", background: "#2c1a0e", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(180,110,60,0.18) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-          <div style={{ fontSize: 56, marginBottom: 24 }} className="pp-float">🪢</div>
+          <div style={{ marginBottom: 24 }} className="pp-float"><Icon name="Infinity" size={48} style={{ color: "#e8b47a" }} /></div>
           <div className="pp-label" style={{ marginBottom: 16, color: "rgba(255,220,180,0.7)" }}>Начни сегодня</div>
           <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20, color: "#fff" }}>
             Твой первый шаг —<br /><em style={{ color: "#e8b47a" }}>по специальной цене</em>
@@ -125,13 +125,13 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
 
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
             <a href="tel:+79147012883" style={{ padding: "10px 20px", fontSize: 13, border: "1px solid rgba(255,255,255,0.2)", borderRadius: 100, color: "rgba(255,220,180,0.85)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
-              <span>📞</span> +7 (914) 701-28-83
+              <Icon name="Phone" size={13} /> +7 (914) 701-28-83
             </a>
             <a href="https://wa.me/79147012883" target="_blank" rel="noopener noreferrer" style={{ padding: "10px 20px", fontSize: 13, border: "1px solid rgba(255,255,255,0.2)", borderRadius: 100, color: "rgba(255,220,180,0.85)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
-              <span>📱</span> WhatsApp
+              <Icon name="MessageCircle" size={13} /> WhatsApp
             </a>
             <a href="https://t.me/+79147012883" target="_blank" rel="noopener noreferrer" style={{ padding: "10px 20px", fontSize: 13, border: "1px solid rgba(255,255,255,0.2)", borderRadius: 100, color: "rgba(255,220,180,0.85)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
-              <span>💬</span> Telegram
+              <Icon name="Send" size={13} /> Telegram
             </a>
           </div>
         </div>
