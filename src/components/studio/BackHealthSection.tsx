@@ -59,7 +59,7 @@ export default function BackHealthSection({ onShowForm }: Props) {
         </div>
 
         {/* Главный блок — фото + описание */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", marginBottom: 56 }}>
+        <div className="pp-grid-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center", marginBottom: 56 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "4/3" }}>
               <img src={IMG_BOLSTER} alt="Терапия с болстером" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -119,8 +119,8 @@ export default function BackHealthSection({ onShowForm }: Props) {
         </div>
 
         {/* Форматы + CTA */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        <div className="pp-grid-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "stretch" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: 16 }}>
             {FORMATS.map((f, i) => (
               <div key={i} style={{ background: "var(--pp-cream-2)", border: "1px solid var(--pp-border)", borderRadius: 16, padding: "20px 22px" }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: "var(--pp-text)", marginBottom: 6 }}>{f.title}</div>

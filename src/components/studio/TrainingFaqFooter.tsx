@@ -13,7 +13,7 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
     <>
       {/* ── ОБУЧЕНИЕ ─────────────────────────────────────── */}
       <section id="training" style={{ padding: "100px 24px", background: "var(--pp-cream-2)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+        <div className="pp-grid-2col" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
           <div>
             <div className="pp-label" style={{ marginBottom: 16 }}>Для инструкторов</div>
             <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 16 }}>

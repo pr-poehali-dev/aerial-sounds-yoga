@@ -57,7 +57,7 @@ export default function ContactForm({ onClose }: Props) {
         <div style={{ position: "relative", zIndex: 1, display: "flex", borderRadius: 24, overflow: "hidden", maxWidth: 860, width: "100%", maxHeight: "92vh", boxShadow: "0 32px 80px rgba(0,0,0,0.35)" }}>
 
           {/* Фото слева */}
-          <div style={{ flex: "0 0 42%", position: "relative", minHeight: 560 }}>
+          <div className="pp-form-photo" style={{ flex: "0 0 42%", position: "relative", minHeight: 560 }}>
             <img src={PHOTO} alt="Красивая осанка" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, transparent 60%, rgba(255,252,248,0.15) 100%)" }} />
             <div style={{ position: "absolute", bottom: 28, left: 24, right: 24 }}>

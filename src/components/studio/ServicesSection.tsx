@@ -72,7 +72,7 @@ export default function ServicesSection({ onShowForm }: Props) {
 
             {/* Раскрывающиеся направления */}
             <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
-              <div style={{ padding: "0 48px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))", gap: 14 }}>
+              <div style={{ padding: "0 clamp(16px, 4vw, 48px) 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 14 }}>
                 {HAMMOCK_DIRS.map((d, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden", display: "flex", alignItems: "stretch" }}>
                     <img src={d.img} alt={d.title} style={{ width: 140, flexShrink: 0, objectFit: "cover", objectPosition: "center", display: "block" }} />

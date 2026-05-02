@@ -103,7 +103,7 @@ export default function HeroSection({ onShowForm }: Props) {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.75) 100%)" }} />
 
         {/* Кнопка — правый верхний угол */}
-        <div style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, display: "flex", gap: 10, alignItems: "center" }}>
+        <div className="pp-hero-store-btns" style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, display: "flex", gap: 10, alignItems: "center" }}>
           <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#000", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
             App Store
           </a>
@@ -333,7 +333,7 @@ export default function HeroSection({ onShowForm }: Props) {
             <div style={{ borderRadius: 24, overflow: "hidden", aspectRatio: "4/5", boxShadow: "0 30px 80px rgba(31,29,24,0.12)" }}>
               <img src={IMG_GONG} alt="Гонг-медитация" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
-            <div style={{ position: "absolute", top: 32, left: -28, background: "var(--pp-cream-2)", borderRadius: 16, padding: "20px 24px", boxShadow: "0 12px 40px rgba(31,29,24,0.1)", border: "1px solid var(--pp-border)" }}>
+            <div className="pp-gong-badge" style={{ position: "absolute", top: 32, left: -28, background: "var(--pp-cream-2)", borderRadius: 16, padding: "20px 24px", boxShadow: "0 12px 40px rgba(31,29,24,0.1)", border: "1px solid var(--pp-border)" }}>
               <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
                 <Icon name="Bell" size={24} style={{ color: "var(--pp-teal)" }} />
                 <div>

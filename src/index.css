@@ -382,3 +382,48 @@
   background: var(--pp-teal);
   border-radius: 2px;
 }
+
+/* ── MOBILE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Отзывы: 3 колонки → 1 */
+  .pp-reviews-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Скрыть боковое фото в форме */
+  .pp-form-photo {
+    display: none !important;
+  }
+
+  /* Кнопки AppStore/RuStore — скрыть на мобильном */
+  .pp-hero-store-btns {
+    display: none !important;
+  }
+
+  /* Секции с 2 колонками → 1 */
+  .pp-grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Секции — padding по горизонтали на мобильном */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* HeroSection — absolute float-card Гонг убрать за экран */
+  .pp-gong-badge {
+    display: none !important;
+  }
+
+  /* Уменьшить padding секции с 100px до 60px */
+  section[style*='padding: "100px'] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Форма — полная ширина на мобильном */
+  .pp-form-photo ~ div {
+    border-radius: 16px !important;
+  }
+}

@@ -39,7 +39,7 @@ export default function ReviewsCarousel() {
         </div>
 
         {/* 3 карточки в строку */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 32 }}>
+        <div className="pp-reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 32 }}>
           {visible.map((r, k) => (
             <div key={k} className="pp-card" style={{ padding: "32px 28px", display: "flex", flexDirection: "column", justifyContent: "space-between", opacity: k === 0 ? 1 : k === 1 ? 1 : 0.75, transition: "opacity 0.4s" }}>
               <div>
