@@ -1,16 +1,61 @@
+import { useEffect, useRef, useState } from "react";
+
 const S = { fontFamily: "var(--font-serif)" };
 
+const PHOTOS = [
+  "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/cc500b87-ed2c-4e0d-b55c-e27ebd74969d.jpg",
+  "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/b6bfaeb1-ba92-4ba1-9f86-8a46d733fe45.jpg",
+  "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/59c0d533-8d59-4b40-b01e-934852adc266.jpg",
+];
+
 export default function SpaSection() {
+  const [slide, setSlide] = useState(0);
+  const [fading, setFading] = useState(false);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const goTo = (i: number) => {
+    if (i === slide) return;
+    setFading(true);
+    setTimeout(() => { setSlide(i); setFading(false); }, 400);
+  };
+
+  useEffect(() => {
+    timer.current = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setSlide(s => (s + 1) % PHOTOS.length);
+        setFading(false);
+      }, 400);
+    }, 4000);
+    return () => { if (timer.current) clearInterval(timer.current); };
+  }, []);
+
   return (
     <section id="spa" style={{ position: "relative", overflow: "hidden" }}>
-      {/* Фото на весь блок */}
       <div style={{ position: "relative", minHeight: 560, display: "flex", alignItems: "center" }}>
+
         <img
-          src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/cc500b87-ed2c-4e0d-b55c-e27ebd74969d.jpg"
-          alt="Пространство пара"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+          src={PHOTOS[slide]}
+          alt="Спа"
+          style={{
+            position: "absolute", inset: 0, width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "center",
+            transition: "opacity 0.6s ease", opacity: fading ? 0 : 1,
+          }}
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(12,8,4,0.82) 0%, rgba(12,8,4,0.5) 55%, rgba(12,8,4,0.15) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(12,8,4,0.82) 0%, rgba(12,8,4,0.5) 55%, rgba(12,8,4,0.1) 100%)" }} />
+
+        {/* Точки */}
+        <div style={{ position: "absolute", bottom: 24, left: "6vw", display: "flex", gap: 8, zIndex: 2 }}>
+          {PHOTOS.map((_, i) => (
+            <button key={i} onClick={() => goTo(i)} style={{
+              width: i === slide ? 28 : 8, height: 8, borderRadius: 4,
+              border: "none", cursor: "pointer", padding: 0,
+              background: i === slide ? "#D2691E" : "rgba(255,255,255,0.35)",
+              transition: "all 0.3s ease",
+            }} />
+          ))}
+        </div>
 
         <div style={{ position: "relative", zIndex: 1, padding: "80px 6vw", maxWidth: 600 }}>
           <div className="pp-label" style={{ marginBottom: 16, color: "rgba(255,220,180,0.7)" }}>Спа услуги</div>
