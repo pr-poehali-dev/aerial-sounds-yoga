@@ -209,35 +209,7 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
 }
 
 function SpinCard({ onShowForm }: { onShowForm: () => void }) {
-  const [spinning, setSpinning] = useState(false);
-  const [deg, setDeg] = useState(0);
   const [hovered, setHovered] = useState(false);
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number>(0);
-  const startDeg = useRef<number>(0);
-
-  const spin = () => {
-    if (spinning) return;
-    setSpinning(true);
-    startRef.current = performance.now();
-    startDeg.current = deg;
-    const duration = 1000;
-    const animate = (now: number) => {
-      const elapsed = now - startRef.current;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
-      setDeg(startDeg.current + 360 * ease);
-      if (progress < 1) {
-        rafRef.current = requestAnimationFrame(animate);
-      } else {
-        setDeg(startDeg.current + 360);
-        setSpinning(false);
-      }
-    };
-    rafRef.current = requestAnimationFrame(animate);
-  };
-
-  useEffect(() => () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); }, []);
 
   return (
     <div
@@ -246,21 +218,21 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
         border: "2px solid var(--pp-gold)", display: "flex", flexDirection: "column",
         boxShadow: hovered ? "0 8px 32px rgba(184,148,72,0.22)" : "0 2px 12px rgba(184,148,72,0.1)",
         transition: "box-shadow 0.3s",
-        cursor: "pointer",
       }}
-      onMouseEnter={() => { setHovered(true); spin(); }}
+      onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={spin}
     >
-      {/* Фото с вращением */}
+      {/* Фото с постоянным вращением */}
       <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative" }}>
         <img
           src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/6e5d8c66-245a-445b-917e-e9083416ebb0.jpg"
           alt="Красивая осанка"
           style={{
-            width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center",
+            width: "130%", height: "130%",
+            objectFit: "cover", objectPosition: "center center",
             display: "block",
-            transform: `rotate(${deg}deg)`,
+            marginLeft: "-15%", marginTop: "-15%",
+            animation: "spinFull 8s linear infinite",
             transformOrigin: "center center",
           }}
         />
