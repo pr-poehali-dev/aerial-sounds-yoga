@@ -103,9 +103,17 @@ export default function HeroSection({ onShowForm }: Props) {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.75) 100%)" }} />
 
         {/* Кнопка — правый верхний угол */}
-        <button onClick={onShowForm} className="pp-btn-pulse-cta" style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, padding: "13px 32px", fontSize: 14, fontWeight: 600, background: "#2c1a0e", color: "#e8dcc8", border: "1px solid rgba(232,220,200,0.2)", borderRadius: 12, cursor: "pointer", letterSpacing: "0.02em", fontFamily: "Inter, sans-serif" }}>
-          Записаться
-        </button>
+        <div style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, display: "flex", gap: 10, alignItems: "center" }}>
+          <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#000", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
+            🍎 App Store
+          </a>
+          <a href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#4a90e2", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
+            🤖 RuStore
+          </a>
+          <button onClick={onShowForm} className="pp-btn-pulse-cta" style={{ padding: "13px 32px", fontSize: 14, fontWeight: 600, background: "#2c1a0e", color: "#e8dcc8", border: "1px solid rgba(232,220,200,0.2)", borderRadius: 12, cursor: "pointer", letterSpacing: "0.02em", fontFamily: "Inter, sans-serif" }}>
+            Записаться
+          </button>
+        </div>
 
         {/* Контент поверх */}
         <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 6vw", paddingTop: 68 }}>
