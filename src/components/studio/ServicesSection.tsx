@@ -31,12 +31,14 @@ const GONG_DIRS = [
     sub: "Тибетские чаши, гонг, монохорд. Просто лечь и слушать",
     price: "от 1500 ₽",
     icon: "Users",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/05f45da9-193d-4a42-b936-30172ed9b568.jpg",
   },
   {
     title: "VIP мини-группа",
     sub: "До 5 человек — более глубокое погружение",
     price: "от 1500 ₽",
     icon: "Star",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/0c9c4157-3312-44ff-bb40-6e49e113cab2.jpg",
   },
   {
     title: "Аэройога + Гонг",
@@ -44,12 +46,14 @@ const GONG_DIRS = [
     price: "уточните цену",
     icon: "Sparkles",
     exclusive: true,
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/c48350e9-a068-4b3a-99db-2724c3f139f5.jpg",
   },
   {
     title: "Корпоративные сеансы",
     sub: "Для команд и мероприятий — выезд или в студии",
     price: "индивидуально",
     icon: "Building2",
+    img: "https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/files/1b4d24cf-24bb-434a-9db9-633edc94e35a.jpg",
   },
 ];
 
@@ -144,18 +148,18 @@ export default function ServicesSection({ onShowForm }: Props) {
             <div style={{ maxHeight: openGong ? 800 : 0, overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1)" }}>
               <div style={{ padding: "0 clamp(16px, 4vw, 48px) 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: 14 }}>
                 {GONG_DIRS.map((d, i) => (
-                  <div key={i} style={{ background: d.exclusive ? "rgba(212,184,150,0.08)" : "rgba(255,255,255,0.05)", border: d.exclusive ? "1px solid rgba(212,184,150,0.3)" : "1px solid rgba(232,220,200,0.12)", borderRadius: 18, padding: "24px 22px", display: "flex", flexDirection: "column", gap: 8 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-                      <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(212,184,150,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        <Icon name={d.icon} fallback="Bell" size={16} style={{ color: "#d4b896" }} />
+                  <div key={i} style={{ background: d.exclusive ? "rgba(212,184,150,0.08)" : "rgba(255,255,255,0.05)", border: d.exclusive ? "1px solid rgba(212,184,150,0.3)" : "1px solid rgba(232,220,200,0.12)", borderRadius: 18, overflow: "hidden", display: "flex", alignItems: "stretch" }}>
+                    <img src={d.img} alt={d.title} style={{ width: 120, flexShrink: 0, objectFit: "cover", objectPosition: "center" }} />
+                    <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, gap: 6 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                        <div style={{ fontSize: 15, fontWeight: 600, color: "#e8dcc8" }}>{d.title}</div>
+                        {d.exclusive && <span style={{ fontSize: 10, fontWeight: 700, color: "#d4b896", background: "rgba(212,184,150,0.15)", border: "1px solid rgba(212,184,150,0.3)", borderRadius: 100, padding: "2px 8px", letterSpacing: "0.1em" }}>ЭКСКЛЮЗИВ</span>}
                       </div>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: "#e8dcc8" }}>{d.title}</div>
-                      {d.exclusive && <span style={{ fontSize: 10, fontWeight: 700, color: "#d4b896", background: "rgba(212,184,150,0.15)", border: "1px solid rgba(212,184,150,0.3)", borderRadius: 100, padding: "2px 8px", letterSpacing: "0.1em" }}>ЭКСКЛЮЗИВ</span>}
-                    </div>
-                    <div style={{ fontSize: 13, color: "rgba(232,220,200,0.6)", lineHeight: 1.55, flex: 1 }}>{d.sub}</div>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 8 }}>
-                      <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
-                      <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#3b1f0e", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
+                      <div style={{ fontSize: 13, color: "rgba(232,220,200,0.6)", lineHeight: 1.5 }}>{d.sub}</div>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 6 }}>
+                        <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#3b1f0e", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
+                      </div>
                     </div>
                   </div>
                 ))}
