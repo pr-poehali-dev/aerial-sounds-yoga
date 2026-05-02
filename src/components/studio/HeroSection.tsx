@@ -169,8 +169,9 @@ export default function HeroSection({ onShowForm }: Props) {
               onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
             >
-              <span style={{ fontSize: 13 }}>📍</span>
-              <span style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>2ГИС</span>
+              <span style={{ fontSize: 13 }}>⭐⭐⭐⭐⭐</span>
+              <span style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>4.9</span>
+              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.6)" }}>2ГИС</span>
             </a>
           </div>
         </div>
