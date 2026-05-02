@@ -208,10 +208,12 @@ export default function DirectionsPoster({ onShowForm }: Props) {
 
         {/* Заголовок */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
-          <div className="pp-label" style={{ marginBottom: 14 }}>Что мы предлагаем</div>
-          <h2 style={{ ...S, fontSize: "clamp(32px,4vw,54px)", fontWeight: 300, lineHeight: 1.1, marginBottom: 14 }}>
-            Почувствуй <em style={{ color: "var(--pp-teal)" }}>лёгкость тела</em><br />и тишину ума
-          </h2>
+          <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px,2.5vw,30px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-text)", lineHeight: 1.6, maxWidth: 680, margin: "0 auto 20px", padding: 0, border: "none" }}>
+            «Йога — это путешествие внутрь себя. Аэройога — это шаг в это путешествие с лёгкостью и радостью.»
+          </blockquote>
+          <div style={{ fontSize: 13, color: "var(--pp-muted)", fontWeight: 400, marginBottom: 32 }}>
+            — Алёна Самарина, основатель студии и автор школы обучения инструкторов Аэройоги
+          </div>
           <div style={{ width: 80, height: 2, background: "var(--pp-gold)", margin: "0 auto", borderRadius: 2 }} />
         </div>
 
