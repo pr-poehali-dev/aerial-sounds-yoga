@@ -197,7 +197,7 @@ export default function HeroSection({ onShowForm }: Props) {
       {/* ── О НАС ────────────────────────────────────────── */}
       <section id="about" style={{ padding: "100px 24px", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url(https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/55c9c9fe-fe69-487c-ba0d-74df88f6e4b5.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div style={{ position: "absolute", inset: 0, background: "rgba(248,245,240,0.78)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "rgba(243,238,255,0.85)" }} />
         <div className="pp-grid-2col" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start", position: "relative", zIndex: 1 }}>
           <div>
             <div className="pp-label" style={{ marginBottom: 16 }}>О студии</div>
