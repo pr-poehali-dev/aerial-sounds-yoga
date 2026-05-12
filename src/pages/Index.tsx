@@ -5,7 +5,6 @@ import ServicesSection from "@/components/studio/ServicesSection";
 import GallerySection from "@/components/studio/GallerySection";
 import TrainingFaqFooter from "@/components/studio/TrainingFaqFooter";
 import SpaSection from "@/components/studio/SpaSection";
-import AppDownloadSection from "@/components/studio/AppDownloadSection";
 import ContactForm from "@/components/studio/ContactForm";
 import PrivacyModal from "@/components/studio/PrivacyModal";
 
@@ -18,7 +17,6 @@ export default function Index() {
     <div style={{ background: "var(--pp-cream)", minHeight: "100vh", color: "var(--pp-text)" }}>
       <NavBar onShowForm={() => setShowForm(true)} />
       <HeroSection onShowForm={() => setShowForm(true)} />
-      <AppDownloadSection />
       <ServicesSection onShowForm={() => setShowForm(true)} />
       <GallerySection />
       <SpaSection />
