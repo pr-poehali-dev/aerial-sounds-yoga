@@ -44,18 +44,18 @@
     --radius: 0.5rem;
 
     /* Пространство Пара Brand */
-    --pp-cream: #17151f;
-    --pp-cream-2: #1e1b29;
-    --pp-cream-3: #231f30;
+    --pp-cream: #f3eeff;
+    --pp-cream-2: #ede5ff;
+    --pp-cream-3: #e6dbfa;
     --pp-teal: #9b72cf;
     --pp-teal-light: #2a2040;
     --pp-teal-dark: #7a52b0;
     --pp-gold: #c4a8e8;
     --pp-gold-light: #2a2040;
-    --pp-text: #f0edf8;
-    --pp-muted: #b8aed0;
-    --pp-faint: #7a6e98;
-    --pp-border: #3a3050;
+    --pp-text: #2d1f4a;
+    --pp-muted: #7a6898;
+    --pp-faint: #b8aed0;
+    --pp-border: #ddd0f5;
     --font-serif: "Cormorant Garamond", Georgia, serif;
     --font-sans: "Satoshi", "Inter", sans-serif;
   }
@@ -66,7 +66,7 @@
     @apply border-border;
   }
   body {
-    background-color: #0f0e14;
+    background-color: #f3eeff;
     color: var(--pp-text);
     font-family: var(--font-sans);
     font-weight: 300;
@@ -81,7 +81,7 @@
     font-family: var(--font-serif);
     font-weight: 300;
     line-height: 1.1;
-    color: #f0edf8;
+    color: #2d1f4a;
   }
 }
 
@@ -331,7 +331,7 @@
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(15, 14, 20, 0.92);
+  background: rgba(243, 238, 255, 0.92);
   border-bottom: 1px solid var(--pp-border);
 }
 

@@ -77,7 +77,7 @@ export default function ServicesSection({ onShowForm }: Props) {
           </div>
 
           {/* ── Аэройога в гамаках ── */}
-          <div style={{ background: "#17151f", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
+          <div style={{ background: "#ede5ff", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
             <button
               onClick={() => setOpenAero(o => !o)}
               style={{ width: "100%", padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
@@ -121,7 +121,7 @@ export default function ServicesSection({ onShowForm }: Props) {
           </div>
 
           {/* ── Гонг-медитации ── */}
-          <div style={{ background: "#17151f", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
+          <div style={{ background: "#ede5ff", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
             <button
               onClick={() => setOpenGong(o => !o)}
               style={{ width: "100%", padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
