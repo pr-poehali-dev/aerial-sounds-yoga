@@ -115,9 +115,18 @@ export default function HeroSection({ onShowForm }: Props) {
         {/* Контент поверх */}
         <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 6vw", paddingTop: 68 }}>
 
-          <div className="pp-fade-up pp-label" style={{ marginBottom: 14, color: "rgba(255,255,255,0.7)", borderColor: "rgba(255,255,255,0.25)" }}>
-            Приморский край, г. Артём
-          </div>
+          <a
+            href="https://go.2gis.com/GBjxz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pp-fade-up"
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 14, padding: "7px 16px", borderRadius: 100, background: "rgba(179,157,219,0.18)", border: "1px solid rgba(179,157,219,0.35)", textDecoration: "none", backdropFilter: "blur(6px)", transition: "background 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(179,157,219,0.28)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "rgba(179,157,219,0.18)")}
+          >
+            <Icon name="MapPin" size={14} style={{ color: "#c9b8e8", flexShrink: 0 }} />
+            <span style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>г.Артём, Микрорайон Глобус-2, 1а</span>
+          </a>
 
           <h1 style={{ ...S, fontSize: "clamp(28px, 4.5vw, 58px)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: 12, color: "#fff", maxWidth: 640 }}>
             Студия <em style={{ color: "var(--pp-gold)" }}>Йоги,</em> Аэройоги<br />и Фитнеса
