@@ -461,7 +461,7 @@ const directions = [
 
 export default function DirectionsPoster({ onShowForm }: Props) {
   return (
-    <section style={{ padding: "100px 24px", background: "linear-gradient(160deg, #e8d5c0 0%, #f5ebe0 100%)" }}>
+    <section style={{ padding: "100px 24px", background: "linear-gradient(160deg, #ede5ff 0%, #f3eeff 100%)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Заголовок */}
