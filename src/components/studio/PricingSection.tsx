@@ -298,16 +298,11 @@ export default function PricingSection({ onShowForm }: Props) {
             }}>Предложения для новых клиентов</h3>
           </div>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-            gap: 16,
-          }}>
+          {/* Карточки одиночных пробных */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 16 }}>
             {[
-              { name: "Первый шаг", desc: "Пробная тренировка · 60 мин", price: "500 ₽", emoji: "🌱" },
-              { name: "Первый опыт", desc: "Пробная тренировка · 60 мин", price: "800 ₽", emoji: "✨" },
-              { name: "Приведи подругу", desc: "60 мин на двоих", price: "900 ₽", emoji: "👯‍♀️" },
-              { name: "Вместе лучше", desc: "90 мин на двоих", price: "1 500 ₽", emoji: "💜" },
+              { name: "Первый шаг", desc: "Пробная тренировка · 60 мин", price: "500 ₽" },
+              { name: "Первый опыт", desc: "Пробная тренировка · 60 мин", price: "800 ₽" },
             ].map((offer, i) => (
               <div key={i} style={{
                 background: "#fff",
@@ -316,46 +311,93 @@ export default function PricingSection({ onShowForm }: Props) {
                 padding: "24px 22px",
                 display: "flex",
                 flexDirection: "column",
-                gap: 12,
+                gap: 16,
               }}>
-                <div style={{ fontSize: 28 }}>{offer.emoji}</div>
                 <div>
                   <div style={{
-                    fontSize: 17, fontWeight: 700,
+                    fontSize: 11, fontWeight: 700, color: "#9c6fd6",
+                    letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8,
+                  }}>Новым клиентам</div>
+                  <div style={{
+                    fontSize: 20, fontWeight: 800,
                     color: "var(--pp-text)",
                     fontFamily: "'Inter', sans-serif",
                     marginBottom: 4,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.02em",
                   }}>«{offer.name}»</div>
                   <div style={{ fontSize: 13, color: "var(--pp-muted)" }}>{offer.desc}</div>
                 </div>
-                <div style={{
-                  fontSize: 28,
-                  fontWeight: 700,
-                  color: "#9c6fd6",
-                  fontFamily: "var(--font-serif)",
-                }}>{offer.price}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{
+                    background: "#c4a0f0",
+                    borderRadius: 8,
+                    padding: "8px 18px",
+                  }}>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: "#fff", fontFamily: "var(--font-serif)" }}>{offer.price}</div>
+                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.85)" }}>60 мин</div>
+                  </div>
+                </div>
                 <button
                   onClick={onShowForm}
                   style={{
-                    marginTop: "auto",
-                    padding: "12px",
-                    background: "#9c6fd6",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: 12,
-                    fontSize: 14,
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    fontFamily: "'Inter', sans-serif",
-                    transition: "opacity 0.2s",
+                    marginTop: "auto", padding: "12px",
+                    background: "#9c6fd6", color: "#fff", border: "none",
+                    borderRadius: 12, fontSize: 14, fontWeight: 600,
+                    cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "opacity 0.2s",
                   }}
                   onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
                   onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-                >
-                  Записаться
-                </button>
+                >Записаться</button>
               </div>
             ))}
+          </div>
+
+          {/* Карточка парных тренировок — широкая с фото */}
+          <div style={{
+            borderRadius: 20,
+            overflow: "hidden",
+            position: "relative",
+            minHeight: 380,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+          }}>
+            <img
+              src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/69abef0c-9aca-4001-8c1a-a90930d0ea5a.jpg"
+              alt="Парная тренировка"
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+            />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(20,10,35,0.85) 0%, rgba(20,10,35,0.3) 50%, transparent 100%)" }} />
+            <div style={{ position: "relative", padding: "32px 28px 28px" }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#c4a0f0", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 8 }}>
+                Парная тренировка
+              </div>
+              <div style={{ fontSize: "clamp(22px,3vw,32px)", fontWeight: 900, color: "#fff", textTransform: "uppercase", letterSpacing: "0.03em", lineHeight: 1.1, marginBottom: 8 }}>
+                Приведи подругу
+              </div>
+              <div style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", marginBottom: 24, maxWidth: 420, lineHeight: 1.5 }}>
+                Тренировка с подругой — идеально, если хочешь поддержку, мотивацию и результат быстрее
+              </div>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 20 }}>
+                {[{ price: "900 ₽", dur: "60 мин" }, { price: "1 500 ₽", dur: "90 мин" }].map((p, i) => (
+                  <div key={i} style={{ background: "#c4a0f0", borderRadius: 8, padding: "10px 20px" }}>
+                    <div style={{ fontSize: 24, fontWeight: 900, color: "#fff", fontFamily: "var(--font-serif)" }}>{p.price}</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.85)" }}>{p.dur}</div>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={onShowForm}
+                style={{
+                  padding: "13px 36px", background: "#9c6fd6", color: "#fff",
+                  border: "none", borderRadius: 12, fontSize: 15, fontWeight: 700,
+                  cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "opacity 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+                onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+              >Записаться</button>
+            </div>
           </div>
         </div>
 
