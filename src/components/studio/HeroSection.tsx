@@ -122,12 +122,12 @@ export default function HeroSection({ onShowForm }: Props) {
             Приморский край, г. Артём
           </div>
 
-          <h1 style={{ ...S, fontSize: "clamp(32px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: 20, color: "#fff", maxWidth: 640 }}>
-            Почувствуй <em style={{ color: "var(--pp-gold)" }}>лёгкость</em><br />тела и тишину ума
+          <h1 style={{ ...S, fontSize: "clamp(28px, 4.5vw, 58px)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: 12, color: "#fff", maxWidth: 640 }}>
+            Студия <em style={{ color: "var(--pp-gold)" }}>Йоги,</em> Аэройоги<br />и Фитнеса
           </h1>
 
-          <p style={{ fontSize: "clamp(13px, 1.4vw, 16px)", color: "rgba(255,255,255,0.75)", marginBottom: 28, maxWidth: 420, lineHeight: 1.6 }}>
-            {HERO_SLIDES[slide].label} · {HERO_SLIDES[slide].sub}
+          <p style={{ ...S, fontSize: "clamp(14px, 1.6vw, 20px)", fontStyle: "italic", color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 460, lineHeight: 1.55 }}>
+            Пространство, в котором царит гармония и любовь к своему телу
           </p>
 
 
