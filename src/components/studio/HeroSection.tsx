@@ -10,6 +10,7 @@ const HERO_SLIDES = [
 ];
 import BackHealthSection from "./BackHealthSection";
 import DirectionsPoster from "./DirectionsPoster";
+import PricingSection from "./PricingSection";
 
 const S = { fontFamily: "var(--font-serif)" };
 
@@ -202,6 +203,7 @@ export default function HeroSection({ onShowForm }: Props) {
       </section>
 
       <DirectionsPoster onShowForm={onShowForm} />
+      <PricingSection onShowForm={onShowForm} />
 
       {/* ── О НАС ────────────────────────────────────────── */}
       <section id="about" style={{ padding: "100px 24px", position: "relative", overflow: "hidden" }}>
