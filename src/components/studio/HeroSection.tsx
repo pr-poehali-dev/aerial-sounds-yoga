@@ -123,7 +123,7 @@ export default function HeroSection({ onShowForm }: Props) {
             Студия <em style={{ color: "var(--pp-gold)" }}>Йоги,</em> Аэройоги<br />и Фитнеса
           </h1>
 
-          <p style={{ ...S, fontSize: "clamp(14px, 1.6vw, 20px)", fontStyle: "italic", color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 460, lineHeight: 1.55 }}>
+          <p style={{ ...S, fontSize: "clamp(17px, 2vw, 24px)", fontStyle: "italic", color: "rgba(255,255,255,0.8)", marginBottom: 28, maxWidth: 460, lineHeight: 1.55 }}>
             Пространство, в котором царит гармония и любовь к своему телу
           </p>
 
