@@ -488,6 +488,17 @@ export default function DirectionsPoster({ onShowForm }: Props) {
           <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(16px,1.8vw,22px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-muted)", lineHeight: 1.7, maxWidth: 740, margin: "0 auto 20px" }}>
             Мы первыми привезли аэройогу в Приморский край, когда о гамаках никто не слышал. Сегодня у нас занимаются сотни людей, которые пришли из любопытства — и остались навсегда.
           </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap", margin: "20px auto 24px", maxWidth: 600 }}>
+            {["Снять боль в спине", "Избавиться от тревоги", "Восстановить гибкость"].map(item => (
+              <div key={item} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 18px", borderRadius: 100, background: "rgba(179,157,219,0.12)", border: "1px solid var(--pp-gold)" }}>
+                <span style={{ color: "var(--pp-teal-dark)", fontSize: 13 }}>—</span>
+                <span style={{ fontSize: 14, color: "var(--pp-text)", fontWeight: 500 }}>{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 15, color: "var(--pp-teal-dark)", fontWeight: 600, fontFamily: "var(--font-serif)", fontStyle: "italic", marginBottom: 28 }}>
+            Присоединяйтесь к нам и откройте новые горизонты здоровья и гармонии!
+          </p>
           <div style={{ width: 80, height: 2, background: "var(--pp-gold)", margin: "0 auto", borderRadius: 2 }} />
         </div>
 
