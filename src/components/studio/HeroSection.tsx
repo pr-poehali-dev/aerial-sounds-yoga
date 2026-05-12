@@ -104,10 +104,10 @@ export default function HeroSection({ onShowForm }: Props) {
 
         {/* Кнопки — правый верхний угол */}
         <div className="pp-hero-store-btns" style={{ position: "absolute", top: 82, right: "6vw", zIndex: 10, display: "flex", gap: 10, alignItems: "center" }}>
-          <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#000", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
+          <a href="https://apps.apple.com/ru/app/mobifitness/id986278836" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#fff", color: "#1a1a1a", border: "none", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
             App Store
           </a>
-          <a href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#4a90e2", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
+          <a href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 6, padding: "10px 16px", fontSize: 13, fontWeight: 600, background: "#fff", color: "#1a1a1a", border: "none", borderRadius: 12, cursor: "pointer", textDecoration: "none", fontFamily: "Inter, sans-serif", whiteSpace: "nowrap" }}>
             RuStore
           </a>
         </div>
