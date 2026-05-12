@@ -272,6 +272,93 @@ export default function PricingSection({ onShowForm }: Props) {
           </button>
         </div>
 
+        {/* Предложения для новых клиентов */}
+        <div style={{ marginTop: 64 }}>
+          <div style={{ marginBottom: 32 }}>
+            <div style={{
+              display: "inline-block",
+              background: "rgba(156,111,214,0.1)",
+              border: "1px solid rgba(156,111,214,0.3)",
+              borderRadius: 100,
+              padding: "5px 16px",
+              fontSize: 11,
+              color: "#9c6fd6",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              marginBottom: 12,
+            }}>Новым клиентам</div>
+            <h3 style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "clamp(20px, 2.4vw, 30px)",
+              fontWeight: 700,
+              color: "var(--pp-text)",
+              lineHeight: 1.2,
+              margin: 0,
+            }}>Предложения для новых клиентов</h3>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: 16,
+          }}>
+            {[
+              { name: "Первый шаг", desc: "Пробная тренировка · 60 мин", price: "500 ₽", emoji: "🌱" },
+              { name: "Первый опыт", desc: "Пробная тренировка · 60 мин", price: "800 ₽", emoji: "✨" },
+              { name: "Приведи подругу", desc: "60 мин на двоих", price: "900 ₽", emoji: "👯‍♀️" },
+              { name: "Вместе лучше", desc: "90 мин на двоих", price: "1 500 ₽", emoji: "💜" },
+            ].map((offer, i) => (
+              <div key={i} style={{
+                background: "#fff",
+                borderRadius: 18,
+                border: "1px solid rgba(156,111,214,0.18)",
+                padding: "24px 22px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}>
+                <div style={{ fontSize: 28 }}>{offer.emoji}</div>
+                <div>
+                  <div style={{
+                    fontSize: 17, fontWeight: 700,
+                    color: "var(--pp-text)",
+                    fontFamily: "'Inter', sans-serif",
+                    marginBottom: 4,
+                  }}>«{offer.name}»</div>
+                  <div style={{ fontSize: 13, color: "var(--pp-muted)" }}>{offer.desc}</div>
+                </div>
+                <div style={{
+                  fontSize: 28,
+                  fontWeight: 700,
+                  color: "#9c6fd6",
+                  fontFamily: "var(--font-serif)",
+                }}>{offer.price}</div>
+                <button
+                  onClick={onShowForm}
+                  style={{
+                    marginTop: "auto",
+                    padding: "12px",
+                    background: "#9c6fd6",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: 12,
+                    fontSize: 14,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    fontFamily: "'Inter', sans-serif",
+                    transition: "opacity 0.2s",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+                >
+                  Записаться
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
