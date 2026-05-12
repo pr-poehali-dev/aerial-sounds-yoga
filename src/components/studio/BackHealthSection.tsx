@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const S = { fontFamily: "var(--font-serif)" };
@@ -27,18 +27,8 @@ interface Props {
 
 export default function BackHealthSection({ onShowForm }: Props) {
   const [slide, setSlide] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const startTimer = () => {
-    timerRef.current = setInterval(() => setSlide(c => (c + 1) % RESULTS.length), 4000);
-  };
-  useEffect(() => { startTimer(); return () => { if (timerRef.current) clearInterval(timerRef.current); }; }, []);
-
-  const goTo = (i: number) => {
-    setSlide(i);
-    if (timerRef.current) clearInterval(timerRef.current);
-    startTimer();
-  };
+  const goTo = (i: number) => setSlide(i);
 
   return (
     <section id="back-health" style={{ padding: "100px 24px", background: "var(--pp-cream)" }}>
