@@ -482,12 +482,12 @@ export default function DirectionsPoster({ onShowForm }: Props) {
             </div>
           </div>
 
-          <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px,2.5vw,30px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-text)", lineHeight: 1.6, maxWidth: 680, margin: "0 auto 20px", padding: 0, border: "none" }}>
-            «Йога — это путешествие внутрь себя. Аэройога — это шаг в это путешествие с лёгкостью и радостью.»
+          <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(18px,2.2vw,26px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-text)", lineHeight: 1.7, maxWidth: 740, margin: "0 auto 12px", padding: 0, border: "none" }}>
+            С 2018 года мы стали надёжным местом для качественной практики в уютной атмосфере. Наша студия площадью 200 кв.м включает два зала с удобными раздевалками и душевыми. Полы с подогревом и панорамные окна создают комфортные условия для занятий.
           </blockquote>
-          <div style={{ fontSize: 13, color: "var(--pp-muted)", fontWeight: 400, marginBottom: 32 }}>
-            — Алёна Самарина, основатель студии и автор школы обучения инструкторов Аэройоги
-          </div>
+          <p style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(16px,1.8vw,22px)", fontStyle: "italic", fontWeight: 300, color: "var(--pp-muted)", lineHeight: 1.7, maxWidth: 740, margin: "0 auto 20px" }}>
+            Мы первыми привезли аэройогу в Приморский край, когда о гамаках никто не слышал. Сегодня у нас занимаются сотни людей, которые пришли из любопытства — и остались навсегда.
+          </p>
           <div style={{ width: 80, height: 2, background: "var(--pp-gold)", margin: "0 auto", borderRadius: 2 }} />
         </div>
 
