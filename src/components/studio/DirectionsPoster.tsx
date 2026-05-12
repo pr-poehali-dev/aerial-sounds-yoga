@@ -211,7 +211,7 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
 function SpinCard({ onShowForm }: { onShowForm: () => void }) {
   return (
     <div style={{ perspective: "1000px" }}>
-      <div style={{ animation: "spinCardY 12s linear infinite", transformStyle: "preserve-3d", position: "relative" }}>
+      <div style={{ position: "relative" }}>
 
         {/* Лицевая сторона */}
         <div style={{
