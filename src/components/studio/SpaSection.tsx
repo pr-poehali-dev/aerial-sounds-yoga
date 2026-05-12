@@ -98,7 +98,7 @@ export default function SpaSection() {
             style={{
               display: "inline-flex", alignItems: "center", gap: 12,
               padding: "16px 36px", borderRadius: 14,
-              background: "#3b1f0e", color: "#fff",
+              background: "#6a42a8", color: "#fff",
               fontSize: 16, fontWeight: 700, textDecoration: "none",
               letterSpacing: "0.01em", transition: "opacity 0.2s",
             }}

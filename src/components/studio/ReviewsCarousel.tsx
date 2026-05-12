@@ -39,12 +39,12 @@ export default function ReviewsCarousel() {
   const r = REVIEWS[current];
 
   return (
-    <section id="reviews" style={{ padding: "100px 24px", background: "#2c1a0e" }}>
+    <section id="reviews" style={{ padding: "100px 24px", background: "#0f0e14" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ marginBottom: 48, textAlign: "center" }}>
           <div className="pp-label" style={{ marginBottom: 16, color: "rgba(232,220,200,0.55)" }}>Отзывы</div>
           <h2 style={{ ...S, fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1.1, color: "#e8dcc8" }}>
-            Что говорят <em style={{ color: "#d4b896" }}>наши гости</em>
+            Что говорят <em style={{ color: "#9b72cf" }}>наши гости</em>
           </h2>
         </div>
 

@@ -117,21 +117,21 @@ export default function TrainingFaqFooter({ onShowForm, onShowPrivacy }: Props) 
       </section>
 
       {/* ── ФИНАЛЬНЫЙ CTA ────────────────────────────────── */}
-      <section id="specials" style={{ padding: "100px 24px", background: "#2c1a0e", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(180,110,60,0.18) 0%, transparent 70%)", pointerEvents: "none" }} />
+      <section id="specials" style={{ padding: "100px 24px", background: "#0f0e14", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, rgba(155,114,207,0.18) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-          <div style={{ marginBottom: 24 }} className="pp-float"><Icon name="Infinity" size={48} style={{ color: "#e8b47a" }} /></div>
-          <div className="pp-label" style={{ marginBottom: 16, color: "rgba(255,220,180,0.7)" }}>Начни сегодня</div>
-          <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20, color: "#fff" }}>
-            Твой первый шаг —<br /><em style={{ color: "#e8b47a" }}>по специальной цене</em>
+          <div style={{ marginBottom: 24 }} className="pp-float"><Icon name="Infinity" size={48} style={{ color: "#9b72cf" }} /></div>
+          <div className="pp-label" style={{ marginBottom: 16, color: "rgba(196,168,232,0.7)" }}>Начни сегодня</div>
+          <h2 style={{ ...S, fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 300, lineHeight: 1.05, marginBottom: 20, color: "#f0edf8" }}>
+            Твой первый шаг —<br /><em style={{ color: "#9b72cf" }}>по специальной цене</em>
           </h2>
-          <hr className="pp-divider" style={{ margin: "0 auto 24px", borderColor: "rgba(255,255,255,0.15)" }} />
-          <p style={{ fontSize: 17, color: "rgba(255,220,180,0.75)", lineHeight: 1.7, marginBottom: 32 }}>
+          <hr className="pp-divider" style={{ margin: "0 auto 24px", borderColor: "rgba(155,114,207,0.3)" }} />
+          <p style={{ fontSize: 17, color: "rgba(196,168,232,0.75)", lineHeight: 1.7, marginBottom: 32 }}>
             Запишись на пробное занятие прямо сейчас и почувствуй лёгкость с первого раза.
           </p>
 
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 100, padding: "8px 20px", marginBottom: 36, fontSize: 13, color: "rgba(255,220,180,0.7)" }}>
-            <div className="pp-blink" style={{ width: 8, height: 8, borderRadius: "50%", background: "#e8b47a", flexShrink: 0 }} />
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(155,114,207,0.1)", border: "1px solid rgba(155,114,207,0.25)", borderRadius: 100, padding: "8px 20px", marginBottom: 36, fontSize: 13, color: "rgba(196,168,232,0.8)" }}>
+            <div className="pp-blink" style={{ width: 8, height: 8, borderRadius: "50%", background: "#9b72cf", flexShrink: 0 }} />
             Мест в группе не более 8 — обычно заканчиваются за 3–5 дней
           </div>
 
