@@ -195,7 +195,7 @@ function FlipCarouselCard({ items, onShowForm }: { items: typeof aeroyogaGroup; 
           onClick={onShowForm}
           style={{
             width: "100%", padding: "12px", borderRadius: 10, border: "none",
-            background: "#6a42a8", color: "#fff", fontSize: 14, fontWeight: 600,
+            background: "#9c6fd6", color: "#fff", fontSize: 14, fontWeight: 600,
             cursor: "pointer", transition: "opacity 0.2s", fontFamily: "'Inter', sans-serif",
           }}
           onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
@@ -259,7 +259,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
               onClick={onShowForm}
               style={{
                 width: "100%", padding: "12px", borderRadius: 10, border: "none",
-                background: "#6a42a8", color: "#fff", fontSize: 14, fontWeight: 600,
+                background: "#9c6fd6", color: "#fff", fontSize: 14, fontWeight: 600,
                 cursor: "pointer", fontFamily: "'Inter', sans-serif",
               }}
             >Записаться</button>
@@ -305,7 +305,7 @@ function SpinCard({ onShowForm }: { onShowForm: () => void }) {
             onClick={onShowForm}
             style={{
               padding: "12px 28px", borderRadius: 10,
-              border: "none", background: "#6a42a8",
+              border: "none", background: "#9c6fd6",
               color: "#fff", fontSize: 14, fontWeight: 600,
               cursor: "pointer", fontFamily: "'Inter', sans-serif",
             }}
@@ -461,7 +461,7 @@ const directions = [
 
 export default function DirectionsPoster({ onShowForm }: Props) {
   return (
-    <section style={{ padding: "100px 24px", background: "linear-gradient(160deg, #ede5ff 0%, #f3eeff 100%)" }}>
+    <section style={{ padding: "100px 24px", background: "linear-gradient(160deg, #ebe8f2 0%, #f2f0f5 100%)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         {/* Заголовок */}
@@ -564,7 +564,7 @@ export default function DirectionsPoster({ onShowForm }: Props) {
                     padding: "12px",
                     borderRadius: 10,
                     border: "none",
-                    background: "#6a42a8",
+                    background: "#9c6fd6",
                     color: "#fff",
                     fontSize: 14,
                     fontWeight: 600,

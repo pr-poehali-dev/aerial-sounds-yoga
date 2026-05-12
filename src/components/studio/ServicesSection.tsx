@@ -77,7 +77,7 @@ export default function ServicesSection({ onShowForm }: Props) {
           </div>
 
           {/* ── Аэройога в гамаках ── */}
-          <div style={{ background: "#ede5ff", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
+          <div style={{ background: "#ebe8f2", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
             <button
               onClick={() => setOpenAero(o => !o)}
               style={{ width: "100%", padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
@@ -111,7 +111,7 @@ export default function ServicesSection({ onShowForm }: Props) {
                       <div style={{ fontSize: 13, color: "rgba(232,220,200,0.55)", lineHeight: 1.5, marginBottom: 16 }}>{d.sub}</div>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                         <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
-                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#6a42a8", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#9c6fd6", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
                       </div>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export default function ServicesSection({ onShowForm }: Props) {
           </div>
 
           {/* ── Гонг-медитации ── */}
-          <div style={{ background: "#ede5ff", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
+          <div style={{ background: "#ebe8f2", borderRadius: 24, marginBottom: 16, overflow: "hidden" }}>
             <button
               onClick={() => setOpenGong(o => !o)}
               style={{ width: "100%", padding: "clamp(20px, 4vw, 36px) clamp(16px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}
@@ -158,7 +158,7 @@ export default function ServicesSection({ onShowForm }: Props) {
                       <div style={{ fontSize: 13, color: "rgba(232,220,200,0.6)", lineHeight: 1.5 }}>{d.sub}</div>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 6 }}>
                         <span style={{ ...S, fontSize: 16, color: "#d4b896" }}>{d.price}</span>
-                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#6a42a8", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
+                        <button onClick={onShowForm} style={{ fontSize: 12, fontWeight: 600, color: "#fff", background: "#9c6fd6", border: "none", borderRadius: 8, padding: "7px 16px", cursor: "pointer" }}>Записаться</button>
                       </div>
                     </div>
                   </div>
