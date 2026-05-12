@@ -4,7 +4,27 @@ interface Props {
   onShowForm: () => void;
 }
 
-const plans = [
+interface PlanItem {
+  label: string;
+  price: string;
+  note: string;
+}
+
+interface PlanGroup {
+  groupTitle?: string;
+  items: PlanItem[];
+}
+
+interface Plan {
+  title: string;
+  sub?: string;
+  groups?: PlanGroup[];
+  items?: PlanItem[];
+  footer?: string;
+  maxH?: number;
+}
+
+const plans: Plan[] = [
   {
     title: "Абонемент",
     items: [
@@ -21,15 +41,36 @@ const plans = [
       { label: "Занятие 50 мин", price: "1 200 ₽", note: "" },
       { label: "Занятие 90 мин", price: "1 500 ₽", note: "" },
     ],
-    footer: "",
   },
   {
     title: "Индивидуальные тренировки",
     sub: "персональный подход с тренером",
-    items: [
-      { label: "Индивидуальное занятие", price: "по запросу", note: "уточните у администратора" },
+    maxH: 900,
+    groups: [
+      {
+        groupTitle: "Инструктор 2 категории",
+        items: [
+          { label: "1 занятие · 60 мин", price: "2 800 ₽", note: "" },
+          { label: "Абонемент 5 занятий · 60 мин", price: "12 000 ₽", note: "срок действия 4 недели" },
+        ],
+      },
+      {
+        groupTitle: "Инструктор 1 категории · опыт более 5 лет",
+        items: [
+          { label: "1 занятие · 60 мин", price: "3 500 ₽", note: "срок действия 4 недели" },
+          { label: "Абонемент 5 занятий · 60 мин", price: "15 000 ₽", note: "срок действия 4 недели" },
+          { label: "1 занятие · 90 мин", price: "5 000 ₽", note: "срок действия 4 недели" },
+          { label: "Абонемент 5 занятий · 90 мин", price: "22 500 ₽", note: "срок действия 4 недели" },
+        ],
+      },
+      {
+        groupTitle: "Руководитель центра · 1 категория",
+        items: [
+          { label: "1 занятие · 60 мин", price: "5 000 ₽", note: "" },
+          { label: "1 занятие · 90 мин", price: "8 999 ₽", note: "" },
+        ],
+      },
     ],
-    footer: "",
   },
 ];
 
@@ -126,54 +167,69 @@ export default function PricingSection({ onShowForm }: Props) {
 
               {/* Раскрывающееся содержимое */}
               <div style={{
-                maxHeight: open === i ? 600 : 0,
+                maxHeight: open === i ? (plan.maxH ?? 600) : 0,
                 overflow: "hidden",
                 transition: "max-height 0.4s cubic-bezier(.4,0,.2,1)",
               }}>
                 <div style={{ padding: "0 24px 24px" }}>
-                  <div style={{
-                    height: 1,
-                    background: "rgba(156,111,214,0.15)",
-                    marginBottom: 20,
-                  }} />
-                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                    {plan.items.map((item, j) => (
-                      <div key={j} style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        background: "linear-gradient(135deg, rgba(156,111,214,0.06) 0%, rgba(156,111,214,0.02) 100%)",
-                        borderRadius: 12,
-                        padding: "14px 18px",
-                        gap: 16,
-                      }}>
-                        <div>
-                          <div style={{ fontSize: 15, fontWeight: 500, color: "var(--pp-text)" }}>{item.label}</div>
-                          {item.note && (
-                            <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>{item.note}</div>
-                          )}
+                  <div style={{ height: 1, background: "rgba(156,111,214,0.15)", marginBottom: 20 }} />
+
+                  {/* Обычные items */}
+                  {plan.items && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                      {plan.items.map((item, j) => (
+                        <div key={j} style={{
+                          display: "flex", alignItems: "center", justifyContent: "space-between",
+                          background: "linear-gradient(135deg, rgba(156,111,214,0.06) 0%, rgba(156,111,214,0.02) 100%)",
+                          borderRadius: 12, padding: "14px 18px", gap: 16,
+                        }}>
+                          <div>
+                            <div style={{ fontSize: 15, fontWeight: 500, color: "var(--pp-text)" }}>{item.label}</div>
+                            {item.note && <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>{item.note}</div>}
+                          </div>
+                          <div style={{ fontSize: 18, fontWeight: 700, color: "#9c6fd6", fontFamily: "var(--font-serif)", whiteSpace: "nowrap" }}>{item.price}</div>
                         </div>
-                        <div style={{
-                          fontSize: 18,
-                          fontWeight: 700,
-                          color: "#9c6fd6",
-                          fontFamily: "var(--font-serif)",
-                          whiteSpace: "nowrap",
-                        }}>{item.price}</div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Сгруппированные items */}
+                  {plan.groups && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                      {plan.groups.map((group, g) => (
+                        <div key={g}>
+                          {group.groupTitle && (
+                            <div style={{
+                              fontSize: 13, fontWeight: 700, color: "#9c6fd6",
+                              textTransform: "uppercase", letterSpacing: "0.05em",
+                              marginBottom: 10, paddingLeft: 4,
+                            }}>{group.groupTitle}</div>
+                          )}
+                          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                            {group.items.map((item, j) => (
+                              <div key={j} style={{
+                                display: "flex", alignItems: "center", justifyContent: "space-between",
+                                background: "linear-gradient(135deg, rgba(156,111,214,0.06) 0%, rgba(156,111,214,0.02) 100%)",
+                                borderRadius: 12, padding: "12px 18px", gap: 16,
+                              }}>
+                                <div>
+                                  <div style={{ fontSize: 14, fontWeight: 500, color: "var(--pp-text)" }}>{item.label}</div>
+                                  {item.note && <div style={{ fontSize: 12, color: "var(--pp-muted)", marginTop: 2 }}>{item.note}</div>}
+                                </div>
+                                <div style={{ fontSize: 17, fontWeight: 700, color: "#9c6fd6", fontFamily: "var(--font-serif)", whiteSpace: "nowrap" }}>{item.price}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   {plan.footer && (
                     <div style={{
-                      marginTop: 16,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 8,
-                      padding: "10px 14px",
-                      background: "rgba(156,111,214,0.08)",
-                      borderRadius: 10,
-                      fontSize: 13,
-                      color: "var(--pp-muted)",
+                      marginTop: 16, display: "flex", alignItems: "center", gap: 8,
+                      padding: "10px 14px", background: "rgba(156,111,214,0.08)",
+                      borderRadius: 10, fontSize: 13, color: "var(--pp-muted)",
                     }}>
                       <span style={{ fontSize: 16 }}>❄️</span>
                       {plan.footer}
