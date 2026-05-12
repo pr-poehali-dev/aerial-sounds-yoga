@@ -392,6 +392,49 @@ export default function PricingSection({ onShowForm }: Props) {
           </div>
         </div>
 
+        {/* Индивидуальные тренировки — карточка с фото */}
+        <div style={{
+          marginTop: 16,
+          borderRadius: 20,
+          overflow: "hidden",
+          position: "relative",
+          minHeight: 420,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+        }}>
+          <img
+            src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/49629e92-6181-4e8f-83e1-6e930e09742a.jpg"
+            alt="Индивидуальные тренировки"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(20,10,35,0.92) 0%, rgba(20,10,35,0.5) 50%, rgba(20,10,35,0.15) 100%)" }} />
+          <div style={{ position: "relative", padding: "32px 28px 32px" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "#c4a0f0", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>
+              Персональный подход
+            </div>
+            <div style={{ fontSize: "clamp(22px,3vw,34px)", fontWeight: 900, color: "#fff", textTransform: "uppercase", letterSpacing: "0.03em", lineHeight: 1.1, marginBottom: 14 }}>
+              Индивидуальные<br />тренировки
+            </div>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.8)", lineHeight: 1.65, marginBottom: 10, maxWidth: 480 }}>
+              Это всегда персональный подход под ваши цели, особенности и уровень подготовки. Именно это позволяет достигать результатов быстрее и оправдывать ожидания.
+            </p>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.65)", lineHeight: 1.65, marginBottom: 28, maxWidth: 480 }}>
+              Ваш личный тренер мотивирует вас, помогает сохранять интерес к занятиям и уверенно двигаться к желаемому результату.
+            </p>
+            <button
+              onClick={onShowForm}
+              style={{
+                padding: "13px 36px", background: "#9c6fd6", color: "#fff",
+                border: "none", borderRadius: 12, fontSize: 15, fontWeight: 700,
+                cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+              onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+            >Записаться</button>
+          </div>
+        </div>
+
       </div>
     </section>
   );
