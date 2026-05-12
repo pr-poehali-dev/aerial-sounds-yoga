@@ -305,50 +305,41 @@ export default function PricingSection({ onShowForm }: Props) {
               { name: "Первый опыт", desc: "Пробная тренировка · 60 мин", price: "800 ₽" },
             ].map((offer, i) => (
               <div key={i} style={{
-                background: "#fff",
                 borderRadius: 18,
-                border: "1px solid rgba(156,111,214,0.18)",
-                padding: "24px 22px",
+                overflow: "hidden",
+                position: "relative",
+                minHeight: 280,
                 display: "flex",
                 flexDirection: "column",
-                gap: 16,
+                justifyContent: "flex-end",
               }}>
-                <div>
-                  <div style={{
-                    fontSize: 11, fontWeight: 700, color: "#9c6fd6",
-                    letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 8,
-                  }}>Новым клиентам</div>
-                  <div style={{
-                    fontSize: 20, fontWeight: 800,
-                    color: "var(--pp-text)",
-                    fontFamily: "'Inter', sans-serif",
-                    marginBottom: 4,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.02em",
-                  }}>«{offer.name}»</div>
-                  <div style={{ fontSize: 13, color: "var(--pp-muted)" }}>{offer.desc}</div>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{
-                    background: "#c4a0f0",
-                    borderRadius: 8,
-                    padding: "8px 18px",
-                  }}>
+                <img
+                  src="https://cdn.poehali.dev/projects/cb6bf55d-d0e9-4bf4-a310-b60f55ba4f82/bucket/04e8f2cc-2a02-4b15-892e-947fd5abd3de.jpg"
+                  alt="Пробная тренировка"
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(20,10,35,0.88) 0%, rgba(20,10,35,0.35) 55%, transparent 100%)" }} />
+                <div style={{ position: "relative", padding: "24px 22px", display: "flex", flexDirection: "column", gap: 12 }}>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: "#c4a0f0", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 6 }}>Новым клиентам</div>
+                    <div style={{ fontSize: 20, fontWeight: 900, color: "#fff", textTransform: "uppercase", letterSpacing: "0.02em", marginBottom: 4 }}>«{offer.name}»</div>
+                    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>{offer.desc}</div>
+                  </div>
+                  <div style={{ background: "#c4a0f0", borderRadius: 8, padding: "8px 18px", alignSelf: "flex-start" }}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: "#fff", fontFamily: "var(--font-serif)" }}>{offer.price}</div>
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,0.85)" }}>60 мин</div>
                   </div>
+                  <button
+                    onClick={onShowForm}
+                    style={{
+                      padding: "12px", background: "#9c6fd6", color: "#fff", border: "none",
+                      borderRadius: 12, fontSize: 14, fontWeight: 600,
+                      cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "opacity 0.2s",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+                    onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+                  >Записаться</button>
                 </div>
-                <button
-                  onClick={onShowForm}
-                  style={{
-                    marginTop: "auto", padding: "12px",
-                    background: "#9c6fd6", color: "#fff", border: "none",
-                    borderRadius: 12, fontSize: 14, fontWeight: 600,
-                    cursor: "pointer", fontFamily: "'Inter', sans-serif", transition: "opacity 0.2s",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-                >Записаться</button>
               </div>
             ))}
           </div>
