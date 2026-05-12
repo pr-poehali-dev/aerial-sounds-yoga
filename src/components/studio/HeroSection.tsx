@@ -172,10 +172,22 @@ export default function HeroSection({ onShowForm }: Props) {
             </a>
           </div>
 
+          <a
+            href="https://go.2gis.com/GBjxz"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 20, padding: "9px 18px", borderRadius: 100, background: "rgba(179,157,219,0.18)", border: "1px solid rgba(179,157,219,0.35)", textDecoration: "none", backdropFilter: "blur(6px)", transition: "background 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "rgba(179,157,219,0.28)")}
+            onMouseLeave={e => (e.currentTarget.style.background = "rgba(179,157,219,0.18)")}
+          >
+            <Icon name="MapPin" size={15} style={{ color: "#c9b8e8", flexShrink: 0 }} />
+            <span style={{ fontSize: 13, color: "#fff", fontWeight: 500, letterSpacing: "0.01em" }}>г.Артём, Микрорайон Глобус-2, 1а</span>
+          </a>
+
           <button
             onClick={onShowForm}
             className="pp-btn-pulse-cta"
-            style={{ marginTop: 32, padding: "11px 48px", fontSize: 14, fontWeight: 600, background: "#fff", color: "#1a1a1a", border: "none", borderRadius: 100, cursor: "pointer", letterSpacing: "0.04em", fontFamily: "Inter, sans-serif" }}
+            style={{ marginTop: 20, padding: "11px 48px", fontSize: 14, fontWeight: 600, background: "#fff", color: "#1a1a1a", border: "none", borderRadius: 100, cursor: "pointer", letterSpacing: "0.04em", fontFamily: "Inter, sans-serif" }}
           >
             Записаться
           </button>
