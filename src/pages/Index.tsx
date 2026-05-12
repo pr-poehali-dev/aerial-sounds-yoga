@@ -18,10 +18,10 @@ export default function Index() {
     <div style={{ background: "var(--pp-cream)", minHeight: "100vh", color: "var(--pp-text)" }}>
       <NavBar onShowForm={() => setShowForm(true)} />
       <HeroSection onShowForm={() => setShowForm(true)} />
+      <AppDownloadSection />
       <ServicesSection onShowForm={() => setShowForm(true)} />
       <GallerySection />
       <SpaSection />
-      <AppDownloadSection />
       <TrainingFaqFooter onShowForm={() => setShowForm(true)} onShowPrivacy={setPrivacyModal} />
 
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}

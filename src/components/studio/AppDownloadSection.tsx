@@ -58,7 +58,9 @@ export default function AppDownloadSection() {
           <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 320 }}>
             {/* App Store */}
             <a
-              href="#"
+              href="https://apps.apple.com/ru/app/mobifitness/id986278836"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -84,7 +86,9 @@ export default function AppDownloadSection() {
 
             {/* RuStore */}
             <a
-              href="#"
+              href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: "flex",
                 alignItems: "center",
