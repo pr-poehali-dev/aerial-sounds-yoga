@@ -5,6 +5,7 @@ import ServicesSection from "@/components/studio/ServicesSection";
 import GallerySection from "@/components/studio/GallerySection";
 import TrainingFaqFooter from "@/components/studio/TrainingFaqFooter";
 import SpaSection from "@/components/studio/SpaSection";
+import PricingSection from "@/components/studio/PricingSection";
 import ContactForm from "@/components/studio/ContactForm";
 import PrivacyModal from "@/components/studio/PrivacyModal";
 
@@ -18,6 +19,7 @@ export default function Index() {
       <NavBar onShowForm={() => setShowForm(true)} />
       <HeroSection onShowForm={() => setShowForm(true)} />
       <ServicesSection onShowForm={() => setShowForm(true)} />
+      <PricingSection onShowForm={() => setShowForm(true)} />
       <GallerySection />
       <SpaSection />
       <TrainingFaqFooter onShowForm={() => setShowForm(true)} onShowPrivacy={setPrivacyModal} />
