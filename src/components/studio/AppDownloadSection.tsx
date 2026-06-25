@@ -84,6 +84,36 @@ export default function AppDownloadSection() {
               </div>
             </a>
 
+            {/* MAX */}
+            <a
+              href="https://max.ru/u/f9LHodD0cOIg2rGnoHhI6pFjRa_6dirxGtWgb8Dnx_1OURHwCzlvI-NrwoU"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                background: "rgba(255,255,255,0.07)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "#fff",
+                borderRadius: 16,
+                padding: "14px 24px",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="6" fill="#0077FF"/>
+                <text x="12" y="16.5" textAnchor="middle" fontSize="11" fontWeight="800" fill="white" fontFamily="Arial">MAX</text>
+              </svg>
+              <div>
+                <div style={{ fontSize: 11, opacity: 0.6, marginBottom: 1 }}>Написать в</div>
+                <div style={{ fontSize: 16, fontWeight: 700 }}>MAX</div>
+              </div>
+            </a>
+
             {/* RuStore */}
             <a
               href="https://www.rustore.ru/catalog/app/com.itrack.fitnslim122797"
