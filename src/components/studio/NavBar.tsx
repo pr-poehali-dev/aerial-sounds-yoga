@@ -19,10 +19,18 @@ export default function NavBar({ onShowForm }: Props) {
             <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--pp-muted)" }}>Аэройога · Йога · Фитнес</div>
           </a>
           <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-            <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "var(--pp-text)", fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>
-              <Icon name="Phone" size={15} className="pp-blink" style={{ color: "var(--pp-teal)" }} />
-              +7 (914) 701-28-83
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", gap: 4, alignItems: "flex-end" }}>
+              <a href="tel:+79147012883" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "var(--pp-text)", fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>
+                <Icon name="Phone" size={15} className="pp-blink" style={{ color: "var(--pp-teal)" }} />
+                <span style={{ fontSize: 10, color: "var(--pp-muted)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>Тренировки</span>
+                +7 (914) 701-28-83
+              </a>
+              <a href="tel:+79089803545" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", color: "var(--pp-text)", fontSize: 14, fontWeight: 600, whiteSpace: "nowrap" }}>
+                <Icon name="Phone" size={15} style={{ color: "#c4a0f0" }} />
+                <span style={{ fontSize: 10, color: "var(--pp-muted)", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>Спа услуги</span>
+                +7 (908) 980-35-45
+              </a>
+            </div>
             <button
               onClick={() => setMenuOpen(true)}
               style={{ display: "flex", flexDirection: "column", gap: 5, padding: "8px", background: "none", border: "1px solid var(--pp-border)", borderRadius: 10, cursor: "pointer" }}
