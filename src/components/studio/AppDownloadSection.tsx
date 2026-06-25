@@ -84,6 +84,66 @@ export default function AppDownloadSection() {
               </div>
             </a>
 
+            {/* Telegram */}
+            <a
+              href="https://t.me/+79147012883"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                background: "rgba(255,255,255,0.07)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "#fff",
+                borderRadius: 16,
+                padding: "14px 24px",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="6" fill="#26A5E4"/>
+                <path d="M5.5 11.5l10-4.5-1.5 9-3-2.5-2 2v-3l5-4.5-6 3.5-2.5-1z" fill="white"/>
+              </svg>
+              <div>
+                <div style={{ fontSize: 11, opacity: 0.6, marginBottom: 1 }}>Написать в</div>
+                <div style={{ fontSize: 16, fontWeight: 700 }}>Telegram</div>
+              </div>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/79147012883"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                background: "rgba(255,255,255,0.07)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "#fff",
+                borderRadius: 16,
+                padding: "14px 24px",
+                textDecoration: "none",
+                transition: "background 0.2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.12)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="6" fill="#25D366"/>
+                <path d="M12 4a8 8 0 0 0-6.93 11.99L4 20l4.13-1.06A8 8 0 1 0 12 4zm0 14.5a6.46 6.46 0 0 1-3.29-.9l-.24-.14-2.45.63.65-2.38-.16-.25A6.5 6.5 0 1 1 12 18.5zm3.56-4.87c-.19-.1-1.14-.56-1.32-.63-.17-.06-.3-.1-.42.1-.13.19-.49.63-.6.76-.11.13-.22.14-.41.05a5.26 5.26 0 0 1-1.54-.95 5.74 5.74 0 0 1-1.07-1.33c-.11-.2-.01-.3.08-.4.09-.09.2-.22.29-.34.1-.11.13-.19.2-.32.06-.13.03-.24-.02-.34-.05-.1-.42-1.01-.58-1.38-.15-.36-.3-.31-.42-.32h-.36c-.12 0-.32.05-.49.24-.17.19-.64.62-.64 1.52s.65 1.76.74 1.88c.1.13 1.28 1.95 3.1 2.74.43.19.77.3 1.03.38.43.14.83.12 1.14.07.35-.05 1.07-.44 1.22-.86.15-.42.15-.78.1-.86-.04-.07-.17-.12-.36-.21z" fill="white"/>
+              </svg>
+              <div>
+                <div style={{ fontSize: 11, opacity: 0.6, marginBottom: 1 }}>Написать в</div>
+                <div style={{ fontSize: 16, fontWeight: 700 }}>WhatsApp</div>
+              </div>
+            </a>
+
             {/* MAX */}
             <a
               href="https://max.ru/u/f9LHodD0cOIg2rGnoHhI6pFjRa_6dirxGtWgb8Dnx_1OURHwCzlvI-NrwoU"
