@@ -301,8 +301,8 @@ export default function PricingSection({ onShowForm }: Props) {
           {/* Карточки одиночных пробных */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 16 }}>
             {[
-              { name: "Первый шаг", desc: "Пробная тренировка · 60 мин", price: "500 ₽" },
-              { name: "Первый опыт", desc: "Пробная тренировка · 60 мин", price: "800 ₽" },
+              { name: "Первый шаг", desc: "Пробная тренировка · 60 мин", price: "500 ₽", dur: "60 мин" },
+              { name: "Первый опыт", desc: "Пробная тренировка · 90 мин", price: "800 ₽", dur: "90 мин" },
             ].map((offer, i) => (
               <div key={i} style={{
                 borderRadius: 18,
@@ -327,7 +327,7 @@ export default function PricingSection({ onShowForm }: Props) {
                   </div>
                   <div style={{ background: "#c4a0f0", borderRadius: 8, padding: "8px 18px", alignSelf: "flex-start" }}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: "#fff", fontFamily: "var(--font-serif)" }}>{offer.price}</div>
-                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.85)" }}>60 мин</div>
+                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.85)" }}>{offer.dur}</div>
                   </div>
                   <button
                     onClick={onShowForm}
